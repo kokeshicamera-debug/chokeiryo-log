@@ -7,6 +7,14 @@
 1. 環境省 EADAS などから取得した自然公園区域の GeoJSON
 2. POTA公式の `all_parks_ext.csv`
 
+公的データがShape形式の場合は、先に次の道具でGeoJSONへ変換します。
+
+```text
+shape-to-geojson.mjs <Shapeファイルのフォルダ> <出力.geojson> [utf-8|shift_jis]
+```
+
+全国データは一度だけまとめて変換・照合します。利用者が公園ごとに作業する必要はありません。
+
 ## 実行結果
 
 - `pota-boundaries-national.geojson` : 一意に対応付けられた区域だけを含むアプリ用データ
