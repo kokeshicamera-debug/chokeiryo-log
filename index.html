@@ -1237,7 +1237,21 @@ async function ensurePotaBoundaryData(){
     if(!potaBoundaryLoading){
         potaBoundaryLoading=(async()=>{
             if(!window.PotaBoundaryEngine) return null;
-            const data=await window.PotaBoundaryEngine.load("./data/pota-boundaries-kanagawa-shizuoka.geojson");
+            let files=["./data/pota-boundaries-kanagawa-shizuoka.geojson"];
+            try{
+                const manifestResponse=await fetch("./data/pota-boundaries-manifest.json");
+                if(manifestResponse.ok){
+                    const manifest=await manifestResponse.json();
+                    const listedFiles=(manifest.regions || []).map(region=>region.file).filter(Boolean);
+                    if(listedFiles.length) files=listedFiles;
+                }
+            }catch(error){}
+
+            const collections=await Promise.all(files.map(file=>window.PotaBoundaryEngine.load(file).catch(()=>null)));
+            const data={
+                type:"FeatureCollection",
+                features:collections.flatMap(collection=>Array.isArray(collection?.features) ? collection.features : [])
+            };
             potaBoundaryData=data;
             return data;
         })().catch(()=>null).finally(()=>{ potaBoundaryLoading=null; });
@@ -1499,13 +1513,15 @@ function requestLocation(){
     navigator.geolocation.getCurrentPosition(
         position=>{
 
-            const {latitude,longitude,altitude,accuracy}=position.coords;
+            const {latitude,longitude,altitude,accuracy,altitudeAccuracy}=position.coords;
 
-            latestPosition={latitude,longitude,altitude,accuracy};
+            latestPosition={latitude,longitude,altitude,accuracy,altitudeAccuracy};
 
             gps.textContent="📍 "+latitude.toFixed(5)+", "+longitude.toFixed(5)+"（±"+Math.round(accuracy)+"m）";
             if(!applyOfflineGeoCache(latitude,longitude)) area.textContent="エリア判定中…";
-            alt.textContent=altitude===null ? "標高 GPS未取得" : "標高 "+Math.round(altitude)+"m";
+            alt.textContent=altitude===null
+                ? "GPS標高 未取得"
+                : "GPS標高 "+Math.round(altitude)+"m"+(altitudeAccuracy===null ? "（精度不明）" : " ±"+Math.round(altitudeAccuracy)+"m");
             updateAddress(latitude,longitude);
             updateJcc(latitude,longitude);
             refreshProgramStatus();

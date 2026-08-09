@@ -3,7 +3,7 @@
  * 一度オンラインで開いたアプリ本体を端末に保管し、圏外でも起動できるようにする。
  * POTA/SOTAの判定データは、次の段階で地域別にここへ追加する。
  */
-const CACHE_NAME = "cho-keiryo-log-v1-10-shell-6";
+const CACHE_NAME = "cho-keiryo-log-v1-10-shell-7";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -15,6 +15,7 @@ const APP_SHELL = [
   "./data/japan-municipalities-offline.json",
   "./data/jarl-jcc-jcg-index.json",
   "./data/japan-town-points.json",
+  "./data/pota-boundaries-manifest.json",
   "./data/pota-boundaries-kanagawa-shizuoka.geojson"
 ];
 
