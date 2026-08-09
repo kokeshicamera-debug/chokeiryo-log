@@ -17,6 +17,8 @@ viewport-fit=cover">
 <link rel="manifest" href="manifest.webmanifest">
 <script defer src="pota-boundary-engine.js"></script>
 <script defer src="offline-municipality-engine.js"></script>
+<script defer src="offline-jcc-engine.js"></script>
+<script defer src="offline-town-engine.js"></script>
 
 <title>超軽量ログ Ver.1.10 開発版</title>
 
@@ -1004,15 +1006,76 @@ async function findOfflineMunicipality(latitude,longitude){
     }
 }
 
+let offlineTownData=null;
+let offlineTownLoading=null;
+
+function ensureOfflineTownData(){
+    if(offlineTownData) return Promise.resolve(offlineTownData);
+    if(!offlineTownLoading && window.OfflineTownEngine){
+        offlineTownLoading=window.OfflineTownEngine.load("./data/japan-town-points.json")
+            .then(data=>{
+                offlineTownData=data;
+                return data;
+            })
+            .catch(error=>{
+                offlineTownLoading=null;
+                throw error;
+            });
+    }
+    return offlineTownLoading || Promise.reject(new Error("町字住所データを準備中です"));
+}
+
+async function findOfflineTown(latitude,longitude,municipality){
+    try{
+        const data=await ensureOfflineTownData();
+        return window.OfflineTownEngine.nearest(latitude,longitude,municipality.code,data);
+    }catch(error){
+        return null;
+    }
+}
+
 async function showOfflineMunicipality(latitude,longitude,preferSavedAddress=false){
     const hit=await findOfflineMunicipality(latitude,longitude);
     if(!hit) return false;
     if(!preferSavedAddress){
-        addr.textContent=hit.address+"（オフライン判定）";
+        const town=await findOfflineTown(latitude,longitude,hit);
+        const townText=town&&town.distanceMeters<=3000 ? town.town+town.koaza+"（町字推定）" : "";
+        addr.textContent=hit.address+townText+"（オフライン判定）";
         addr.title=hit.address;
     }
     area.textContent=getCallArea({prefecture:hit.prefecture});
     return true;
+}
+
+let offlineJccData=null;
+let offlineJccLoading=null;
+
+function ensureOfflineJccData(){
+    if(offlineJccData) return Promise.resolve(offlineJccData);
+    if(!offlineJccLoading && window.OfflineJccEngine){
+        offlineJccLoading=window.OfflineJccEngine.load("./data/jarl-jcc-jcg-index.json")
+            .then(data=>{
+                offlineJccData=data;
+                return data;
+            })
+            .catch(error=>{
+                offlineJccLoading=null;
+                throw error;
+            });
+    }
+    return offlineJccLoading || Promise.reject(new Error("JCC/JCG番号表を準備中です"));
+}
+
+async function findOfflineJcc(latitude,longitude){
+    try{
+        const [municipality,jccData]=await Promise.all([
+            findOfflineMunicipality(latitude,longitude),
+            ensureOfflineJccData()
+        ]);
+        return municipality ? window.OfflineJccEngine.find(municipality,jccData) : null;
+    }catch(error){
+        return null;
+    }
 }
 
 
@@ -1379,7 +1442,12 @@ async function updateJcc(latitude,longitude){
 
     if(!navigator.onLine){
         const cached=readGeoCache()[geoCacheKey(latitude,longitude)];
-        jcc.textContent=cached?.jcc ? cached.jcc+"（保存済み）" : "JCC/JCG：オフラインのため未取得";
+        if(cached?.jcc){
+            jcc.textContent=cached.jcc+"（保存済み）";
+            return;
+        }
+        const offlineJcc=await findOfflineJcc(latitude,longitude);
+        jcc.textContent=offlineJcc ? offlineJcc.type+" "+offlineJcc.code+"（オフライン判定）" : "JCC/JCG：オフライン判定中…";
         return;
     }
 
