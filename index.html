@@ -16,6 +16,7 @@ viewport-fit=cover">
 <meta name="theme-color" content="#111111">
 <link rel="manifest" href="manifest.webmanifest">
 <script defer src="pota-boundary-engine.js"></script>
+<script defer src="offline-municipality-engine.js"></script>
 
 <title>超軽量ログ Ver.1.10 開発版</title>
 
@@ -961,15 +962,57 @@ function saveGeoCache(latitude,longitude,changes){
     try{localStorage.setItem(GEO_CACHE_KEY,JSON.stringify(trimmed));}catch(error){}
 }
 
-function applyOfflineGeoCache(latitude,longitude){
+function applyOfflineGeoCache(latitude,longitude,showSavedLabel=false){
     const cached=readGeoCache()[geoCacheKey(latitude,longitude)];
     if(!cached) return false;
+    const savedLabel=showSavedLabel ? "（保存済み）" : "";
     if(cached.address){
-        addr.textContent=cached.address;
+        addr.textContent=savedLabel+cached.address;
         area.textContent=cached.area||"--エリア";
     }
-    if(cached.jcc) jcc.textContent=cached.jcc;
+    if(cached.jcc) jcc.textContent=cached.jcc+savedLabel;
     return Boolean(cached.address||cached.jcc);
+}
+
+/* 全国の市区町村・郡を、初回ダウンロード後は通信なしで判定する。 */
+let offlineMunicipalityData=null;
+let offlineMunicipalityLoading=null;
+
+function ensureOfflineMunicipalityData(){
+    if(offlineMunicipalityData) return Promise.resolve(offlineMunicipalityData);
+    if(!offlineMunicipalityLoading && window.OfflineMunicipalityEngine){
+        offlineMunicipalityLoading=window.OfflineMunicipalityEngine
+            .load("./data/japan-municipalities-offline.json")
+            .then(data=>{
+                offlineMunicipalityData=data;
+                return data;
+            })
+            .catch(error=>{
+                offlineMunicipalityLoading=null;
+                throw error;
+            });
+    }
+    return offlineMunicipalityLoading || Promise.reject(new Error("全国行政区域判定を準備中です"));
+}
+
+async function findOfflineMunicipality(latitude,longitude){
+    try{
+        const data=await ensureOfflineMunicipalityData();
+        return window.OfflineMunicipalityEngine.locate(latitude,longitude,data);
+    }catch(error){
+        return null;
+    }
+}
+
+async function showOfflineMunicipality(latitude,longitude,preferSavedAddress=false){
+    const hit=await findOfflineMunicipality(latitude,longitude);
+    if(!hit) return false;
+    if(!preferSavedAddress){
+        addr.textContent=hit.address+"（オフライン判定）";
+        addr.title=hit.address;
+    }
+    area.textContent=getCallArea({prefecture:hit.prefecture});
+    return true;
 }
 
 
@@ -1291,7 +1334,9 @@ largeInfoOverlay.addEventListener("click",()=>largeInfoOverlay.classList.remove(
 async function updateAddress(latitude,longitude){
 
     if(!navigator.onLine){
-        if(!applyOfflineGeoCache(latitude,longitude)){
+        const hasSavedAddress=applyOfflineGeoCache(latitude,longitude,true);
+        if(await showOfflineMunicipality(latitude,longitude,hasSavedAddress)) return;
+        if(!hasSavedAddress){
             addr.textContent="住所：オフラインのため未取得";
             area.textContent="--エリア";
         }
@@ -1334,7 +1379,7 @@ async function updateJcc(latitude,longitude){
 
     if(!navigator.onLine){
         const cached=readGeoCache()[geoCacheKey(latitude,longitude)];
-        jcc.textContent=cached?.jcc || "JCC/JCG：オフラインのため未取得";
+        jcc.textContent=cached?.jcc ? cached.jcc+"（保存済み）" : "JCC/JCG：オフラインのため未取得";
         return;
     }
 
