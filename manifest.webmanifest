@@ -1,0 +1,9 @@
+{
+  "name": "超軽量ログ Ver.1.10 開発版",
+  "short_name": "超軽量ログ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "lang": "ja"
+}

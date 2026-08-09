@@ -12,7 +12,12 @@ maximum-scale=1,
 user-scalable=no,
 viewport-fit=cover">
 
-<title>超軽量ログ Ver.1.02a</title>
+<!-- Ver.1.10: インストール後もアプリ本体をオフラインで開くための設定 -->
+<meta name="theme-color" content="#111111">
+<link rel="manifest" href="manifest.webmanifest">
+<script defer src="pota-boundary-engine.js"></script>
+
+<title>超軽量ログ Ver.1.10 開発版</title>
 
 <style>
 
@@ -976,6 +981,8 @@ let programMode=false;
 let latestPosition=null;
 let programData=null;
 let programDataLoading=null;
+let potaBoundaryData=null;
+let potaBoundaryLoading=null;
 let lastProgramMatches={pota:"",sota:""};
 let hasProgramMatchState=false;
 
@@ -1118,14 +1125,46 @@ async function ensureProgramData(){
 
 }
 
+async function ensurePotaBoundaryData(){
+
+    if(potaBoundaryData) return potaBoundaryData;
+    if(!potaBoundaryLoading){
+        potaBoundaryLoading=(async()=>{
+            if(!window.PotaBoundaryEngine) return null;
+            const data=await window.PotaBoundaryEngine.load("./data/pota-boundaries-kanagawa-shizuoka.geojson");
+            potaBoundaryData=data;
+            return data;
+        })().catch(()=>null).finally(()=>{ potaBoundaryLoading=null; });
+    }
+
+    return potaBoundaryLoading;
+
+}
+
 function programMatches(position){
 
     const nearest=(items,limit)=>items.map(item=>({...item,distance:distanceMeters(position.latitude,position.longitude,item.latitude,item.longitude)}))
         .filter(item=>item.distance<=limit)
         .sort((first,second)=>first.distance-second.distance);
 
+    const boundaryFeatures=potaBoundaryData && Array.isArray(potaBoundaryData.features)
+        ? potaBoundaryData.features.filter(feature=>feature.geometry)
+        : [];
+    const boundaryRefs=new Set(boundaryFeatures.map(feature=>feature.properties && feature.properties.potaRef).filter(Boolean));
+    const boundaryMatches=(window.PotaBoundaryEngine && potaBoundaryData)
+        ? window.PotaBoundaryEngine.classifyParks(position.latitude,position.longitude,potaBoundaryData,position.accuracy)
+            .map(result=>({
+                id:result.feature.properties.potaRef,
+                name:(result.feature.properties.nameJa || result.feature.properties.nameEn || result.feature.properties.potaRef)+(result.state==="boundary" ? " [境界付近]" : ""),
+                distance:0,
+                boundary:true,
+                boundaryState:result.state,
+                boundaryMeters:result.boundaryMeters
+            }))
+        : [];
+
     return {
-        pota:nearest(programData.pota,POTA_NEARBY_METERS),
+        pota:[...boundaryMatches,...nearest(programData.pota.filter(item=>!boundaryRefs.has(item.id)),POTA_NEARBY_METERS)],
         sota:nearest(programData.sota,SOTA_NEARBY_METERS)
     };
 
@@ -1135,9 +1174,10 @@ function formatProgramMatches(matches,type){
 
     if(!matches.length) return "スポット外です";
 
-    const suffix=type==="pota" ? "（位置目安・境界要確認）" : "（山頂から";
+    const hasBoundaryMatch=type==="pota" && matches.some(match=>match.boundary);
+    const suffix=type==="pota" ? (hasBoundaryMatch ? "（公式区域・境界判定）" : "（位置目安・境界要確認）") : "（山頂から";
     const lines=matches.slice(0,3).map(match=>type==="pota"
-        ? match.id+" "+match.name+" 約"+Math.round(match.distance/100)/10+"km"
+        ? match.id+" "+match.name+(match.boundary ? "" : " 約"+Math.round(match.distance/100)/10+"km")
         : match.id+" "+match.name+" "+Math.round(match.distance)+"m");
 
     return lines.join(" ／ ")+(type==="pota" ? suffix : suffix+"）");
@@ -1200,6 +1240,7 @@ async function refreshProgramStatus(){
         }
     }
 
+    await ensurePotaBoundaryData();
     const matches=programMatches(latestPosition);
     showProgramStatus(formatProgramMatches(matches.pota,"pota"),formatProgramMatches(matches.sota,"sota"));
     if(hasProgramMatchState){
@@ -2140,6 +2181,15 @@ redrawAll();
 
 window.addEventListener("load",requestLocation,{once:true});
 window.addEventListener("load",keepScreenAwake,{once:true});
+
+/* Ver.1.10: 初回のオンライン利用時に、アプリ本体を端末へ保管する。 */
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function(){
+        navigator.serviceWorker.register("./sw.js").catch(function(error){
+            console.warn("オフライン機能の準備に失敗しました", error);
+        });
+    });
+}
 
 </script>
 
