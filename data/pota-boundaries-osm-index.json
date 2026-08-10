@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T02:51:57.592Z",
+  "generatedAt": "2026-08-10T03:08:46.328Z",
   "source": "全国POTA区域候補",
   "parks": [
     {
@@ -617,6 +617,28 @@
       "minLatitude": 34.2650042,
       "maxLongitude": 133.7489948,
       "maxLatitude": 34.2709314,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1682",
+      "nameJa": "",
+      "nameEn": "Muroto Koiki Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1682.geojson",
+      "minLongitude": 134.1692314,
+      "minLatitude": 33.2874473,
+      "maxLongitude": 134.1753763,
+      "maxLatitude": 33.2924203,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1704",
+      "nameJa": "",
+      "nameEn": "Central Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1704.geojson",
+      "minLongitude": 130.8370453,
+      "minLatitude": 33.8734119,
+      "maxLongitude": 130.8455232,
+      "maxLatitude": 33.8778949,
       "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
     }
   ]

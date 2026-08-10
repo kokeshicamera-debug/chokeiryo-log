@@ -75,11 +75,12 @@ function featureFor(park, elements) {
 }
 function query(parks) {
   const radius = Math.max(100, Number(process.env.POTA_OSM_RADIUS || 6000));
-  const filters = parks.flatMap(park => ["[leisure=park]", "[boundary=national_park]", "[boundary=protected_area]", "[protect_class]", "[landuse=recreation_ground]"].map(filter => `nwr(around:${radius},${park.latitude},${park.longitude})${filter};`)).join("");
+  const filters = parks.flatMap(park => ["[leisure=park]", "[boundary=national_park]", "[boundary=protected_area]", "[protect_class]", "[landuse=recreation_ground]"].map(filter => `way(around:${radius},${park.latitude},${park.longitude})${filter};`)).join("");
   return `[out:json][timeout:180];(${filters});out tags geom;`;
 }
 async function overpass(ql) {
-  const response = await fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(ql)}`, { headers: { "User-Agent": "ChokeiryoLog/1.10 (offline POTA candidate builder)" } });
+  const endpoint = process.env.POTA_OSM_ENDPOINT || "https://overpass-api.de/api/interpreter";
+  const response = await fetch(`${endpoint}?data=${encodeURIComponent(ql)}`, { headers: { "User-Agent": "ChokeiryoLog/1.10 (offline POTA candidate builder)" } });
   if (!response.ok) {
     const error = new Error(`Overpass ${response.status}: ${(await response.text()).slice(0, 160)}`);
     error.status = response.status;
@@ -112,7 +113,7 @@ for (let start = 0; start < targets.length; start += batchSize) {
     if (error.status === 429) { console.warn("照会先が混雑しています。ここで安全に停止し、次回は続きから再開します。"); break; }
   }
   fs.writeFileSync(progressFile, `${JSON.stringify({ version: 1, source: "© OpenStreetMap contributors / ODbL", generatedAt: new Date().toISOString(), completed: [...completed], features: [...byRef.values()], failures })}\n`, "utf8");
-  await new Promise(resolve => setTimeout(resolve, 1200));
+  await new Promise(resolve => setTimeout(resolve, Math.max(1200, Number(process.env.POTA_OSM_DELAY_MS || 1200))));
 }
 const features = [...byRef.values()].sort((left, right) => left.properties.potaRef.localeCompare(right.properties.potaRef));
 fs.writeFileSync(outputFile, `${JSON.stringify({ type: "FeatureCollection", attribution: "© OpenStreetMap contributors", licence: "ODbL-1.0", generatedAt: new Date().toISOString(), features })}\n`, "utf8");
