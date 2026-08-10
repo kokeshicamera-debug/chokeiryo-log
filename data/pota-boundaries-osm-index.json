@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T02:27:56.555Z",
+  "generatedAt": "2026-08-10T02:51:57.592Z",
   "source": "全国POTA区域候補",
   "parks": [
     {
@@ -551,6 +551,72 @@
       "minLatitude": 35.4392582,
       "maxLongitude": 136.7681093,
       "maxLatitude": 35.4433687,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1552",
+      "nameJa": "",
+      "nameEn": "Ball Park Awaji Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1552.geojson",
+      "minLongitude": 134.9263371,
+      "minLatitude": 34.4494932,
+      "maxLongitude": 134.934962,
+      "maxLatitude": 34.4568548,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1560",
+      "nameJa": "",
+      "nameEn": "Mahoroba Kenko Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1560.geojson",
+      "minLongitude": 135.7791465,
+      "minLatitude": 34.5934991,
+      "maxLongitude": 135.7849373,
+      "maxLatitude": 34.6031994,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1565",
+      "nameJa": "",
+      "nameEn": "Uda Animal Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1565.geojson",
+      "minLongitude": 135.9307185,
+      "minLatitude": 34.4862182,
+      "maxLongitude": 135.9349765,
+      "maxLatitude": 34.4911914,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1610",
+      "nameJa": "",
+      "nameEn": "Okayama Prefectural Multipurpose Grounds Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1610.geojson",
+      "minLongitude": 133.9129438,
+      "minLatitude": 34.6756096,
+      "maxLongitude": 133.9209758,
+      "maxLatitude": 34.681622,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1623",
+      "nameJa": "",
+      "nameEn": "Sera Kenmin Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1623.geojson",
+      "minLongitude": 132.9783802,
+      "minLatitude": 34.6221118,
+      "maxLongitude": 132.9851527,
+      "maxLatitude": 34.6311146,
+      "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
+    },
+    {
+      "ref": "JP-1651",
+      "nameJa": "",
+      "nameEn": "Toryo Prefectural Park",
+      "file": "./pota-boundaries-osm-candidates/JP-1651.geojson",
+      "minLongitude": 133.7424994,
+      "minLatitude": 34.2650042,
+      "maxLongitude": 133.7489948,
+      "maxLatitude": 34.2709314,
       "boundaryStatus": "OpenStreetMap公園・保護区域候補（POTA公式境界ではありません）"
     }
   ]

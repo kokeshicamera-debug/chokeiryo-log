@@ -74,12 +74,17 @@ function featureFor(park, elements) {
   return null;
 }
 function query(parks) {
-  const filters = parks.flatMap(park => ["[leisure=park]", "[boundary=national_park]", "[boundary=protected_area]", "[protect_class]", "[landuse=recreation_ground]"].map(filter => `nwr(around:6000,${park.latitude},${park.longitude})${filter};`)).join("");
+  const radius = Math.max(100, Number(process.env.POTA_OSM_RADIUS || 6000));
+  const filters = parks.flatMap(park => ["[leisure=park]", "[boundary=national_park]", "[boundary=protected_area]", "[protect_class]", "[landuse=recreation_ground]"].map(filter => `nwr(around:${radius},${park.latitude},${park.longitude})${filter};`)).join("");
   return `[out:json][timeout:180];(${filters});out tags geom;`;
 }
 async function overpass(ql) {
-  const response = await fetch("https://overpass.kumi.systems/api/interpreter", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded", "User-Agent": "ChokeiryoLog/1.10 (offline POTA candidate builder)" }, body: `data=${encodeURIComponent(ql)}` });
-  if (!response.ok) throw new Error(`Overpass ${response.status}: ${(await response.text()).slice(0, 160)}`);
+  const response = await fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(ql)}`, { headers: { "User-Agent": "ChokeiryoLog/1.10 (offline POTA candidate builder)" } });
+  if (!response.ok) {
+    const error = new Error(`Overpass ${response.status}: ${(await response.text()).slice(0, 160)}`);
+    error.status = response.status;
+    throw error;
+  }
   return response.json();
 }
 
@@ -89,9 +94,11 @@ for (const feature of prior.features || []) {
   feature.properties = { ...feature.properties, boundarySource: feature.properties?.boundarySource || "OpenStreetMap contributors / ODbL" };
 }
 const completed = new Set(prior.completed || []), byRef = new Map((prior.features || []).map(feature => [feature.properties?.potaRef, feature])), failures = [...(prior.failures || [])];
-const allTargets = parks.filter(park => !covered.has(park.ref) && !completed.has(park.ref));
+const failedRefs = new Set((prior.failures || []).flatMap(failure => failure.refs || []));
+const skipFailed = process.env.POTA_OSM_SKIP_FAILED === "1";
+const allTargets = parks.filter(park => !covered.has(park.ref) && !completed.has(park.ref) && (!skipFailed || !failedRefs.has(park.ref)));
 const maximum = Number(process.env.POTA_OSM_MAX || 0);
-const targets = maximum > 0 ? allTargets.slice(0, maximum) : allTargets;
+const targets = process.env.POTA_OSM_WRITE_ONLY === "1" ? [] : maximum > 0 ? allTargets.slice(0, maximum) : allTargets;
 console.log(`未照合 ${targets.length}件をOpenStreetMapから確認します（既存候補 ${byRef.size}件）。`);
 for (let start = 0; start < targets.length; start += batchSize) {
   const batch = targets.slice(start, start + batchSize);
@@ -99,7 +106,11 @@ for (let start = 0; start < targets.length; start += batchSize) {
     const result = await overpass(query(batch));
     for (const park of batch) { const feature = featureFor(park, result.elements || []); if (feature) byRef.set(park.ref, feature); completed.add(park.ref); }
     console.log(`${Math.min(start + batch.length, targets.length)}/${targets.length}件: 候補 ${byRef.size}件`);
-  } catch (error) { console.warn(`${batch.map(park => park.ref).join(", ")}: ${error.message}`); failures.push({ refs: batch.map(park => park.ref), message: error.message, at: new Date().toISOString() }); }
+  } catch (error) {
+    console.warn(`${batch.map(park => park.ref).join(", ")}: ${error.message}`);
+    failures.push({ refs: batch.map(park => park.ref), message: error.message, at: new Date().toISOString() });
+    if (error.status === 429) { console.warn("照会先が混雑しています。ここで安全に停止し、次回は続きから再開します。"); break; }
+  }
   fs.writeFileSync(progressFile, `${JSON.stringify({ version: 1, source: "© OpenStreetMap contributors / ODbL", generatedAt: new Date().toISOString(), completed: [...completed], features: [...byRef.values()], failures })}\n`, "utf8");
   await new Promise(resolve => setTimeout(resolve, 1200));
 }
