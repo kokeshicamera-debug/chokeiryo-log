@@ -4,10 +4,11 @@ import path from "node:path";
 // 全国候補GeoJSONをPOTA番号ごとの小さなファイルへ分割します。
 // index JSONは現在地に近い候補だけを選ぶために使用します。
 // 使い方:
-// node split-pota-candidate-boundaries.mjs <候補.geojson> <出力フォルダ> <索引.json> <Service Worker用一覧.js>
+// node split-pota-candidate-boundaries.mjs <候補.geojson> <出力フォルダ> <索引.json> <Service Worker用一覧.js> [Service Workerの変数名]
 
-const [inputFile, outputDirectory, indexFile, workerListFile] = process.argv.slice(2);
+const [inputFile, outputDirectory, indexFile, workerListFile, workerVariable = "NATIONAL_POTA_CANDIDATE_FILES"] = process.argv.slice(2);
 if (!workerListFile) throw new Error("使い方: node split-pota-candidate-boundaries.mjs <候補.geojson> <出力フォルダ> <索引.json> <Service Worker用一覧.js>");
+if (!/^[A-Z][A-Z0-9_]*$/u.test(workerVariable)) throw new Error("Service Workerの変数名が不正です");
 
 function bounds(geometry) {
   const polygons = geometry.type === "Polygon" ? [geometry.coordinates] : geometry.coordinates;
@@ -43,5 +44,5 @@ for (const feature of collection.features || []) {
 }
 index.sort((a, b) => a.ref.localeCompare(b.ref));
 fs.writeFileSync(indexFile, `${JSON.stringify({ version: 1, generatedAt: new Date().toISOString(), source: "全国POTA区域候補", parks: index }, null, 2)}\n`, "utf8");
-fs.writeFileSync(workerListFile, `self.NATIONAL_POTA_CANDIDATE_FILES=${JSON.stringify(files)};\n`, "utf8");
+fs.writeFileSync(workerListFile, `self.${workerVariable}=${JSON.stringify(files)};\n`, "utf8");
 console.log(`完了: ${index.length}件を ${outputDirectory} へ分割しました`);

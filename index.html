@@ -1110,6 +1110,10 @@ let nationalPotaCandidateIndex=null;
 let nationalPotaCandidateIndexLoading=null;
 const nationalPotaCandidateCache=new Map();
 let nationalPotaCandidateData=null;
+let urbanPotaCandidateIndex=null;
+let urbanPotaCandidateIndexLoading=null;
+const urbanPotaCandidateCache=new Map();
+let urbanPotaCandidateData=null;
 let lastProgramMatches={pota:"",sota:""};
 let hasProgramMatchState=false;
 
@@ -1318,6 +1322,42 @@ async function ensureNationalPotaCandidateData(position){
     return nationalPotaCandidateData;
 }
 
+async function ensureUrbanPotaCandidateData(position){
+    if(!window.PotaBoundaryEngine || !position) return null;
+    if(!urbanPotaCandidateIndexLoading && !urbanPotaCandidateIndex){
+        urbanPotaCandidateIndexLoading=fetch("./data/pota-boundaries-urban-index.json")
+            .then(response=>response.ok ? response.json() : null)
+            .catch(()=>null)
+            .then(data=>{
+                urbanPotaCandidateIndex=data;
+                return data;
+            })
+            .finally(()=>{urbanPotaCandidateIndexLoading=null;});
+    }
+    if(urbanPotaCandidateIndexLoading) await urbanPotaCandidateIndexLoading;
+    const parks=Array.isArray(urbanPotaCandidateIndex?.parks) ? urbanPotaCandidateIndex.parks : [];
+    const latitudeMargin=Math.max(0.01,(Number(position.accuracy)||0)/110540);
+    const longitudeMargin=Math.max(0.01,latitudeMargin/Math.max(0.2,Math.cos(position.latitude*Math.PI/180)));
+    const nearby=parks.filter(park=>
+        position.latitude>=park.minLatitude-latitudeMargin && position.latitude<=park.maxLatitude+latitudeMargin &&
+        position.longitude>=park.minLongitude-longitudeMargin && position.longitude<=park.maxLongitude+longitudeMargin
+    );
+    await Promise.all(nearby.map(async park=>{
+        if(urbanPotaCandidateCache.has(park.ref)) return;
+        try{
+            const file="./data/"+String(park.file||"").replace(/^\.\//u,"");
+            const collection=await window.PotaBoundaryEngine.load(file);
+            const feature=collection.features && collection.features[0];
+            if(feature){
+                feature.properties={...feature.properties,nationalCandidate:true,urbanParkCandidate:true};
+                urbanPotaCandidateCache.set(park.ref,feature);
+            }
+        }catch(error){}
+    }));
+    urbanPotaCandidateData={type:"FeatureCollection",features:[...urbanPotaCandidateCache.values()]};
+    return urbanPotaCandidateData;
+}
+
 function programMatches(position){
 
     const nearest=(items,limit)=>items.map(item=>({...item,distance:distanceMeters(position.latitude,position.longitude,item.latitude,item.longitude)}))
@@ -1339,12 +1379,17 @@ function programMatches(position){
                 boundaryMeters:result.boundaryMeters
             }))
         : [];
-    const nationalCandidateMatches=(window.PotaBoundaryEngine && nationalPotaCandidateData)
-        ? window.PotaBoundaryEngine.classifyParks(position.latitude,position.longitude,nationalPotaCandidateData,position.accuracy)
+    const candidateFeatures=[
+        ...(Array.isArray(nationalPotaCandidateData?.features) ? nationalPotaCandidateData.features : []),
+        ...(Array.isArray(urbanPotaCandidateData?.features) ? urbanPotaCandidateData.features : [])
+    ];
+    const candidateData={type:"FeatureCollection",features:candidateFeatures};
+    const nationalCandidateMatches=(window.PotaBoundaryEngine && candidateFeatures.length)
+        ? window.PotaBoundaryEngine.classifyParks(position.latitude,position.longitude,candidateData,position.accuracy)
             .filter(result=>!boundaryRefs.has(result.feature.properties.potaRef))
             .map(result=>({
                 id:result.feature.properties.potaRef,
-                name:(result.feature.properties.nameJa || result.feature.properties.nameEn || result.feature.properties.potaRef)+" [全国候補・要公式確認]",
+                name:(result.feature.properties.nameJa || result.feature.properties.nameEn || result.feature.properties.potaRef)+(result.feature.properties.urbanParkCandidate ? " [都市公園候補・要公式確認]" : " [全国候補・要公式確認]"),
                 distance:0,
                 boundary:false,
                 candidate:true,
@@ -1433,6 +1478,7 @@ async function refreshProgramStatus(){
 
     await ensurePotaBoundaryData();
     await ensureNationalPotaCandidateData(latestPosition);
+    await ensureUrbanPotaCandidateData(latestPosition);
     const matches=programMatches(latestPosition);
     showProgramStatus(formatProgramMatches(matches.pota,"pota"),formatProgramMatches(matches.sota,"sota"));
     if(hasProgramMatchState){

@@ -4,4 +4,8 @@ data/pota-boundaries-national-candidate*.geojson
 data/moe-natural-parks*.json
 data/pota-boundary-match-report*.json
 data/pota-point-match-report*.json
+data/pota-urban-park-candidate*.geojson
+data/pota-urban-park-match-report*.json
+data/pota-boundaries-urban-kanagawa-candidates.geojson
+data/pota-boundaries-urban-candidates.geojson
 data/pota-japan-catalog.csv
