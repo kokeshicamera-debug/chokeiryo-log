@@ -273,6 +273,18 @@ text-overflow:clip;
 
 }
 
+.programCredit{
+
+font-size:8px;
+
+line-height:1.2;
+
+padding:0 3px;
+
+color:var(--muted);
+
+}
+
 #saveToast{
 
 position:fixed;
@@ -674,6 +686,7 @@ font-size:18px;
     <section id="programPanel" aria-live="polite">
         <div class="programLine" id="potaStatus">POTA：モードを開始してください</div>
         <div class="programLine" id="sotaStatus">SOTA：モードを開始してください</div>
+        <div class="programCredit">公園候補データ：© OpenStreetMap contributors（ODbL）</div>
     </section>
 
     <div id="gpsInfo">
@@ -1114,6 +1127,10 @@ let urbanPotaCandidateIndex=null;
 let urbanPotaCandidateIndexLoading=null;
 const urbanPotaCandidateCache=new Map();
 let urbanPotaCandidateData=null;
+let osmPotaCandidateIndex=null;
+let osmPotaCandidateIndexLoading=null;
+const osmPotaCandidateCache=new Map();
+let osmPotaCandidateData=null;
 let lastProgramMatches={pota:"",sota:""};
 let hasProgramMatchState=false;
 
@@ -1358,6 +1375,42 @@ async function ensureUrbanPotaCandidateData(position){
     return urbanPotaCandidateData;
 }
 
+async function ensureOsmPotaCandidateData(position){
+    if(!window.PotaBoundaryEngine || !position) return null;
+    if(!osmPotaCandidateIndexLoading && !osmPotaCandidateIndex){
+        osmPotaCandidateIndexLoading=fetch("./data/pota-boundaries-osm-index.json")
+            .then(response=>response.ok ? response.json() : null)
+            .catch(()=>null)
+            .then(data=>{
+                osmPotaCandidateIndex=data;
+                return data;
+            })
+            .finally(()=>{osmPotaCandidateIndexLoading=null;});
+    }
+    if(osmPotaCandidateIndexLoading) await osmPotaCandidateIndexLoading;
+    const parks=Array.isArray(osmPotaCandidateIndex?.parks) ? osmPotaCandidateIndex.parks : [];
+    const latitudeMargin=Math.max(0.01,(Number(position.accuracy)||0)/110540);
+    const longitudeMargin=Math.max(0.01,latitudeMargin/Math.max(0.2,Math.cos(position.latitude*Math.PI/180)));
+    const nearby=parks.filter(park=>
+        position.latitude>=park.minLatitude-latitudeMargin && position.latitude<=park.maxLatitude+latitudeMargin &&
+        position.longitude>=park.minLongitude-longitudeMargin && position.longitude<=park.maxLongitude+longitudeMargin
+    );
+    await Promise.all(nearby.map(async park=>{
+        if(osmPotaCandidateCache.has(park.ref)) return;
+        try{
+            const file="./data/"+String(park.file||"").replace(/^\.\//u,"");
+            const collection=await window.PotaBoundaryEngine.load(file);
+            const feature=collection.features && collection.features[0];
+            if(feature){
+                feature.properties={...feature.properties,nationalCandidate:true,osmParkCandidate:true};
+                osmPotaCandidateCache.set(park.ref,feature);
+            }
+        }catch(error){}
+    }));
+    osmPotaCandidateData={type:"FeatureCollection",features:[...osmPotaCandidateCache.values()]};
+    return osmPotaCandidateData;
+}
+
 function programMatches(position){
 
     const nearest=(items,limit)=>items.map(item=>({...item,distance:distanceMeters(position.latitude,position.longitude,item.latitude,item.longitude)}))
@@ -1381,7 +1434,8 @@ function programMatches(position){
         : [];
     const candidateFeatures=[
         ...(Array.isArray(nationalPotaCandidateData?.features) ? nationalPotaCandidateData.features : []),
-        ...(Array.isArray(urbanPotaCandidateData?.features) ? urbanPotaCandidateData.features : [])
+        ...(Array.isArray(urbanPotaCandidateData?.features) ? urbanPotaCandidateData.features : []),
+        ...(Array.isArray(osmPotaCandidateData?.features) ? osmPotaCandidateData.features : [])
     ];
     const candidateData={type:"FeatureCollection",features:candidateFeatures};
     const nationalCandidateMatches=(window.PotaBoundaryEngine && candidateFeatures.length)
@@ -1389,7 +1443,7 @@ function programMatches(position){
             .filter(result=>!boundaryRefs.has(result.feature.properties.potaRef))
             .map(result=>({
                 id:result.feature.properties.potaRef,
-                name:(result.feature.properties.nameJa || result.feature.properties.nameEn || result.feature.properties.potaRef)+(result.feature.properties.urbanParkCandidate ? " [都市公園候補・要公式確認]" : " [全国候補・要公式確認]"),
+                name:(result.feature.properties.nameJa || result.feature.properties.nameEn || result.feature.properties.potaRef)+(result.feature.properties.osmParkCandidate ? " [OSM候補・要公式確認]" : result.feature.properties.urbanParkCandidate ? " [都市公園候補・要公式確認]" : " [全国候補・要公式確認]"),
                 distance:0,
                 boundary:false,
                 candidate:true,
@@ -1479,6 +1533,7 @@ async function refreshProgramStatus(){
     await ensurePotaBoundaryData();
     await ensureNationalPotaCandidateData(latestPosition);
     await ensureUrbanPotaCandidateData(latestPosition);
+    await ensureOsmPotaCandidateData(latestPosition);
     const matches=programMatches(latestPosition);
     showProgramStatus(formatProgramMatches(matches.pota,"pota"),formatProgramMatches(matches.sota,"sota"));
     if(hasProgramMatchState){
@@ -2439,10 +2494,10 @@ if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("./sw.js").then(function(registration){
             function watchInstall(worker){
                 if(!worker) return;
-                showToast("全国POTA候補を端末へ保存しています。初回だけ数分かかります。",6000);
+                showToast("全国POTA判定データを端末へ保存しています。初回だけ数分かかります。",6000);
                 worker.addEventListener("statechange",function(){
                     if(worker.state==="installed"){
-                        showToast("全国POTA候補のオフライン保存が完了しました。",4000);
+                        showToast("全国POTA判定データのオフライン保存が完了しました。",4000);
                     }
                 });
             }

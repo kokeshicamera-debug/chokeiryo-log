@@ -12,3 +12,11 @@
 - JCC/JCG番号: JARL「市郡区番号リスト」を参照して作成。公開版ではJARLの最新情報・利用条件を確認して更新すること。
 
 このアプリは、町字については境界ではなく代表点に基づく最寄り推定を表示する。
+
+## OpenStreetMap 由来のPOTA候補区域
+
+- 全国POTA候補の一部は、OpenStreetMap contributors の公園・保護区域データを、POTAの代表地点と重なる区域だけに加工して作成する。
+- 出典表示: © OpenStreetMap contributors
+- ライセンス: Open Data Commons Open Database License (ODbL) v1.0
+- このリポジトリ内の `data/pota-boundaries-osm-candidates/` および対応する索引・生成ツールは、上記のODbLに従って公開する。アプリ本体のHTML・操作画面・手書き機能そのものをODbL化するものではない。
+- OSM由来の区域はPOTA公式区域そのものではないため、アプリでは必ず「OSM候補・要公式確認」と表示する。

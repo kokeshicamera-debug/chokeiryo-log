@@ -1,12 +1,13 @@
 importScripts("./data/pota-boundaries-national-files.js");
 importScripts("./data/pota-boundaries-urban-files.js");
+importScripts("./data/pota-boundaries-osm-files.js");
 
 /*
  * 超軽量ログ Ver.1.10 開発版
  * 一度オンラインで開いたアプリ本体を端末に保管し、圏外でも起動できるようにする。
  * POTA/SOTAの判定データは、次の段階で地域別にここへ追加する。
  */
-const CACHE_NAME = "cho-keiryo-log-v1-10-shell-11";
+const CACHE_NAME = "cho-keiryo-log-v1-10-shell-12";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -23,6 +24,8 @@ const APP_SHELL = [
   "./data/pota-boundaries-national-files.js",
   "./data/pota-boundaries-urban-index.json",
   "./data/pota-boundaries-urban-files.js",
+  "./data/pota-boundaries-osm-index.json",
+  "./data/pota-boundaries-osm-files.js",
   "./data/pota-boundaries-kanagawa-shizuoka.geojson"
 ];
 
@@ -34,6 +37,9 @@ self.addEventListener("install", event => {
     }
     for (const file of self.NATIONAL_POTA_URBAN_CANDIDATE_FILES || []) {
       try { await cache.add(file); } catch (error) { console.warn("都市公園POTA候補の保存に失敗", file, error); }
+    }
+    for (const file of self.NATIONAL_POTA_OSM_CANDIDATE_FILES || []) {
+      try { await cache.add(file); } catch (error) { console.warn("OpenStreetMap由来POTA候補の保存に失敗", file, error); }
     }
   }));
   self.skipWaiting();
