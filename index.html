@@ -794,6 +794,18 @@ const sotaStatus = document.getElementById("sotaStatus");
 const saveToast=document.getElementById("saveToast");
 const largeInfoOverlay=document.getElementById("largeInfoOverlay");
 
+function showToast(message,duration=1800){
+    const defaultMessage=saveToast.dataset.defaultMessage || saveToast.textContent;
+    saveToast.dataset.defaultMessage=defaultMessage;
+    saveToast.textContent=message;
+    saveToast.classList.add("show");
+    clearTimeout(showToast.timer);
+    showToast.timer=setTimeout(()=>{
+        saveToast.classList.remove("show");
+        saveToast.textContent=defaultMessage;
+    },duration);
+}
+
 function applyPenStyle(){
 
     ctx.strokeStyle=getComputedStyle(document.body).getPropertyValue("--pen").trim();
@@ -1094,6 +1106,10 @@ let programData=null;
 let programDataLoading=null;
 let potaBoundaryData=null;
 let potaBoundaryLoading=null;
+let nationalPotaCandidateIndex=null;
+let nationalPotaCandidateIndexLoading=null;
+const nationalPotaCandidateCache=new Map();
+let nationalPotaCandidateData=null;
 let lastProgramMatches={pota:"",sota:""};
 let hasProgramMatchState=false;
 
@@ -1266,6 +1282,42 @@ async function ensurePotaBoundaryData(){
 
 }
 
+async function ensureNationalPotaCandidateData(position){
+    if(!window.PotaBoundaryEngine || !position) return null;
+    if(!nationalPotaCandidateIndexLoading && !nationalPotaCandidateIndex){
+        nationalPotaCandidateIndexLoading=fetch("./data/pota-boundaries-national-index.json")
+            .then(response=>response.ok ? response.json() : null)
+            .catch(()=>null)
+            .then(data=>{
+                nationalPotaCandidateIndex=data;
+                return data;
+            })
+            .finally(()=>{ nationalPotaCandidateIndexLoading=null; });
+    }
+    if(nationalPotaCandidateIndexLoading) await nationalPotaCandidateIndexLoading;
+    const parks=Array.isArray(nationalPotaCandidateIndex?.parks) ? nationalPotaCandidateIndex.parks : [];
+    const latitudeMargin=Math.max(0.01,(Number(position.accuracy)||0)/110540);
+    const longitudeMargin=Math.max(0.01,latitudeMargin/Math.max(0.2,Math.cos(position.latitude*Math.PI/180)));
+    const nearby=parks.filter(park=>
+        position.latitude>=park.minLatitude-latitudeMargin && position.latitude<=park.maxLatitude+latitudeMargin &&
+        position.longitude>=park.minLongitude-longitudeMargin && position.longitude<=park.maxLongitude+longitudeMargin
+    );
+    await Promise.all(nearby.map(async park=>{
+        if(nationalPotaCandidateCache.has(park.ref)) return;
+        try{
+            const file="./data/"+String(park.file||"").replace(/^\.\//u,"");
+            const collection=await window.PotaBoundaryEngine.load(file);
+            const feature=collection.features && collection.features[0];
+            if(feature){
+                feature.properties={...feature.properties,nationalCandidate:true};
+                nationalPotaCandidateCache.set(park.ref,feature);
+            }
+        }catch(error){}
+    }));
+    nationalPotaCandidateData={type:"FeatureCollection",features:[...nationalPotaCandidateCache.values()]};
+    return nationalPotaCandidateData;
+}
+
 function programMatches(position){
 
     const nearest=(items,limit)=>items.map(item=>({...item,distance:distanceMeters(position.latitude,position.longitude,item.latitude,item.longitude)}))
@@ -1287,9 +1339,23 @@ function programMatches(position){
                 boundaryMeters:result.boundaryMeters
             }))
         : [];
+    const nationalCandidateMatches=(window.PotaBoundaryEngine && nationalPotaCandidateData)
+        ? window.PotaBoundaryEngine.classifyParks(position.latitude,position.longitude,nationalPotaCandidateData,position.accuracy)
+            .filter(result=>!boundaryRefs.has(result.feature.properties.potaRef))
+            .map(result=>({
+                id:result.feature.properties.potaRef,
+                name:(result.feature.properties.nameJa || result.feature.properties.nameEn || result.feature.properties.potaRef)+" [全国候補・要公式確認]",
+                distance:0,
+                boundary:false,
+                candidate:true,
+                boundaryState:result.state,
+                boundaryMeters:result.boundaryMeters
+            }))
+        : [];
+    const nationalCandidateRefs=new Set(nationalCandidateMatches.map(match=>match.id));
 
     return {
-        pota:[...boundaryMatches,...nearest(programData.pota.filter(item=>!boundaryRefs.has(item.id)),POTA_NEARBY_METERS)],
+        pota:[...boundaryMatches,...nationalCandidateMatches,...nearest(programData.pota.filter(item=>!boundaryRefs.has(item.id)&&!nationalCandidateRefs.has(item.id)),POTA_NEARBY_METERS)],
         sota:nearest(programData.sota,SOTA_NEARBY_METERS)
     };
 
@@ -1366,6 +1432,7 @@ async function refreshProgramStatus(){
     }
 
     await ensurePotaBoundaryData();
+    await ensureNationalPotaCandidateData(latestPosition);
     const matches=programMatches(latestPosition);
     showProgramStatus(formatProgramMatches(matches.pota,"pota"),formatProgramMatches(matches.sota,"sota"));
     if(hasProgramMatchState){
@@ -2323,7 +2390,21 @@ window.addEventListener("load",keepScreenAwake,{once:true});
 /* Ver.1.10: 初回のオンライン利用時に、アプリ本体を端末へ保管する。 */
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function(){
-        navigator.serviceWorker.register("./sw.js").catch(function(error){
+        navigator.serviceWorker.register("./sw.js").then(function(registration){
+            function watchInstall(worker){
+                if(!worker) return;
+                showToast("全国POTA候補を端末へ保存しています。初回だけ数分かかります。",6000);
+                worker.addEventListener("statechange",function(){
+                    if(worker.state==="installed"){
+                        showToast("全国POTA候補のオフライン保存が完了しました。",4000);
+                    }
+                });
+            }
+            watchInstall(registration.installing);
+            registration.addEventListener("updatefound",function(){
+                watchInstall(registration.installing);
+            });
+        }).catch(function(error){
             console.warn("オフライン機能の準備に失敗しました", error);
         });
     });

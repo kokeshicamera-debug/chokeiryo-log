@@ -1,9 +1,11 @@
+importScripts("./data/pota-boundaries-national-files.js");
+
 /*
  * 超軽量ログ Ver.1.10 開発版
  * 一度オンラインで開いたアプリ本体を端末に保管し、圏外でも起動できるようにする。
  * POTA/SOTAの判定データは、次の段階で地域別にここへ追加する。
  */
-const CACHE_NAME = "cho-keiryo-log-v1-10-shell-8";
+const CACHE_NAME = "cho-keiryo-log-v1-10-shell-9";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -16,11 +18,18 @@ const APP_SHELL = [
   "./data/jarl-jcc-jcg-index.json",
   "./data/japan-town-points.json",
   "./data/pota-boundaries-manifest.json",
+  "./data/pota-boundaries-national-index.json",
+  "./data/pota-boundaries-national-files.js",
   "./data/pota-boundaries-kanagawa-shizuoka.geojson"
 ];
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
+  event.waitUntil(caches.open(CACHE_NAME).then(async cache => {
+    await cache.addAll(APP_SHELL);
+    for (const file of self.NATIONAL_POTA_CANDIDATE_FILES || []) {
+      try { await cache.add(file); } catch (error) { console.warn("全国POTA候補の保存に失敗", file, error); }
+    }
+  }));
   self.skipWaiting();
 });
 

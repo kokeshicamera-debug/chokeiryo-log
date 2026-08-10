@@ -1,0 +1,7 @@
+# 環境省GISから作る再生成用の中間データ（アプリには含めない）
+data/moe-natural-parks*.geojson
+data/pota-boundaries-national-candidate*.geojson
+data/moe-natural-parks*.json
+data/pota-boundary-match-report*.json
+data/pota-point-match-report*.json
+data/pota-japan-catalog.csv
