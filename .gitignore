@@ -12,3 +12,4 @@ data/pota-boundaries-osm-candidates.geojson
 data/pota-boundaries-osm-progress.json
 data/pota-boundaries-osm-report.json
 data/pota-japan-catalog.csv
+data/.cache/
