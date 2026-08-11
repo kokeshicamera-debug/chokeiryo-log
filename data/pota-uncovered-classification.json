@@ -22,7 +22,12 @@
       "data/pota-boundaries-miyazaki.geojson",
       "data/pota-boundaries-yamaguchi.geojson",
       "data/pota-boundaries-tokushima.geojson",
-      "data/pota-boundaries-okinawa.geojson"
+      "data/pota-boundaries-okinawa.geojson",
+      "data/pota-boundaries-aichi.geojson",
+      "data/pota-boundaries-kyoto.geojson",
+      "data/pota-boundaries-yamagata.geojson",
+      "data/pota-boundaries-yamanashi.geojson",
+      "data/pota-boundaries-nagano.geojson"
     ]
   },
   "totals": {

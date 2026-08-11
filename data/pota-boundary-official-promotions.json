@@ -85,6 +85,70 @@
       ]
     },
     {
+      "id": "aichi", "label": "愛知県", "output": "data/pota-boundaries-aichi.geojson", "authority": "愛知県", "officialParkUrl": "https://www.pref.aichi.jp/soshiki/koen/0000008962.html", "reviewNote": "公的GISの公園名・所在地と愛知県公式都市公園資料を照合済み",
+      "parks": [
+        { "ref": "JP-1460", "candidate": "data/pota-boundaries-urban-candidates/JP-1460.geojson", "nameJa": "大高緑地", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "名古屋市", "expectedSourceName": "大高緑地" },
+        { "ref": "JP-1461", "candidate": "data/pota-boundaries-urban-candidates/JP-1461.geojson", "nameJa": "小幡緑地", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "名古屋市", "expectedSourceName": "小幡緑地" },
+        { "ref": "JP-1464", "candidate": "data/pota-boundaries-urban-candidates/JP-1464.geojson", "nameJa": "木曽川祖父江緑地", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "稲沢市", "expectedSourceName": "木曽三川公園尾張緑地" },
+        { "ref": "JP-1465", "candidate": "data/pota-boundaries-urban-candidates/JP-1465.geojson", "nameJa": "尾張広域緑道", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "小牧市", "expectedSourceName": "尾張広域緑道" },
+        { "ref": "JP-1466", "candidate": "data/pota-boundaries-urban-candidates/JP-1466.geojson", "nameJa": "あいち健康の森公園", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "大府市", "expectedSourceName": "あいち健康の森公園" },
+        { "ref": "JP-1467", "candidate": "data/pota-boundaries-urban-candidates/JP-1467.geojson", "nameJa": "牧野ヶ池緑地", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "名古屋市", "expectedSourceName": "牧野ヶ池緑地" },
+        { "ref": "JP-1468", "candidate": "data/pota-boundaries-urban-candidates/JP-1468.geojson", "nameJa": "東三河ふるさと公園", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "豊川市", "expectedSourceName": "東三河ふるさと公園" },
+        { "ref": "JP-1469", "candidate": "data/pota-boundaries-urban-candidates/JP-1469.geojson", "nameJa": "愛・地球博記念公園", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "長久手市", "expectedSourceName": "愛・地球博記念公園" },
+        { "ref": "JP-1470", "candidate": "data/pota-boundaries-urban-candidates/JP-1470.geojson", "nameJa": "油ヶ淵水辺公園", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "碧南市", "expectedSourceName": "油ヶ淵水辺公園" }
+      ]
+    },
+    {
+      "id": "kyoto", "label": "京都府", "output": "data/pota-boundaries-kyoto.geojson", "authority": "京都府", "officialParkUrl": "https://www.pref.kyoto.jp/koen-annai/", "reviewNote": "公的GISの公園名・所在地と京都府公式府立都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1495", "candidate": "data/pota-boundaries-urban-candidates/JP-1495.geojson", "nameJa": "嵐山公園", "expectedSourcePrefecture": "京都府", "expectedSourceCity": "京都市", "expectedSourceName": "嵐山亀山公園" },
+        { "ref": "JP-1496", "candidate": "data/pota-boundaries-urban-candidates/JP-1496.geojson", "nameJa": "嵐山東公園", "expectedSourcePrefecture": "京都府", "expectedSourceCity": "京都市", "expectedSourceName": "嵐山東公園" },
+        { "ref": "JP-1497", "candidate": "data/pota-boundaries-urban-candidates/JP-1497.geojson", "nameJa": "鴨川公園", "expectedSourcePrefecture": "京都府", "expectedSourceCity": "京都市", "expectedSourceName": "鴨川緑地" },
+        { "ref": "JP-1498", "candidate": "data/pota-boundaries-urban-candidates/JP-1498.geojson", "nameJa": "伏見港公園", "expectedSourcePrefecture": "京都府", "expectedSourceCity": "京都市", "expectedSourceName": "伏見港公園" },
+        { "ref": "JP-1501", "candidate": "data/pota-boundaries-urban-candidates/JP-1501.geojson", "nameJa": "山城総合運動公園", "expectedSourcePrefecture": "京都府", "expectedSourceCity": "宇治市", "expectedSourceName": "山城総合運動公園" },
+        { "ref": "JP-1504", "candidate": "data/pota-boundaries-urban-candidates/JP-1504.geojson", "nameJa": "木津川運動公園", "expectedSourcePrefecture": "京都府", "expectedSourceCity": "城陽市", "expectedSourceName": "木津川運動公園" },
+        { "ref": "JP-1505", "candidate": "data/pota-boundaries-urban-candidates/JP-1505.geojson", "nameJa": "けいはんな記念公園", "expectedSourcePrefecture": "京都府", "expectedSourceCity": "精華町", "expectedSourceName": "学研記念公園" }
+      ]
+    },
+    {
+      "id": "yamagata", "label": "山形県", "output": "data/pota-boundaries-yamagata.geojson", "authority": "山形県", "officialParkUrl": "https://www.pref.yamagata.jp/180019/kurashi/kendo/toshikoen/park02/index.html", "reviewNote": "公的GISの公園名・所在地と山形県公式都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1076", "candidate": "data/pota-boundaries-urban-candidates/JP-1076.geojson", "nameJa": "山形県総合運動公園", "expectedSourcePrefecture": "山形県", "expectedSourceCity": "天童市", "expectedSourceName": "山形県総合運動公園" },
+        { "ref": "JP-1077", "candidate": "data/pota-boundaries-urban-candidates/JP-1077.geojson", "nameJa": "西蔵王公園", "expectedSourcePrefecture": "山形県", "expectedSourceCity": "山形市", "expectedSourceName": "西蔵王公園" },
+        { "ref": "JP-1079", "candidate": "data/pota-boundaries-urban-candidates/JP-1079.geojson", "nameJa": "中山公園", "expectedSourcePrefecture": "山形県", "expectedSourceCity": "中山町", "expectedSourceName": "中山公園" },
+        { "ref": "JP-1080", "candidate": "data/pota-boundaries-urban-candidates/JP-1080.geojson", "nameJa": "最上川ふるさと総合公園", "expectedSourcePrefecture": "山形県", "expectedSourceCity": "寒河江市", "expectedSourceName": "最上川ふるさと総合公園" },
+        { "ref": "JP-1081", "candidate": "data/pota-boundaries-urban-candidates/JP-1081.geojson", "nameJa": "最上中央公園", "expectedSourcePrefecture": "山形県", "expectedSourceCity": "新庄市", "expectedSourceName": "最上中央公園" },
+        { "ref": "JP-1086", "candidate": "data/pota-boundaries-urban-candidates/JP-1086.geojson", "nameJa": "県民緑地", "expectedSourcePrefecture": "山形県", "expectedSourceCity": "山形市", "expectedSourceName": "県民緑地" },
+        { "ref": "JP-1087", "candidate": "data/pota-boundaries-urban-candidates/JP-1087.geojson", "nameJa": "県政史緑地", "expectedSourcePrefecture": "山形県", "expectedSourceCity": "山形市", "expectedSourceName": "県政史緑地" }
+      ]
+    },
+    {
+      "id": "yamanashi", "label": "山梨県", "output": "data/pota-boundaries-yamanashi.geojson", "authority": "山梨県", "officialParkUrl": "https://www.pref.yamanashi.jp/somu/shigaku/reiki/reiki_honbun/a500RG00000956.html", "reviewNote": "公的GISの公園名・所在地と山梨県都市公園条例を照合済み",
+      "parks": [
+        { "ref": "JP-1328", "candidate": "data/pota-boundaries-urban-candidates/JP-1328.geojson", "nameJa": "小瀬スポーツ公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "甲府市", "expectedSourceName": "小瀬スポーツ公園" },
+        { "ref": "JP-1329", "candidate": "data/pota-boundaries-urban-candidates/JP-1329.geojson", "nameJa": "愛宕山広域公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "甲府市", "expectedSourceName": "愛宕山公園" },
+        { "ref": "JP-1330", "candidate": "data/pota-boundaries-urban-candidates/JP-1330.geojson", "nameJa": "曽根丘陵公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "甲府市", "expectedSourceName": "曽根丘陵公園" },
+        { "ref": "JP-1331", "candidate": "data/pota-boundaries-urban-candidates/JP-1331.geojson", "nameJa": "御勅使南公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "南アルプス市", "expectedSourceName": "御勅使南公園" },
+        { "ref": "JP-1907", "candidate": "data/pota-boundaries-urban-candidates/JP-1907.geojson", "nameJa": "緑が丘スポーツ公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "甲府市", "expectedSourceName": "緑が丘スポーツ公園" },
+        { "ref": "JP-1909", "candidate": "data/pota-boundaries-urban-candidates/JP-1909.geojson", "nameJa": "芸術の森公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "甲府市", "expectedSourceName": "芸術の森公園" },
+        { "ref": "JP-1910", "candidate": "data/pota-boundaries-urban-candidates/JP-1910.geojson", "nameJa": "舞鶴城公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "甲府市", "expectedSourceName": "舞鶴城公園" },
+        { "ref": "JP-1913", "candidate": "data/pota-boundaries-urban-candidates/JP-1913.geojson", "nameJa": "御勅使公園", "expectedSourcePrefecture": "山梨県", "expectedSourceCity": "韮崎市", "expectedSourceName": "御勅使公園" }
+      ]
+    },
+    {
+      "id": "nagano", "label": "長野県", "output": "data/pota-boundaries-nagano.geojson", "authority": "長野県・各市", "officialParkUrl": "https://www.pref.nagano.lg.jp/toshikei/infra/toshi/koen/koen.html", "reviewNote": "公的GISの公園名・所在地と長野県公式都市公園一覧・条例を照合済み",
+      "parks": [
+        { "ref": "JP-0208", "candidate": "data/pota-boundaries-urban-candidates/JP-0208.geojson", "nameJa": "国営アルプスあづみの公園", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "安曇野市", "expectedSourceName": "アルプスあづみの公園" },
+        { "ref": "JP-1340", "candidate": "data/pota-boundaries-urban-candidates/JP-1340.geojson", "nameJa": "烏川渓谷緑地", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "安曇野市", "expectedSourceName": "烏川渓谷緑地" },
+        { "ref": "JP-1341", "candidate": "data/pota-boundaries-urban-candidates/JP-1341.geojson", "nameJa": "松本平広域公園", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "松本市", "expectedSourceName": "松本平広域公園" },
+        { "ref": "JP-1343", "candidate": "data/pota-boundaries-urban-candidates/JP-1343.geojson", "nameJa": "飯田運動公園", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "飯田市", "expectedSourceName": "飯田運動公園" },
+        { "ref": "JP-1344", "candidate": "data/pota-boundaries-urban-candidates/JP-1344.geojson", "nameJa": "駒場公園", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "佐久市", "expectedSourceName": "駒場公園" },
+        { "ref": "JP-1345", "candidate": "data/pota-boundaries-urban-candidates/JP-1345.geojson", "nameJa": "若里公園", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "長野市", "expectedSourceName": "若里公園" },
+        { "ref": "JP-1347", "candidate": "data/pota-boundaries-urban-candidates/JP-1347.geojson", "nameJa": "長野運動公園", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "長野市", "expectedSourceName": "長野運動公園" },
+        { "ref": "JP-1844", "candidate": "data/pota-boundaries-urban-candidates/JP-1844.geojson", "nameJa": "風越公園", "expectedSourcePrefecture": "長野県", "expectedSourceCity": "飯田市", "expectedSourceName": "風越公園" }
+      ]
+    },
+    {
       "id": "yamaguchi", "label": "山口県", "output": "data/pota-boundaries-yamaguchi.geojson",
       "parks": [
         { "ref": "JP-1630", "candidate": "data/pota-boundaries-urban-candidates/JP-1630.geojson", "nameJa": "維新百年記念公園", "nameEn": "Ishin Hyakunen Prefectural Park", "authority": "山口県", "expectedSourcePrefecture": "山口県", "expectedSourceCity": "山口市", "expectedSourceName": "維新百年記念公園", "officialParkUrl": "https://www.pref.yamaguchi.lg.jp/soshiki/130/23709.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html", "reviewNote": "公的GISの公園名・所在地と山口県公式県立都市公園一覧を照合済み" },

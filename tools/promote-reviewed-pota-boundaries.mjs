@@ -27,6 +27,10 @@ for (const region of config.regions || []) {
   const refs = new Set();
   const features = [];
   for (const reviewed of region.parks || []) {
+    const officialParkUrl = reviewed.officialParkUrl || region.officialParkUrl;
+    const officialGisUrl = reviewed.officialGisUrl || region.officialGisUrl || "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html";
+    const reviewNote = reviewed.reviewNote || region.reviewNote;
+    const authority = reviewed.authority || region.authority;
     assert(/^JP-\d{4}$/u.test(reviewed.ref || ""), `${region.id}: POTA番号が不正です`);
     assert(!refs.has(reviewed.ref), `${region.id}: ${reviewed.ref} が重複しています`);
     refs.add(reviewed.ref);
@@ -44,8 +48,8 @@ for (const region of config.regions || []) {
       properties: {
         potaRef: reviewed.ref,
         nameJa: reviewed.nameJa,
-        nameEn: reviewed.nameEn,
-        authority: reviewed.authority,
+        nameEn: reviewed.nameEn || properties.nameEn,
+        authority,
         boundaryStatus: "公的GIS・公式公園情報との照合済み（公式区域判定対象）",
         boundarySource: "国土交通省「都市計画決定GISデータ（令和7年度）」都市公園・緑地",
         boundaryScaleNote: "都市計画決定区域を使用。現地の供用区域やPOTA規則上の有効区域と差がある可能性があるため、境界付近は注意表示します。",
@@ -53,14 +57,15 @@ for (const region of config.regions || []) {
         sourceParkName: properties.sourceParkName,
         sourcePrefecture: properties.sourcePrefecture,
         sourceCity: properties.sourceCity,
-        officialParkUrl: reviewed.officialParkUrl,
-        officialGisUrl: reviewed.officialGisUrl,
-        reviewNote: reviewed.reviewNote,
+        officialParkUrl,
+        officialGisUrl,
+        reviewNote,
         importedPolygonCount: countPolygons(source.geometry),
       },
       geometry: source.geometry,
     });
   }
+  assert(features.every(feature => feature.properties.authority && feature.properties.officialParkUrl && feature.properties.reviewNote), `${region.id}: 公式照合情報が不足しています`);
   const collection = {
     type: "FeatureCollection",
     metadata: {

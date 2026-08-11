@@ -61,6 +61,11 @@
     {
       "id": "okinawa", "label": "沖縄県", "file": "./data/pota-boundaries-okinawa.geojson",
       "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
-    }
+    },
+    { "id": "aichi", "label": "愛知県", "file": "./data/pota-boundaries-aichi.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "kyoto", "label": "京都府", "file": "./data/pota-boundaries-kyoto.geojson", "note": "国土交通省の公的GISと府の公式公園情報を照合した区域を含みます。" },
+    { "id": "yamagata", "label": "山形県", "file": "./data/pota-boundaries-yamagata.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "yamanashi", "label": "山梨県", "file": "./data/pota-boundaries-yamanashi.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "nagano", "label": "長野県", "file": "./data/pota-boundaries-nagano.geojson", "note": "国土交通省の公的GISと県・市の公式公園情報を照合した区域を含みます。" }
   ]
 }
