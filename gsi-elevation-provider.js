@@ -3,7 +3,9 @@
 
   const CACHE_NAME = "chokeiryo-sota-gsi-dem-v1";
   const CACHE_LIMIT = 128;
+  const MEMORY_TILE_LIMIT = 24;
   const TILE_SIZE = 256;
+  const memoryTiles = new Map();
   const SOURCES = [
     { id: "DEM1A", template: "https://cyberjapandata.gsi.go.jp/xyz/dem1a_png/{z}/{x}/{y}.png", zoom: 17, uncertaintyMeters: 1 },
     { id: "DEM5A", template: "https://cyberjapandata.gsi.go.jp/xyz/dem5a_png/{z}/{x}/{y}.png", zoom: 15, uncertaintyMeters: 1 },
@@ -68,15 +70,37 @@
     return context.getImageData(pixelX, pixelY, 1, 1).data;
   }
 
+  async function loadTilePixels(url) {
+    if (memoryTiles.has(url)) return memoryTiles.get(url);
+    const promise = (async () => {
+      const tile = await fetchTile(url);
+      const bitmap = await createImageBitmap(await tile.response.blob());
+      const canvas = "OffscreenCanvas" in window ? new OffscreenCanvas(TILE_SIZE, TILE_SIZE) : document.createElement("canvas");
+      canvas.width = TILE_SIZE;
+      canvas.height = TILE_SIZE;
+      const context = canvas.getContext("2d", { willReadFrequently: true });
+      context.drawImage(bitmap, 0, 0);
+      if (typeof bitmap.close === "function") bitmap.close();
+      return { pixels: context.getImageData(0, 0, TILE_SIZE, TILE_SIZE).data, cached: tile.cached };
+    })();
+    memoryTiles.set(url, promise);
+    while (memoryTiles.size > MEMORY_TILE_LIMIT) memoryTiles.delete(memoryTiles.keys().next().value);
+    return promise;
+  }
+
+  function elevationFromPixels(pixels, pixelX, pixelY) {
+    const offset = (pixelY * TILE_SIZE + pixelX) * 4;
+    return decodeElevationRgb(pixels[offset], pixels[offset + 1], pixels[offset + 2]);
+  }
+
   async function getElevation(latitude, longitude) {
     const attempts = [];
     for (const source of SOURCES) {
       const position = tilePosition(latitude, longitude, source.zoom);
       const url = tileUrl(source, position);
       try {
-        const tile = await fetchTile(url);
-        const pixel = await pixelFromResponse(tile.response, position.pixelX, position.pixelY);
-        const elevationMeters = decodeElevationRgb(pixel[0], pixel[1], pixel[2]);
+        const tile = await loadTilePixels(url);
+        const elevationMeters = elevationFromPixels(tile.pixels, position.pixelX, position.pixelY);
         attempts.push({ source: source.id, cached: tile.cached, available: elevationMeters !== null });
         if (elevationMeters !== null) return { latitude, longitude, elevationMeters, elevationUncertaintyMeters: source.uncertaintyMeters, source: source.id, zoom: source.zoom, cached: tile.cached, tile: position, url, attempts };
       } catch (error) {
@@ -88,5 +112,24 @@
     throw error;
   }
 
-  window.GsiElevationProvider = { getElevation, tilePosition, decodeElevationRgb, tileUrl, SOURCES, CACHE_NAME, CACHE_LIMIT };
+  async function getElevations(points, options = {}) {
+    const results = new Array(points.length);
+    const concurrency = Math.max(1, Math.min(16, Number(options.concurrency) || 8));
+    let cursor = 0;
+    async function worker() {
+      while (cursor < points.length) {
+        const index = cursor++;
+        const point = points[index];
+        try {
+          results[index] = await getElevation(point.latitude, point.longitude);
+        } catch (error) {
+          results[index] = { latitude: point.latitude, longitude: point.longitude, elevationMeters: null, error: String(error?.message || error) };
+        }
+      }
+    }
+    await Promise.all(Array.from({ length: Math.min(concurrency, points.length) }, worker));
+    return results;
+  }
+
+  window.GsiElevationProvider = { getElevation, getElevations, tilePosition, decodeElevationRgb, tileUrl, SOURCES, CACHE_NAME, CACHE_LIMIT, MEMORY_TILE_LIMIT };
 }());

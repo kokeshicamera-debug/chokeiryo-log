@@ -17,4 +17,5 @@ for (const [latitude, longitude] of [[35.6812, 139.7671], [43.0642, 141.3469], [
   }
 }
 if (provider.CACHE_LIMIT !== 128) throw new Error("保存上限が不正です");
+if (provider.MEMORY_TILE_LIMIT !== 24 || typeof provider.getElevations !== "function") throw new Error("標高の一括高速化が不正です");
 console.log("検査成功: RGB標高変換・5段階フォールバック・タイル座標・保存上限");

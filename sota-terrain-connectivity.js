@@ -102,6 +102,9 @@
   async function sample(provider, summit, position, options = {}) {
     if (!provider || typeof provider.getElevation !== "function") throw new Error("標高取得機能がありません");
     const grid = buildGrid(summit, position, options);
+    if (typeof provider.getElevations === "function") {
+      return { grid, samples: await provider.getElevations(grid.points, { concurrency: options.concurrency }) };
+    }
     const samples = new Array(grid.points.length);
     const concurrency = Math.max(1, Math.min(16, Number(options.concurrency) || 8));
     let cursor = 0;
