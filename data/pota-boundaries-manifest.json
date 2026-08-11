@@ -49,6 +49,18 @@
     {
       "id": "miyazaki", "label": "宮崎県", "file": "./data/pota-boundaries-miyazaki.geojson",
       "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "yamaguchi", "label": "山口県", "file": "./data/pota-boundaries-yamaguchi.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "tokushima", "label": "徳島県", "file": "./data/pota-boundaries-tokushima.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "okinawa", "label": "沖縄県", "file": "./data/pota-boundaries-okinawa.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
     }
   ]
 }

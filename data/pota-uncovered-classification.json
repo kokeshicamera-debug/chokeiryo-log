@@ -19,7 +19,10 @@
       "data/pota-boundaries-niigata.geojson",
       "data/pota-boundaries-mie.geojson",
       "data/pota-boundaries-wakayama.geojson",
-      "data/pota-boundaries-miyazaki.geojson"
+      "data/pota-boundaries-miyazaki.geojson",
+      "data/pota-boundaries-yamaguchi.geojson",
+      "data/pota-boundaries-tokushima.geojson",
+      "data/pota-boundaries-okinawa.geojson"
     ]
   },
   "totals": {
