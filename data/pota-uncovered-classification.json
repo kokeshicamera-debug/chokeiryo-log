@@ -54,7 +54,11 @@
       "data/pota-boundaries-fukuoka.geojson",
       "data/pota-boundaries-kochi.geojson",
       "data/pota-boundaries-hyogo-additional.geojson",
-      "data/pota-boundaries-oita.geojson"
+      "data/pota-boundaries-oita.geojson",
+      "data/pota-boundaries-ibaraki-additional.geojson",
+      "data/pota-boundaries-tochigi-additional.geojson",
+      "data/pota-boundaries-ishikawa-additional.geojson",
+      "data/pota-boundaries-national-parks-additional.geojson"
     ]
   },
   "totals": {

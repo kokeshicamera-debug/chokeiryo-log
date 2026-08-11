@@ -1,0 +1,812 @@
+{
+  "version": 1,
+  "total": 80,
+  "counts": {
+    "generic-source-name": 31,
+    "missing-source-name": 32,
+    "planning-number-review": 1,
+    "specific-name-review": 16
+  },
+  "items": [
+    {
+      "ref": "JP-1463",
+      "nameEn": "Shinshiro General Prefectural Park",
+      "sourcePrefecture": "愛知県",
+      "sourceCity": "新城市",
+      "sourceParkName": "広域公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1463.geojson"
+    },
+    {
+      "ref": "JP-2113",
+      "nameEn": "Kamezaki Kaihin Ryokuchi Prefectural Park",
+      "sourcePrefecture": "愛知県",
+      "sourceCity": "半田市",
+      "sourceParkName": "その他緑地",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-2113.geojson"
+    },
+    {
+      "ref": "JP-2115",
+      "nameEn": "Handa Ryokuchi Prefectural Park",
+      "sourcePrefecture": "愛知県",
+      "sourceCity": "半田市",
+      "sourceParkName": "その他緑地",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-2115.geojson"
+    },
+    {
+      "ref": "JP-1661",
+      "nameEn": "Dogo Prefectural Park",
+      "sourcePrefecture": "愛媛県",
+      "sourceCity": "松山市",
+      "sourceParkName": "総合公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1661.geojson"
+    },
+    {
+      "ref": "JP-1662",
+      "nameEn": "Ehime Prefectural Sports Complex Prefectural Park",
+      "sourcePrefecture": "愛媛県",
+      "sourceCity": "松山市",
+      "sourceParkName": "広域公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1662.geojson"
+    },
+    {
+      "ref": "JP-1435",
+      "nameEn": "GIFU WORLD ROSE GARDEN Prefectural Park",
+      "sourcePrefecture": "岐阜県",
+      "sourceCity": "可児市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1435.geojson"
+    },
+    {
+      "ref": "JP-1056",
+      "nameEn": "Iwanuma Kaihin Ryokuchi Prefectural Park",
+      "sourcePrefecture": "宮城県",
+      "sourceCity": "岩沼市",
+      "sourceParkName": "緑地",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1056.geojson"
+    },
+    {
+      "ref": "JP-1057",
+      "nameEn": "Kasenuma Prefectural Park",
+      "sourcePrefecture": "宮城県",
+      "sourceCity": "利府町",
+      "sourceParkName": "都市計画公園・緑地",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1057.geojson"
+    },
+    {
+      "ref": "JP-1058",
+      "nameEn": "Miyagi Sports Prefectural Park",
+      "sourcePrefecture": "宮城県",
+      "sourceCity": "利府町",
+      "sourceParkName": "都市計画公園・緑地",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1058.geojson"
+    },
+    {
+      "ref": "JP-1892",
+      "nameEn": "Ishinomakiminamihama Memorial Prefectural Park",
+      "sourcePrefecture": "宮城県",
+      "sourceCity": "石巻市",
+      "sourceParkName": "都市計画公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1892.geojson"
+    },
+    {
+      "ref": "JP-1739",
+      "nameEn": "Kumamoto Athletic Prefectural Park",
+      "sourcePrefecture": "熊本県",
+      "sourceCity": "熊本市",
+      "sourceParkName": "運動公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1739.geojson"
+    },
+    {
+      "ref": "JP-1322",
+      "nameEn": "Gunma no Mori Prefectural Park",
+      "sourcePrefecture": "群馬県",
+      "sourceCity": "高崎市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1322.geojson"
+    },
+    {
+      "ref": "JP-1324",
+      "nameEn": "Kannonyama Family Prefectural Park",
+      "sourcePrefecture": "群馬県",
+      "sourceCity": "高崎市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1324.geojson"
+    },
+    {
+      "ref": "JP-1716",
+      "nameEn": "Shinrin Prefectural Park",
+      "sourcePrefecture": "佐賀県",
+      "sourceCity": "佐賀市",
+      "sourceParkName": "大規模公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1716.geojson"
+    },
+    {
+      "ref": "JP-1174",
+      "nameEn": "Kawagoe Prefectural Park",
+      "sourcePrefecture": "埼玉県",
+      "sourceCity": "川越市",
+      "sourceParkName": "総合公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1174.geojson"
+    },
+    {
+      "ref": "JP-1477",
+      "nameEn": "Suzuka Seishonen no Mori Prefectural Park",
+      "sourcePrefecture": "三重県",
+      "sourceCity": "鈴鹿市",
+      "sourceParkName": "-",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1477.geojson"
+    },
+    {
+      "ref": "JP-1303",
+      "nameEn": "Tsukayama Prefectural Park",
+      "sourcePrefecture": "神奈川県",
+      "sourceCity": "横須賀市",
+      "sourceParkName": "特殊公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1303.geojson"
+    },
+    {
+      "ref": "JP-1312",
+      "nameEn": "Kannonzaki Prefectural Park",
+      "sourcePrefecture": "神奈川県",
+      "sourceCity": "横須賀市",
+      "sourceParkName": "特殊公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1312.geojson"
+    },
+    {
+      "ref": "JP-1444",
+      "nameEn": "Ashitaka Koiki Prefectural Park",
+      "sourcePrefecture": "静岡県",
+      "sourceCity": "沼津市",
+      "sourceParkName": "運動公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1444.geojson"
+    },
+    {
+      "ref": "JP-1450",
+      "nameEn": "Kusanagi Sports Complex Prefectural Park",
+      "sourcePrefecture": "静岡県",
+      "sourceCity": "静岡市",
+      "sourceParkName": "運動公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1450.geojson"
+    },
+    {
+      "ref": "JP-1194",
+      "nameEn": "Gyoda Prefectural Park",
+      "sourcePrefecture": "千葉県",
+      "sourceCity": "船橋市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1194.geojson"
+    },
+    {
+      "ref": "JP-1512",
+      "nameEn": "Ishikawa Kasen Prefectural Park",
+      "sourcePrefecture": "大阪府",
+      "sourceCity": "羽曳野市",
+      "sourceParkName": "T-緑地",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1512.geojson"
+    },
+    {
+      "ref": "JP-1524",
+      "nameEn": "Nishikori Prefectural Park",
+      "sourcePrefecture": "大阪府",
+      "sourceCity": "富田林市",
+      "sourceParkName": "広域公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1524.geojson"
+    },
+    {
+      "ref": "JP-1699",
+      "nameEn": "Higashi Prefectural Park",
+      "sourcePrefecture": "福岡県",
+      "sourceCity": "福岡市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1699.geojson"
+    },
+    {
+      "ref": "JP-1700",
+      "nameEn": "Najima Undo Prefectural Park",
+      "sourcePrefecture": "福岡県",
+      "sourceCity": "福岡市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1700.geojson"
+    },
+    {
+      "ref": "JP-1701",
+      "nameEn": "Nishi Prefectural Park",
+      "sourcePrefecture": "福岡県",
+      "sourceCity": "福岡市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1701.geojson"
+    },
+    {
+      "ref": "JP-1702",
+      "nameEn": "Ohori Prefectural Park",
+      "sourcePrefecture": "福岡県",
+      "sourceCity": "福岡市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1702.geojson"
+    },
+    {
+      "ref": "JP-1703",
+      "nameEn": "Tenjin Chuo Prefectural Park",
+      "sourcePrefecture": "福岡県",
+      "sourceCity": "福岡市",
+      "sourceParkName": "公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1703.geojson"
+    },
+    {
+      "ref": "JP-1099",
+      "nameEn": "Azuma Sports Prefectural Park",
+      "sourcePrefecture": "福島県",
+      "sourceCity": "福島市",
+      "sourceParkName": "広域公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1099.geojson"
+    },
+    {
+      "ref": "JP-1551",
+      "nameEn": "Harima Central Prefectural Park",
+      "sourcePrefecture": "兵庫県",
+      "sourceCity": "加東市",
+      "sourceParkName": "都市計画公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1551.geojson"
+    },
+    {
+      "ref": "JP-1016",
+      "nameEn": "Okhotsk Prefectural Park",
+      "sourcePrefecture": "北海道",
+      "sourceCity": "網走市",
+      "sourceParkName": "都市計画公園",
+      "reviewClass": "generic-source-name",
+      "reason": "GIS側の名称が公園種別だけなので、隣接公園との取り違え防止が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1016.geojson"
+    },
+    {
+      "ref": "JP-1121",
+      "nameEn": "Daigo Koiki Prefectural Park",
+      "sourcePrefecture": "茨城県",
+      "sourceCity": "大子町",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1121.geojson"
+    },
+    {
+      "ref": "JP-1438",
+      "nameEn": "Gifu World Fresh Water Aquarium Prefectural Park",
+      "sourcePrefecture": "岐阜県",
+      "sourceCity": "各務原市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1438.geojson"
+    },
+    {
+      "ref": "JP-1439",
+      "nameEn": "Gifu Seiryu Satoyama Prefectural Park",
+      "sourcePrefecture": "岐阜県",
+      "sourceCity": "美濃加茂市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1439.geojson"
+    },
+    {
+      "ref": "JP-1735",
+      "nameEn": "Minamata Koiki Prefectural Park",
+      "sourcePrefecture": "熊本県",
+      "sourceCity": "水俣市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1735.geojson"
+    },
+    {
+      "ref": "JP-1323",
+      "nameEn": "Kanayama General Prefectural Park",
+      "sourcePrefecture": "群馬県",
+      "sourceCity": "太田市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1323.geojson"
+    },
+    {
+      "ref": "JP-1325",
+      "nameEn": "Tataranuma Prefectural Park",
+      "sourcePrefecture": "群馬県",
+      "sourceCity": "館林市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1325.geojson"
+    },
+    {
+      "ref": "JP-1683",
+      "nameEn": "Haruno Athletic Recreation Prefectural Park",
+      "sourcePrefecture": "高知県",
+      "sourceCity": "高知市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1683.geojson"
+    },
+    {
+      "ref": "JP-1687",
+      "nameEn": "Kochi Prefectural Park",
+      "sourcePrefecture": "高知県",
+      "sourceCity": "高知市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1687.geojson"
+    },
+    {
+      "ref": "JP-1688",
+      "nameEn": "Godaisan Prefectural Park",
+      "sourcePrefecture": "高知県",
+      "sourceCity": "高知市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1688.geojson"
+    },
+    {
+      "ref": "JP-1689",
+      "nameEn": "Tanezaki Sensho Prefectural Park",
+      "sourcePrefecture": "高知県",
+      "sourceCity": "高知市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1689.geojson"
+    },
+    {
+      "ref": "JP-1691",
+      "nameEn": "Kagamikawa Ryokuchi Prefectural Park",
+      "sourcePrefecture": "高知県",
+      "sourceCity": "高知市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1691.geojson"
+    },
+    {
+      "ref": "JP-2099",
+      "nameEn": "Hijima Kotsu Prefectural Park",
+      "sourcePrefecture": "高知県",
+      "sourceCity": "高知市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-2099.geojson"
+    },
+    {
+      "ref": "JP-1155",
+      "nameEn": "Kitaurawa Prefectural Park",
+      "sourcePrefecture": "埼玉県",
+      "sourceCity": "さいたま市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1155.geojson"
+    },
+    {
+      "ref": "JP-1156",
+      "nameEn": "Saitama Stadium 2002 Prefectural Park",
+      "sourcePrefecture": "埼玉県",
+      "sourceCity": "さいたま市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1156.geojson"
+    },
+    {
+      "ref": "JP-1157",
+      "nameEn": "Akigase Prefectural Park",
+      "sourcePrefecture": "埼玉県",
+      "sourceCity": "さいたま市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1157.geojson"
+    },
+    {
+      "ref": "JP-1158",
+      "nameEn": "Omiya Prefectural Park",
+      "sourcePrefecture": "埼玉県",
+      "sourceCity": "さいたま市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1158.geojson"
+    },
+    {
+      "ref": "JP-1181",
+      "nameEn": "Sayama Inariyama Prefectural Park",
+      "sourcePrefecture": "埼玉県",
+      "sourceCity": "狭山市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1181.geojson"
+    },
+    {
+      "ref": "JP-1085",
+      "nameEn": "Shonai Kuko Kansho Ryokuchi Prefectural Park",
+      "sourcePrefecture": "山形県",
+      "sourceCity": "酒田市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1085.geojson"
+    },
+    {
+      "ref": "JP-1906",
+      "nameEn": "Fuefukigawa Fruit Prefectural Park",
+      "sourcePrefecture": "山梨県",
+      "sourceCity": "山梨市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1906.geojson"
+    },
+    {
+      "ref": "JP-1308",
+      "nameEn": "Aikawa Prefectural Park",
+      "sourcePrefecture": "神奈川県",
+      "sourceCity": "愛川町",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1308.geojson"
+    },
+    {
+      "ref": "JP-1396",
+      "nameEn": "Matto Seaside Prefectural Park",
+      "sourcePrefecture": "石川県",
+      "sourceCity": "白山市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1396.geojson"
+    },
+    {
+      "ref": "JP-1398",
+      "nameEn": "Tedori Prefectural Park",
+      "sourcePrefecture": "石川県",
+      "sourceCity": "白山市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1398.geojson"
+    },
+    {
+      "ref": "JP-1224",
+      "nameEn": "Oizumi-Chuo Prefectural Park",
+      "sourcePrefecture": "東京都",
+      "sourceCity": "練馬区",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1224.geojson"
+    },
+    {
+      "ref": "JP-1237",
+      "nameEn": "Shakujii Prefectural Park",
+      "sourcePrefecture": "東京都",
+      "sourceCity": "練馬区",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1237.geojson"
+    },
+    {
+      "ref": "JP-1238",
+      "nameEn": "Johoku-Chuo Prefectural Park",
+      "sourcePrefecture": "東京都",
+      "sourceCity": "練馬区",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1238.geojson"
+    },
+    {
+      "ref": "JP-1249",
+      "nameEn": "Hikarigaoka Prefectural Park",
+      "sourcePrefecture": "東京都",
+      "sourceCity": "練馬区",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1249.geojson"
+    },
+    {
+      "ref": "JP-2074",
+      "nameEn": "Nerima-joshi Prefectural Park",
+      "sourcePrefecture": "東京都",
+      "sourceCity": "練馬区",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-2074.geojson"
+    },
+    {
+      "ref": "JP-1557",
+      "nameEn": "Nara Prefectural Park",
+      "sourcePrefecture": "奈良県",
+      "sourceCity": "奈良市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1557.geojson"
+    },
+    {
+      "ref": "JP-1566",
+      "nameEn": "Nara Palace Site Historical Prefectural Park",
+      "sourcePrefecture": "奈良県",
+      "sourceCity": "奈良市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1566.geojson"
+    },
+    {
+      "ref": "JP-1991",
+      "nameEn": "Maiko Prefectural Park",
+      "sourcePrefecture": "兵庫県",
+      "sourceCity": "神戸市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1991.geojson"
+    },
+    {
+      "ref": "JP-1015",
+      "nameEn": "Nopporo Sports Prefectural Park",
+      "sourcePrefecture": "北海道",
+      "sourceCity": "江別市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1015.geojson"
+    },
+    {
+      "ref": "JP-1017",
+      "nameEn": "Okhotsk Sea Ice Prefectural Park",
+      "sourcePrefecture": "北海道",
+      "sourceCity": "紋別市",
+      "sourceParkName": "",
+      "reviewClass": "missing-source-name",
+      "reason": "GIS側に公園名がなく、所在地と形だけでは同一公園と断定できません。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1017.geojson"
+    },
+    {
+      "ref": "JP-1620",
+      "nameEn": "Hiroshimaken Sogo Ground Prefectural Park",
+      "sourcePrefecture": "広島県",
+      "sourceCity": "広島市",
+      "sourceParkName": "6・5・301号総合運動公園",
+      "reviewClass": "planning-number-review",
+      "reason": "都市計画番号を含むため、公式資料で現在の公園名との対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1620.geojson"
+    },
+    {
+      "ref": "JP-1459",
+      "nameEn": "Atsuta Jingu Prefectural Park",
+      "sourcePrefecture": "愛知県",
+      "sourceCity": "名古屋市",
+      "sourceParkName": "熱田公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1459.geojson"
+    },
+    {
+      "ref": "JP-1124",
+      "nameEn": "Kensei Sogo Prefectural Park",
+      "sourcePrefecture": "茨城県",
+      "sourceCity": "筑西市",
+      "sourceParkName": "都市公園（計画決定）",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1124.geojson"
+    },
+    {
+      "ref": "JP-1715",
+      "nameEn": "Sagajo Prefectural Park",
+      "sourcePrefecture": "佐賀県",
+      "sourceCity": "佐賀市",
+      "sourceParkName": "都市基幹公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1715.geojson"
+    },
+    {
+      "ref": "JP-1162",
+      "nameEn": "Kumagaya Sports & Culture Prefectural Park",
+      "sourcePrefecture": "埼玉県",
+      "sourceCity": "熊谷市",
+      "sourceParkName": "北武蔵公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1162.geojson"
+    },
+    {
+      "ref": "JP-1105",
+      "nameEn": "Aizu Recreation Prefectural Park",
+      "sourcePrefecture": "秋田県",
+      "sourceCity": "横手市",
+      "sourceParkName": "会津レクリエーション公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1105.geojson"
+    },
+    {
+      "ref": "JP-1310",
+      "nameEn": "Chigasaki Satoyama Prefectural Park",
+      "sourcePrefecture": "神奈川県",
+      "sourceCity": "茅ヶ崎市",
+      "sourceParkName": "茅ヶ崎北部丘陵公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1310.geojson"
+    },
+    {
+      "ref": "JP-1314",
+      "nameEn": "Tsujido Seaside Prefectural Park",
+      "sourcePrefecture": "神奈川県",
+      "sourceCity": "藤沢市",
+      "sourceParkName": "湘南海岸公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1314.geojson"
+    },
+    {
+      "ref": "JP-1315",
+      "nameEn": "Sagamihara Prefectural Park",
+      "sourcePrefecture": "神奈川県",
+      "sourceCity": "相模原市",
+      "sourceParkName": "相模原麻溝公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1315.geojson"
+    },
+    {
+      "ref": "JP-1447",
+      "nameEn": "Sekijin no Hoshi Prefectural Park",
+      "sourcePrefecture": "静岡県",
+      "sourceCity": "浜松市",
+      "sourceParkName": "遠州灘海浜公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1447.geojson"
+    },
+    {
+      "ref": "JP-1198",
+      "nameEn": "Hokuso Hananooka Prefectural Park",
+      "sourcePrefecture": "千葉県",
+      "sourceCity": "印西市",
+      "sourceParkName": "印西総合公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1198.geojson"
+    },
+    {
+      "ref": "JP-1746",
+      "nameEn": "Oita Sports Prefectural Park",
+      "sourcePrefecture": "大分県",
+      "sourceCity": "大分市",
+      "sourceParkName": "スポーツ公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1746.geojson"
+    },
+    {
+      "ref": "JP-1747",
+      "nameEn": "Takaoyama Prefectural Park",
+      "sourcePrefecture": "大分県",
+      "sourceCity": "大分市",
+      "sourceParkName": "スポーツ公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1747.geojson"
+    },
+    {
+      "ref": "JP-1726",
+      "nameEn": "Nagasaki Sogo Undo Prefectural Park",
+      "sourcePrefecture": "長崎県",
+      "sourceCity": "諫早市",
+      "sourceParkName": "上山公園",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1726.geojson"
+    },
+    {
+      "ref": "JP-1379",
+      "nameEn": "Kuko Sports Ryokuchi Prefectural Park",
+      "sourcePrefecture": "富山県",
+      "sourceCity": "富山市",
+      "sourceParkName": "神通川南緑地",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1379.geojson"
+    },
+    {
+      "ref": "JP-1092",
+      "nameEn": "Iwaki Kaigan Prefectural Nature Park",
+      "sourcePrefecture": "福島県",
+      "sourceCity": "いわき市",
+      "sourceParkName": "久之浜防災緑地",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1092.geojson"
+    },
+    {
+      "ref": "JP-1023",
+      "nameEn": "Volcano Bay Panorama Prefectural Park",
+      "sourcePrefecture": "北海道",
+      "sourceCity": "八雲町",
+      "sourceParkName": "ラマパーク",
+      "reviewClass": "specific-name-review",
+      "reason": "GISに固有名があります。公式ページで現在名・所在地・区域の対応確認が必要です。",
+      "candidateFile": "./pota-boundaries-urban-candidates/JP-1023.geojson"
+    }
+  ]
+}

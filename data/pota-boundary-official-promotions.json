@@ -621,6 +621,35 @@
       "parks": [
         { "ref": "JP-1748", "nameJa": "大洲総合運動公園", "sourceCity": "大分市", "sourceName": "大洲総合運動公園" }
       ]
+    },
+    {
+      "id": "ibaraki-additional", "label": "茨城県", "output": "data/pota-boundaries-ibaraki-additional.geojson", "authority": "茨城県・つくば市", "officialParkUrl": "https://www.pref.ibaraki.jp/soshiki/doboku/kogai/index.html", "reviewNote": "公的GISの公園名・所在地と茨城県公式都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1122", "nameJa": "洞峰公園", "sourceCity": "つくば市", "sourceName": "洞峰公園（県営）" },
+        { "ref": "JP-1980", "nameJa": "茨城空港公園", "sourceCity": "小美玉市", "sourceName": "空港公園" }
+      ]
+    },
+    {
+      "id": "tochigi-additional", "label": "栃木県", "output": "data/pota-boundaries-tochigi-additional.geojson", "authority": "栃木県", "officialParkUrl": "https://www.pref.tochigi.lg.jp/h51/index-kouen.html", "reviewNote": "公的GISの計画名・所在地と栃木県公式県営都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1141", "nameJa": "みかも山公園", "sourceCity": "栃木市", "sourceName": "県南大規模公園" },
+        { "ref": "JP-1144", "nameJa": "とちぎわんぱく公園", "sourceCity": "壬生町", "sourceName": "壬生総合公園" }
+      ]
+    },
+    {
+      "id": "ishikawa-additional", "label": "石川県", "output": "data/pota-boundaries-ishikawa-additional.geojson", "authority": "石川県", "officialParkUrl": "https://www.pref.ishikawa.lg.jp/kouen/map/park/chuou/index.html", "reviewNote": "公的GISの旧称・所在地と石川県公式の改称履歴を照合済み",
+      "parks": [
+        { "ref": "JP-1401", "nameJa": "いしかわ四高記念公園", "sourceCity": "金沢市", "sourceName": "中央公園" }
+      ]
+    },
+    {
+      "id": "national-parks-additional", "label": "国営公園", "output": "data/pota-boundaries-national-parks-additional.geojson", "authority": "国土交通省", "officialParkUrl": "https://www.mlit.go.jp/toshi/park/toshi_parkgreen_tk_000041.html", "reviewNote": "公的GISの所在地・区域と国土交通省各地方整備局の国営公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-0209", "nameJa": "国営木曽三川公園", "expectedSourcePrefecture": "愛知県", "sourceCity": "一宮市", "sourceName": "こくえいきそさんせんこうえんおわりせいぶりょくち", "officialParkUrl": "https://www.cbr.mlit.go.jp/kisojyo/kokueikouen/p02.html" },
+        { "ref": "JP-0214", "nameJa": "国営備北丘陵公園", "expectedSourcePrefecture": "広島県", "sourceCity": "庄原市", "sourceName": "広域公園", "officialParkUrl": "https://www.cgr.mlit.go.jp/miyoshi/park/p02.html" },
+        { "ref": "JP-0216", "nameJa": "国営海の中道海浜公園", "expectedSourcePrefecture": "福岡県", "sourceCity": "福岡市", "sourceName": "公園", "officialParkUrl": "https://www.qsr.mlit.go.jp/uminaka/profile/gaiyou.html" },
+        { "ref": "JP-2071", "nameJa": "国立民族共生公園", "expectedSourcePrefecture": "北海道", "sourceCity": "白老町", "sourceName": "", "allowMissingSourceName": true, "officialParkUrl": "https://www.mlit.go.jp/hkb/hkb_tk1_000024.html", "reviewNote": "公的GISの無名区域・所在地・POTA代表地点と国土交通省の国立民族共生公園情報を照合済み" }
+      ]
     }
   ]
 }

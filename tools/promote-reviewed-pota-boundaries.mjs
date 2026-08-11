@@ -31,6 +31,7 @@ for (const region of config.regions || []) {
     const expectedSourcePrefecture = reviewed.expectedSourcePrefecture || region.label;
     const expectedSourceCity = reviewed.expectedSourceCity || reviewed.sourceCity;
     const expectedSourceName = reviewed.expectedSourceName || reviewed.sourceName;
+    const allowMissingSourceName = reviewed.allowMissingSourceName === true;
     const officialParkUrl = reviewed.officialParkUrl || region.officialParkUrl;
     const officialGisUrl = reviewed.officialGisUrl || region.officialGisUrl || "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html";
     const reviewNote = reviewed.reviewNote || region.reviewNote;
@@ -45,7 +46,11 @@ for (const region of config.regions || []) {
     assert(properties.potaRef === reviewed.ref, `${reviewed.ref}: 候補のPOTA番号が一致しません`);
     assert(properties.sourcePrefecture === expectedSourcePrefecture, `${reviewed.ref}: 都道府県が一致しません`);
     assert(properties.sourceCity === expectedSourceCity, `${reviewed.ref}: 市区町村が一致しません`);
-    assert(expectedSourceName && String(properties.sourceParkName || "").includes(expectedSourceName), `${reviewed.ref}: 公園名が一致しません`);
+    if (allowMissingSourceName) {
+      assert(!properties.sourceParkName, `${reviewed.ref}: 無名区域として確認した後に公園名が追加されています`);
+    } else {
+      assert(expectedSourceName && String(properties.sourceParkName || "").includes(expectedSourceName), `${reviewed.ref}: 公園名が一致しません`);
+    }
     assert(["Polygon", "MultiPolygon"].includes(source.geometry?.type), `${reviewed.ref}: 区域形状がありません`);
     features.push({
       type: "Feature",

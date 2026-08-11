@@ -93,6 +93,10 @@
     { "id": "fukuoka", "label": "福岡県", "file": "./data/pota-boundaries-fukuoka.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
     { "id": "kochi", "label": "高知県", "file": "./data/pota-boundaries-kochi.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
     { "id": "hyogo-additional", "label": "兵庫県（追加分）", "file": "./data/pota-boundaries-hyogo-additional.geojson", "note": "国土交通省の公的GISと県の公式都市計画公園資料を照合した区域を含みます。" },
-    { "id": "oita", "label": "大分県", "file": "./data/pota-boundaries-oita.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" }
+    { "id": "oita", "label": "大分県", "file": "./data/pota-boundaries-oita.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "ibaraki-additional", "label": "茨城県（追加分）", "file": "./data/pota-boundaries-ibaraki-additional.geojson", "note": "国土交通省の公的GISと県・市の公式公園情報を照合した区域を含みます。" },
+    { "id": "tochigi-additional", "label": "栃木県（追加分）", "file": "./data/pota-boundaries-tochigi-additional.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "ishikawa-additional", "label": "石川県（追加分）", "file": "./data/pota-boundaries-ishikawa-additional.geojson", "note": "国土交通省の公的GISと県の公式改称履歴を照合した区域を含みます。" },
+    { "id": "national-parks-additional", "label": "国営公園（追加分）", "file": "./data/pota-boundaries-national-parks-additional.geojson", "note": "国土交通省の公的GISと各地方整備局の公式公園情報を照合した区域を含みます。" }
   ]
 }
