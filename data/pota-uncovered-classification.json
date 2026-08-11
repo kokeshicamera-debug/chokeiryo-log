@@ -27,7 +27,12 @@
       "data/pota-boundaries-kyoto.geojson",
       "data/pota-boundaries-yamagata.geojson",
       "data/pota-boundaries-yamanashi.geojson",
-      "data/pota-boundaries-nagano.geojson"
+      "data/pota-boundaries-nagano.geojson",
+      "data/pota-boundaries-chiba.geojson",
+      "data/pota-boundaries-osaka.geojson",
+      "data/pota-boundaries-hyogo.geojson",
+      "data/pota-boundaries-ishikawa.geojson",
+      "data/pota-boundaries-saitama.geojson"
     ]
   },
   "totals": {

@@ -85,6 +85,85 @@
       ]
     },
     {
+      "id": "chiba", "label": "千葉県", "output": "data/pota-boundaries-chiba.geojson", "authority": "千葉県", "officialParkUrl": "https://www.pref.chiba.lg.jp/kouen/toshikouen/guidemap/index.html", "reviewNote": "公的GISの公園名・所在地と千葉県公式県立都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1190", "nameJa": "羽衣公園", "sourceCity": "千葉市", "sourceName": "羽衣公園" },
+        { "ref": "JP-1191", "nameJa": "青葉の森公園", "sourceCity": "千葉市", "sourceName": "青葉の森公園" },
+        { "ref": "JP-1192", "nameJa": "千葉県総合スポーツセンター", "sourceCity": "千葉市", "sourceName": "千葉県スポーツセンター" },
+        { "ref": "JP-1193", "nameJa": "幕張海浜公園", "sourceCity": "千葉市", "sourceName": "幕張海浜公園" },
+        { "ref": "JP-1195", "nameJa": "柏の葉公園", "sourceCity": "柏市", "sourceName": "柏の葉公園" },
+        { "ref": "JP-1199", "nameJa": "蓮沼海浜公園", "sourceCity": "山武市", "sourceName": "蓮沼海浜公園" },
+        { "ref": "JP-1201", "nameJa": "館山運動公園", "sourceCity": "館山市", "sourceName": "館山運動公園" },
+        { "ref": "JP-1203", "nameJa": "八千代広域公園", "sourceCity": "八千代市", "sourceName": "八千代広域公園" },
+        { "ref": "JP-1939", "nameJa": "市野谷の森公園", "sourceCity": "流山市", "sourceName": "市野谷の森公園" }
+      ]
+    },
+    {
+      "id": "osaka", "label": "大阪府", "output": "data/pota-boundaries-osaka.geojson", "authority": "国土交通省・大阪府", "officialParkUrl": "https://www.pref.osaka.lg.jp/faq/faq_001840.html", "reviewNote": "公的GISの公園名・所在地と大阪府公式府営公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-0210", "nameJa": "淀川河川公園", "sourceCity": "守口市", "sourceName": "淀川河川公園" },
+        { "ref": "JP-1509", "nameJa": "服部緑地", "sourceCity": "豊中市", "sourceName": "服部緑地" },
+        { "ref": "JP-1510", "nameJa": "寝屋川公園", "sourceCity": "寝屋川市", "sourceName": "寝屋川公園" },
+        { "ref": "JP-1513", "nameJa": "大泉緑地", "sourceCity": "堺市", "sourceName": "大泉緑地" },
+        { "ref": "JP-1514", "nameJa": "浜寺公園", "sourceCity": "堺市", "sourceName": "浜寺公園" },
+        { "ref": "JP-1516", "nameJa": "蜻蛉池公園", "sourceCity": "岸和田市", "sourceName": "蜻蛉池公園" },
+        { "ref": "JP-1517", "nameJa": "せんなん里海公園", "sourceCity": "岬町", "sourceName": "せんなん里海公園" },
+        { "ref": "JP-1518", "nameJa": "山田池公園", "sourceCity": "枚方市", "sourceName": "山田池公園" },
+        { "ref": "JP-1522", "nameJa": "住之江公園", "sourceCity": "大阪市", "sourceName": "住之江公園" },
+        { "ref": "JP-1523", "nameJa": "住吉公園", "sourceCity": "大阪市", "sourceName": "住吉公園" },
+        { "ref": "JP-1525", "nameJa": "長野公園", "sourceCity": "河内長野市", "sourceName": "長野公園" },
+        { "ref": "JP-1526", "nameJa": "二色の浜公園", "sourceCity": "貝塚市", "sourceName": "二色の浜公園" },
+        { "ref": "JP-1886", "nameJa": "万博記念公園", "sourceCity": "吹田市", "sourceName": "万博公園" }
+      ]
+    },
+    {
+      "id": "hyogo", "label": "兵庫県", "output": "data/pota-boundaries-hyogo.geojson", "authority": "兵庫県", "officialParkUrl": "https://web.pref.hyogo.lg.jp/ks24/wd26_000000004.html", "reviewNote": "公的GISの公園名・所在地と兵庫県公式県立都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1540", "nameJa": "有馬富士公園", "sourceCity": "三田市", "sourceName": "有馬富士公園" },
+        { "ref": "JP-1542", "nameJa": "明石公園", "sourceCity": "明石市", "sourceName": "明石公園" },
+        { "ref": "JP-1544", "nameJa": "赤穂海浜公園", "sourceCity": "赤穂市", "sourceName": "赤穂海浜公園" },
+        { "ref": "JP-1546", "nameJa": "甲山森林公園", "sourceCity": "西宮市", "sourceName": "甲山森林公園" },
+        { "ref": "JP-1992", "nameJa": "尼崎の森中央緑地", "sourceCity": "尼崎市", "sourceName": "尼崎の森中央緑地" },
+        { "ref": "JP-1995", "nameJa": "丹波並木道中央公園", "sourceCity": "丹波篠山市", "sourceName": "丹波並木道中央公園" },
+        { "ref": "JP-1997", "nameJa": "三木総合防災公園", "sourceCity": "三木市", "sourceName": "三木総合防災公園" },
+        { "ref": "JP-1998", "nameJa": "西猪名公園", "sourceCity": "伊丹市", "sourceName": "西猪名公園" }
+      ]
+    },
+    {
+      "id": "ishikawa", "label": "石川県", "output": "data/pota-boundaries-ishikawa.geojson", "authority": "石川県", "officialParkUrl": "https://www.pref.ishikawa.lg.jp/kouen/map/index.html", "reviewNote": "公的GISの公園名・所在地と石川県公式県営都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1388", "nameJa": "健民海浜公園", "sourceCity": "金沢市", "sourceName": "健民海浜公園" },
+        { "ref": "JP-1389", "nameJa": "木場潟公園", "sourceCity": "小松市", "sourceName": "木場潟公園" },
+        { "ref": "JP-1391", "nameJa": "能登歴史公園", "sourceCity": "七尾市", "sourceName": "能登歴史公園" },
+        { "ref": "JP-1392", "nameJa": "北部公園", "sourceCity": "金沢市", "sourceName": "北部公園" },
+        { "ref": "JP-1393", "nameJa": "金沢城公園", "sourceCity": "金沢市", "sourceName": "金沢城公園" },
+        { "ref": "JP-1394", "nameJa": "奥卯辰山健民公園", "sourceCity": "金沢市", "sourceName": "奥卯辰山健民公園" },
+        { "ref": "JP-1395", "nameJa": "粟津公園", "sourceCity": "小松市", "sourceName": "粟津公園" },
+        { "ref": "JP-1397", "nameJa": "西部緑地公園", "sourceCity": "金沢市", "sourceName": "西部公園" },
+        { "ref": "JP-1399", "nameJa": "本多の森公園", "sourceCity": "金沢市", "sourceName": "本多の森公園" },
+        { "ref": "JP-1400", "nameJa": "兼六園", "sourceCity": "金沢市", "sourceName": "兼六園" }
+      ]
+    },
+    {
+      "id": "saitama", "label": "埼玉県", "output": "data/pota-boundaries-saitama.geojson", "authority": "埼玉県", "officialParkUrl": "https://www.pref.saitama.lg.jp/a1105/bunka_kyouiku_kennei-kouen-syoukai.html", "reviewNote": "公的GISの公園名・所在地と埼玉県公式県営公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1159", "nameJa": "しらこばと水上公園", "sourceCity": "越谷市", "sourceName": "しらこばと水上公園" },
+        { "ref": "JP-1160", "nameJa": "上尾運動公園", "sourceCity": "上尾市", "sourceName": "上尾運動公園" },
+        { "ref": "JP-1165", "nameJa": "和光樹林公園", "sourceCity": "和光市", "sourceName": "和光樹林公園" },
+        { "ref": "JP-1167", "nameJa": "加須はなさき公園", "sourceCity": "加須市", "sourceName": "加須はなさき公園" },
+        { "ref": "JP-1170", "nameJa": "権現堂公園", "sourceCity": "幸手市", "sourceName": "権現堂公園" },
+        { "ref": "JP-1171", "nameJa": "久喜菖蒲公園", "sourceCity": "久喜市", "sourceName": "久喜菖蒲公園" },
+        { "ref": "JP-1172", "nameJa": "吉川公園", "sourceCity": "吉川市", "sourceName": "吉川公園" },
+        { "ref": "JP-1173", "nameJa": "みさと公園", "sourceCity": "三郷市", "sourceName": "みさと公園" },
+        { "ref": "JP-1176", "nameJa": "北本自然観察公園", "sourceCity": "北本市", "sourceName": "北本自然観察公園" },
+        { "ref": "JP-1177", "nameJa": "荒川大麻生公園", "sourceCity": "熊谷市", "sourceName": "荒川大麻生公園" },
+        { "ref": "JP-1179", "nameJa": "戸田公園", "sourceCity": "戸田市", "sourceName": "戸田公園" },
+        { "ref": "JP-1180", "nameJa": "所沢航空記念公園", "sourceCity": "所沢市", "sourceName": "所沢航空記念公園" },
+        { "ref": "JP-1835", "nameJa": "新座緑道", "sourceCity": "新座市", "sourceName": "新座緑道" },
+        { "ref": "JP-1837", "nameJa": "さきたま緑道", "sourceCity": "鴻巣市", "sourceName": "さきたま緑道" }
+      ]
+    },
+    {
       "id": "aichi", "label": "愛知県", "output": "data/pota-boundaries-aichi.geojson", "authority": "愛知県", "officialParkUrl": "https://www.pref.aichi.jp/soshiki/koen/0000008962.html", "reviewNote": "公的GISの公園名・所在地と愛知県公式都市公園資料を照合済み",
       "parks": [
         { "ref": "JP-1460", "candidate": "data/pota-boundaries-urban-candidates/JP-1460.geojson", "nameJa": "大高緑地", "expectedSourcePrefecture": "愛知県", "expectedSourceCity": "名古屋市", "expectedSourceName": "大高緑地" },

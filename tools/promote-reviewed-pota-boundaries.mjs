@@ -27,6 +27,10 @@ for (const region of config.regions || []) {
   const refs = new Set();
   const features = [];
   for (const reviewed of region.parks || []) {
+    const candidateFile = reviewed.candidate || `data/pota-boundaries-urban-candidates/${reviewed.ref}.geojson`;
+    const expectedSourcePrefecture = reviewed.expectedSourcePrefecture || region.label;
+    const expectedSourceCity = reviewed.expectedSourceCity || reviewed.sourceCity;
+    const expectedSourceName = reviewed.expectedSourceName || reviewed.sourceName;
     const officialParkUrl = reviewed.officialParkUrl || region.officialParkUrl;
     const officialGisUrl = reviewed.officialGisUrl || region.officialGisUrl || "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html";
     const reviewNote = reviewed.reviewNote || region.reviewNote;
@@ -34,14 +38,14 @@ for (const region of config.regions || []) {
     assert(/^JP-\d{4}$/u.test(reviewed.ref || ""), `${region.id}: POTA番号が不正です`);
     assert(!refs.has(reviewed.ref), `${region.id}: ${reviewed.ref} が重複しています`);
     refs.add(reviewed.ref);
-    const candidate = readJson(reviewed.candidate);
+    const candidate = readJson(candidateFile);
     assert(candidate.type === "FeatureCollection" && candidate.features?.length === 1, `${reviewed.ref}: 候補区域が一意ではありません`);
     const source = candidate.features[0];
     const properties = source.properties || {};
     assert(properties.potaRef === reviewed.ref, `${reviewed.ref}: 候補のPOTA番号が一致しません`);
-    assert(properties.sourcePrefecture === reviewed.expectedSourcePrefecture, `${reviewed.ref}: 都道府県が一致しません`);
-    assert(properties.sourceCity === reviewed.expectedSourceCity, `${reviewed.ref}: 市区町村が一致しません`);
-    assert(String(properties.sourceParkName || "").includes(reviewed.expectedSourceName), `${reviewed.ref}: 公園名が一致しません`);
+    assert(properties.sourcePrefecture === expectedSourcePrefecture, `${reviewed.ref}: 都道府県が一致しません`);
+    assert(properties.sourceCity === expectedSourceCity, `${reviewed.ref}: 市区町村が一致しません`);
+    assert(expectedSourceName && String(properties.sourceParkName || "").includes(expectedSourceName), `${reviewed.ref}: 公園名が一致しません`);
     assert(["Polygon", "MultiPolygon"].includes(source.geometry?.type), `${reviewed.ref}: 区域形状がありません`);
     features.push({
       type: "Feature",
