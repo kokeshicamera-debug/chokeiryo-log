@@ -13,3 +13,7 @@ data/pota-boundaries-osm-progress.json
 data/pota-boundaries-osm-report.json
 data/pota-japan-catalog.csv
 data/.cache/
+
+# Pythonが自動生成する一時ファイル（開発用で、GitHubには保存しない）
+__pycache__/
+*.py[cod]
