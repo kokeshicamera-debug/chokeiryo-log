@@ -1,0 +1,1812 @@
+{
+  "version": 1,
+  "purpose": "区域候補が未取得の全国POTAを、次の調査先ごとに整理する",
+  "sources": {
+    "catalog": "index.html の同梱POTA一覧",
+    "coveredIndexes": [
+      "data/pota-boundaries-national-index.json",
+      "data/pota-boundaries-osm-index.json",
+      "data/pota-boundaries-urban-index.json"
+    ],
+    "officialBoundaries": [
+      "data/pota-boundaries-kanagawa-shizuoka.geojson"
+    ]
+  },
+  "totals": {
+    "japanPota": 1217,
+    "boundaryAvailable": 1021,
+    "uncovered": 196
+  },
+  "categories": {
+    "urbanPark": {
+      "label": "都市・広域公園",
+      "count": 112
+    },
+    "naturePark": {
+      "label": "自然公園",
+      "count": 36
+    },
+    "forest": {
+      "label": "森林",
+      "count": 21
+    },
+    "historicCulture": {
+      "label": "史跡・文化施設",
+      "count": 14
+    },
+    "greenway": {
+      "label": "緑道",
+      "count": 7
+    },
+    "other": {
+      "label": "その他",
+      "count": 6
+    }
+  },
+  "parks": [
+    {
+      "reference": "JP-0007",
+      "name": "Towada-Hachimantai National Park",
+      "latitude": 40.2442,
+      "longitude": 140.939,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0015",
+      "name": "Ogasawara National Park",
+      "latitude": 27.0671,
+      "longitude": 142.211,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0023",
+      "name": "Setonaikai National Park",
+      "latitude": 34.2796,
+      "longitude": 133.229,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0025",
+      "name": "Ashizuri-Uwakai National Park",
+      "latitude": 32.7791,
+      "longitude": 132.979,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0115",
+      "name": "Myogi-Arafune-Saku Kogen Quasi-National Park",
+      "latitude": 36.2934,
+      "longitude": 138.842,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0117",
+      "name": "Meiji no Mori Takao Quasi-National Park",
+      "latitude": 35.6334,
+      "longitude": 139.266,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0119",
+      "name": "Sado-Yahiko-Yoneyama Quasi-National Park",
+      "latitude": 38.1614,
+      "longitude": 138.324,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0121",
+      "name": "Echizen-Kaga Kaigan Quasi-National Park",
+      "latitude": 36.249,
+      "longitude": 136.199,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0126",
+      "name": "Ibi-Sekigahara-Yoro Quasi-National Park",
+      "latitude": 35.2942,
+      "longitude": 136.509,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-0156",
+      "name": "Okinawa Kaigan Quasi-National Park",
+      "latitude": 26.778,
+      "longitude": 128.213,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1014",
+      "name": "Hokkaido kodomo no kuni Prefectural Park",
+      "latitude": 43.524,
+      "longitude": 141.94,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1018",
+      "name": "Soya Fureai Prefectural Park",
+      "latitude": 45.3942,
+      "longitude": 141.757,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1035",
+      "name": "Sotoyama-Hayasaka Heights Prefectural Nature Park",
+      "latitude": 39.8183,
+      "longitude": 141.378,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1040",
+      "name": "Goshoko Koiki Prefectural Park",
+      "latitude": 39.6676,
+      "longitude": 140.978,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1043",
+      "name": "Uchimaru Ryokuchi Prefectural Park",
+      "latitude": 39.7026,
+      "longitude": 141.153,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1055",
+      "name": "Yamoto Kaihin Ryokuchi Prefectural Park",
+      "latitude": 38.4053,
+      "longitude": 141.238,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1066",
+      "name": "Magi Mahiru Prefectural Nature Park",
+      "latitude": 39.5375,
+      "longitude": 140.69,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1072",
+      "name": "Kennan Prefectural Nature Park",
+      "latitude": 38.0034,
+      "longitude": 140.205,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1078",
+      "name": "Yumiharidaira Prefectural Park",
+      "latitude": 38.4761,
+      "longitude": 140.003,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1101",
+      "name": "Fukushima Airport Prefectural Park",
+      "latitude": 37.2467,
+      "longitude": 140.42,
+      "category": "other",
+      "categoryLabel": "その他",
+      "reason": "個別確認: 公園・自然・森林・史跡・緑道のどれにも直接当てはまらない施設"
+    },
+    {
+      "reference": "JP-1104",
+      "name": "Hirono Bosai Ryokuchi Prefectural Park",
+      "latitude": 37.2087,
+      "longitude": 141.004,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1129",
+      "name": "Yamizo Prefectural Nature Park",
+      "latitude": 36.7838,
+      "longitude": 140.144,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1200",
+      "name": "Chosei no mori Prefectural Park",
+      "latitude": 35.4547,
+      "longitude": 140.267,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1212",
+      "name": "Kyu-Furukawa Gardens Prefectural Park",
+      "latitude": 35.7422,
+      "longitude": 139.746,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-1213",
+      "name": "Kiyosumi Gardens Prefectural Park",
+      "latitude": 35.6807,
+      "longitude": 139.797,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-1215",
+      "name": "Tonogayato Gardens Prefectural Park",
+      "latitude": 35.6986,
+      "longitude": 139.482,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-1218",
+      "name": "Rikugi-en Gardens Prefectural Park",
+      "latitude": 35.7332,
+      "longitude": 139.746,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-1219",
+      "name": "Aoyama Prefectural Park",
+      "latitude": 35.6633,
+      "longitude": 139.724,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1232",
+      "name": "Sarue Prefectural Park",
+      "latitude": 35.6901,
+      "longitude": 139.818,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1236",
+      "name": "Shiba Prefectural Park",
+      "latitude": 35.6549,
+      "longitude": 139.748,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1240",
+      "name": "Zenpukuji Prefectural Park",
+      "latitude": 35.7146,
+      "longitude": 139.591,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1241",
+      "name": "Soshigaya Prefectural Park",
+      "latitude": 35.6546,
+      "longitude": 139.599,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1242",
+      "name": "Daiba Prefectural Park",
+      "latitude": 35.6336,
+      "longitude": 139.772,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1252",
+      "name": "Meiji Prefectural Park",
+      "latitude": 35.6791,
+      "longitude": 139.712,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1268",
+      "name": "Sayama Sakai Ryokudo Prefectural Park",
+      "latitude": 35.7555,
+      "longitude": 139.444,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1271",
+      "name": "Tamagawa Jyosui Ryokudo Prefectural Park",
+      "latitude": 35.7218,
+      "longitude": 139.358,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1274",
+      "name": "Noyamakita Rokudoyama Prefectural Park",
+      "latitude": 35.7643,
+      "longitude": 139.378,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1275",
+      "name": "Hachikokuyama Ryokuchi Prefectural Park",
+      "latitude": 35.7698,
+      "longitude": 139.459,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1284",
+      "name": "Musashino Chuo Prefectural Park",
+      "latitude": 35.7181,
+      "longitude": 139.556,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1288",
+      "name": "Ogamiyama Prefectural Park",
+      "latitude": 27.0939,
+      "longitude": 142.192,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1318",
+      "name": "Akagi Prefectural Park",
+      "latitude": 36.5418,
+      "longitude": 139.191,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1336",
+      "name": "Mibugawa Suikei Prefectural Nature Park",
+      "latitude": 35.8311,
+      "longitude": 138.062,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1337",
+      "name": "Enrei Ojo Prefectural Nature Park",
+      "latitude": 36.0859,
+      "longitude": 138.029,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1342",
+      "name": "Minami Shinshu Koiki Prefectural Park",
+      "latitude": 35.2496,
+      "longitude": 137.67,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1348",
+      "name": "Senami Sasagawanagare Awashima Prefectural Nature Park",
+      "latitude": 38.423,
+      "longitude": 139.476,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1357",
+      "name": "Kubiki Prefectural Nature Park",
+      "latitude": 37.1716,
+      "longitude": 138.096,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1365",
+      "name": "Seiro Ryokuchi Prefectural Park",
+      "latitude": 37.9958,
+      "longitude": 139.258,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1383",
+      "name": "Yamanaka Dainichisan Prefectural Nature Park",
+      "latitude": 36.2002,
+      "longitude": 136.419,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1390",
+      "name": "Hakusanroku Theme Prefectural Park",
+      "latitude": 36.3812,
+      "longitude": 136.613,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1403",
+      "name": "Saigawa Ryokuchi Prefectural Park",
+      "latitude": 36.5429,
+      "longitude": 136.671,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1405",
+      "name": "Okuetsu Kogen Prefectural Nature Park",
+      "latitude": 36.0035,
+      "longitude": 136.596,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1408",
+      "name": "Rinkai Chuo Prefectural Park",
+      "latitude": 36.1678,
+      "longitude": 136.112,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1417",
+      "name": "Fukui Joshi Prefectural Park",
+      "latitude": 36.0655,
+      "longitude": 136.221,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-1418",
+      "name": "Senbon Matsubara Prefectural Nature Park",
+      "latitude": 35.1461,
+      "longitude": 136.669,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1479",
+      "name": "Daibutsuyama Prefectural Park",
+      "latitude": 34.5169,
+      "longitude": 136.654,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1480",
+      "name": "Kumanonada Rinkai Prefectural Park",
+      "latitude": 34.2173,
+      "longitude": 136.347,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1485",
+      "name": "Koto Prefectural Nature Park",
+      "latitude": 35.2344,
+      "longitude": 136.3,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1486",
+      "name": "Obanagawa Prefectural Park",
+      "latitude": 35.0179,
+      "longitude": 135.861,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1493",
+      "name": "Hozukyo Prefectural Nature Park",
+      "latitude": 35.0229,
+      "longitude": 135.639,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1503",
+      "name": "Tango Eco-Future Prefectural Park",
+      "latitude": 35.6232,
+      "longitude": 135.236,
+      "category": "other",
+      "categoryLabel": "その他",
+      "reason": "個別確認: 公園・自然・森林・史跡・緑道のどれにも直接当てはまらない施設"
+    },
+    {
+      "reference": "JP-1539",
+      "name": "Awajishima Prefectural Park",
+      "latitude": 34.576,
+      "longitude": 135.007,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1548",
+      "name": "Hyogo Park of the Oriental White Stork Prefectural Park",
+      "latitude": 35.5512,
+      "longitude": 134.854,
+      "category": "other",
+      "categoryLabel": "その他",
+      "reason": "個別確認: 公園・自然・森林・史跡・緑道のどれにも直接当てはまらない施設"
+    },
+    {
+      "reference": "JP-1553",
+      "name": "Flower Center Prefectural Park",
+      "latitude": 34.9083,
+      "longitude": 134.861,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1559",
+      "name": "Obuchiike Prefectural Park",
+      "latitude": 34.708,
+      "longitude": 135.747,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1561",
+      "name": "Tatsuta Prefectural Park",
+      "latitude": 34.6021,
+      "longitude": 135.718,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1588",
+      "name": "Dandan Hiroba Prefectural Park",
+      "latitude": 35.424,
+      "longitude": 133.337,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1591",
+      "name": "Shinjiko Kitayama Prefectural Nature Park",
+      "latitude": 35.4462,
+      "longitude": 132.867,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1594",
+      "name": "Gokawa Suikei Prefectural Nature Park",
+      "latitude": 35.0409,
+      "longitude": 132.6,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1601",
+      "name": "Iwami Seaside Prefectural Park",
+      "latitude": 34.9579,
+      "longitude": 132.144,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1608",
+      "name": "Kibi Seiryu Prefectural Nature Park",
+      "latitude": 34.8635,
+      "longitude": 133.904,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1629",
+      "name": "Toyota Prefectural Nature Park",
+      "latitude": 34.1767,
+      "longitude": 131.044,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "個別確認: 都市・広域公園として整理"
+    },
+    {
+      "reference": "JP-1632",
+      "name": "Katazoegahama Kaihin Prefectural Park",
+      "latitude": 33.8975,
+      "longitude": 132.362,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1659",
+      "name": "Sadamisakihanto Uwakai Prefectural Nature Park",
+      "latitude": 33.3891,
+      "longitude": 132.084,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1666",
+      "name": "Shiragayama Prefectural Nature Park",
+      "latitude": 33.8066,
+      "longitude": 133.698,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1678",
+      "name": "Yanase Prefectural Nature Park",
+      "latitude": 33.6137,
+      "longitude": 134.098,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1681",
+      "name": "Kuishiyama Jingamori Prefectural Nature Park",
+      "latitude": 33.6867,
+      "longitude": 133.441,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1685",
+      "name": "Aki Koiki Prefectural Park",
+      "latitude": 33.5228,
+      "longitude": 133.913,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1686",
+      "name": "Noichi Zoological Park of Kochi Prefecture Prefectural Park",
+      "latitude": 33.5704,
+      "longitude": 133.706,
+      "category": "other",
+      "categoryLabel": "その他",
+      "reason": "個別確認: 公園・自然・森林・史跡・緑道のどれにも直接当てはまらない施設"
+    },
+    {
+      "reference": "JP-1692",
+      "name": "Kochi Kuko Midori no Hiroba Prefectural Park",
+      "latitude": 33.537,
+      "longitude": 133.681,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1693",
+      "name": "Ike Prefectural Park",
+      "latitude": 33.5246,
+      "longitude": 133.589,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1717",
+      "name": "Taradake Prefectural Nature Park",
+      "latitude": 32.9481,
+      "longitude": 130.088,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1718",
+      "name": "Nomo Hanto Prefectural Nature Park",
+      "latitude": 32.5589,
+      "longitude": 129.78,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1721",
+      "name": "Nishisonogi Hanto Prefectural Nature Park",
+      "latitude": 32.8099,
+      "longitude": 129.737,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1723",
+      "name": "Hirado Prefectural Park",
+      "latitude": 33.3581,
+      "longitude": 129.568,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1730",
+      "name": "Misumi Oyano Kaihen Prefectural Nature Park",
+      "latitude": 32.607,
+      "longitude": 130.47,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1738",
+      "name": "Mannichiyama Ryokuchi Prefectural Park",
+      "latitude": 32.791,
+      "longitude": 130.682,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1741",
+      "name": "Kunisaki Hanto Prefectural Nature Park",
+      "latitude": 33.5643,
+      "longitude": 131.569,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1760",
+      "name": "Akune Prefectural Nature Park",
+      "latitude": 32.1054,
+      "longitude": 130.176,
+      "category": "naturePark",
+      "categoryLabel": "自然公園",
+      "reason": "名称が国立・国定・都道府県立自然公園を示す"
+    },
+    {
+      "reference": "JP-1773",
+      "name": "Osumi Koiki Prefectural Park",
+      "latitude": 31.2942,
+      "longitude": 130.919,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1796",
+      "name": "Akatsuki Port Prefectural Park",
+      "latitude": 35.6082,
+      "longitude": 139.791,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1800",
+      "name": "Ariake Nishi Port Prefectural Park",
+      "latitude": 35.6271,
+      "longitude": 139.794,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1803",
+      "name": "Harumibashi Prefectural Park",
+      "latitude": 35.6571,
+      "longitude": 139.791,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1804",
+      "name": "Higashi Yashio Greenway Prefectural Park",
+      "latitude": 35.6193,
+      "longitude": 139.772,
+      "category": "greenway",
+      "categoryLabel": "緑道",
+      "reason": "名称に Greenway（緑道）を含む"
+    },
+    {
+      "reference": "JP-1808",
+      "name": "Tatsumi Greenway Prefectural Park",
+      "latitude": 35.6457,
+      "longitude": 139.813,
+      "category": "greenway",
+      "categoryLabel": "緑道",
+      "reason": "名称に Greenway（緑道）を含む"
+    },
+    {
+      "reference": "JP-1810",
+      "name": "Shin-kiba Greenway Prefectural Park",
+      "latitude": 35.6401,
+      "longitude": 139.841,
+      "category": "greenway",
+      "categoryLabel": "緑道",
+      "reason": "名称に Greenway（緑道）を含む"
+    },
+    {
+      "reference": "JP-1816",
+      "name": "Container Terminal Prefectural Park",
+      "latitude": 35.6053,
+      "longitude": 139.76,
+      "category": "other",
+      "categoryLabel": "その他",
+      "reason": "個別確認: 公園・自然・森林・史跡・緑道のどれにも直接当てはまらない施設"
+    },
+    {
+      "reference": "JP-1821",
+      "name": "Keihinjima Tsubasa Prefectural Park",
+      "latitude": 35.5701,
+      "longitude": 139.77,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1824",
+      "name": "Oi Port Greenway Prefectural Park",
+      "latitude": 35.5997,
+      "longitude": 139.755,
+      "category": "greenway",
+      "categoryLabel": "緑道",
+      "reason": "名称に Greenway（緑道）を含む"
+    },
+    {
+      "reference": "JP-1826",
+      "name": "Jonanjima Greenway Prefectural Park",
+      "latitude": 35.5794,
+      "longitude": 139.781,
+      "category": "greenway",
+      "categoryLabel": "緑道",
+      "reason": "名称に Greenway（緑道）を含む"
+    },
+    {
+      "reference": "JP-1836",
+      "name": "Shinrinkoen Park Walking Road Prefectural Park",
+      "latitude": 36.0471,
+      "longitude": 139.375,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1838",
+      "name": "Hananosato Greenway Prefectural Park",
+      "latitude": 36.094,
+      "longitude": 139.491,
+      "category": "greenway",
+      "categoryLabel": "緑道",
+      "reason": "名称に Greenway（緑道）を含む"
+    },
+    {
+      "reference": "JP-1839",
+      "name": "Akigase Greenway Prefectural Park",
+      "latitude": 35.8525,
+      "longitude": 139.634,
+      "category": "greenway",
+      "categoryLabel": "緑道",
+      "reason": "名称に Greenway（緑道）を含む"
+    },
+    {
+      "reference": "JP-1845",
+      "name": "Ikaho Forest Prefectural Park",
+      "latitude": 36.4822,
+      "longitude": 138.912,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1846",
+      "name": "Akagi Forest Prefectural Park",
+      "latitude": 36.5273,
+      "longitude": 139.152,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1847",
+      "name": "Akagi Community Forest Prefectural Park",
+      "latitude": 36.5228,
+      "longitude": 139.145,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1850",
+      "name": "Mikabo Forest Prefectural Park",
+      "latitude": 36.151,
+      "longitude": 138.863,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1851",
+      "name": "Gunma Forest Park 21st Century Prefectural Park",
+      "latitude": 36.739,
+      "longitude": 139.084,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1852",
+      "name": "Gunma Insect World Forest Prefectural Park",
+      "latitude": 36.436,
+      "longitude": 139.251,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1853",
+      "name": "Gunma Flower Prefectural Park",
+      "latitude": 36.4557,
+      "longitude": 139.177,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1854",
+      "name": "Oura no Mori Forest Prefectural Park",
+      "latitude": 36.265,
+      "longitude": 139.487,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1855",
+      "name": "Oneyama Bird Forest Prefectural Park",
+      "latitude": 36.3524,
+      "longitude": 138.738,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1865",
+      "name": "Kenmin-no-mori Prefectural Park",
+      "latitude": 38.242,
+      "longitude": 140.203,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1866",
+      "name": "Yugaku-no-mori Prefectural Park",
+      "latitude": 38.9127,
+      "longitude": 140.376,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1869",
+      "name": "Kenmin-no-mori Prefectural Park",
+      "latitude": 38.3215,
+      "longitude": 140.937,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1870",
+      "name": "Forest Park Adatara Prefectural Park",
+      "latitude": 37.5815,
+      "longitude": 140.329,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1872",
+      "name": "Rachihama Bosai Ryokuchi Prefectural Park",
+      "latitude": 37.8871,
+      "longitude": 140.932,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1879",
+      "name": "Nagasaki Bosai Ryokuchi Prefectural Park",
+      "latitude": 36.9539,
+      "longitude": 140.938,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1883",
+      "name": "Oita Prefecture Museum of History Prefectural Park",
+      "latitude": 33.542,
+      "longitude": 131.361,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-1884",
+      "name": "Oita Kenmin no Mori Prefectural Park",
+      "latitude": 33.1594,
+      "longitude": 131.547,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1887",
+      "name": "Kenmin-no-mori Prefectural Park",
+      "latitude": 39.8957,
+      "longitude": 140.965,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1888",
+      "name": "Senganishi Forest Prefectural Park",
+      "latitude": 39.2217,
+      "longitude": 141,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1893",
+      "name": "Fukushima Memorial Prefectural Park",
+      "latitude": 37.4649,
+      "longitude": 141.031,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1902",
+      "name": "Chiba Prefectural Uchiurayama Forest Prefectural Park",
+      "latitude": 35.1596,
+      "longitude": 140.199,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1903",
+      "name": "Tateyama Wild Bird Sanctuary Prefectural Park",
+      "latitude": 34.9238,
+      "longitude": 139.836,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1904",
+      "name": "Chiba Prefectural Seiwa Forest Prefectural Park",
+      "latitude": 35.1786,
+      "longitude": 140.02,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1905",
+      "name": "Chiba Prefectural Otaki Forest Prefectural Park",
+      "latitude": 35.2824,
+      "longitude": 140.235,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1911",
+      "name": "Kofu Chu-ou Prefectural Park",
+      "latitude": 35.66,
+      "longitude": 138.568,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1916",
+      "name": "Yamanashi Prefectural Makiba Prefectural Park",
+      "latitude": 35.9257,
+      "longitude": 138.408,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1917",
+      "name": "Kiyosato Okanokouen Prefectural Park",
+      "latitude": 35.9013,
+      "longitude": 138.429,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1923",
+      "name": "Korogi Athletic Prefectural Park",
+      "latitude": 35.1654,
+      "longitude": 137.049,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1925",
+      "name": "Kaisho Forest Prefectural Park",
+      "latitude": 35.1888,
+      "longitude": 137.111,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1926",
+      "name": "Aichi Education and Sports Foundation Prefectural Park",
+      "latitude": 35.302,
+      "longitude": 136.846,
+      "category": "other",
+      "categoryLabel": "その他",
+      "reason": "個別確認: 公園・自然・森林・史跡・緑道のどれにも直接当てはまらない施設"
+    },
+    {
+      "reference": "JP-1931",
+      "name": "Gozu Kenmin-no-mori Prefectural Park",
+      "latitude": 37.7715,
+      "longitude": 139.363,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1932",
+      "name": "Mitsuke Sugisawa no Mori Prefectural Park",
+      "latitude": 37.5277,
+      "longitude": 138.989,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1934",
+      "name": "komorebi no Mori Prefectural Park",
+      "latitude": 38.7872,
+      "longitude": 140.788,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1935",
+      "name": "Showa Manyo no Mori Prefectural Park",
+      "latitude": 38.4695,
+      "longitude": 140.881,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1937",
+      "name": "Forest Park Of Mie Prefectural Park",
+      "latitude": 35.0468,
+      "longitude": 136.479,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1940",
+      "name": "Kihoku Prefectural Park",
+      "latitude": 34.3139,
+      "longitude": 135.537,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1949",
+      "name": "Ibaraki Prefectural Okukuji Forest Prefectural Park",
+      "latitude": 36.7649,
+      "longitude": 140.462,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-1951",
+      "name": "Osaka Prefectural Agricultural Prefectural Park",
+      "latitude": 34.3868,
+      "longitude": 135.391,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1963",
+      "name": "Funabashi Port Shinsui Prefectural Park",
+      "latitude": 35.6882,
+      "longitude": 139.987,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1968",
+      "name": "Naikou Kita Prefectural Park",
+      "latitude": 35.3885,
+      "longitude": 139.915,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1969",
+      "name": "Kazusa Minatoko Kaihin Prefectural Park",
+      "latitude": 35.2241,
+      "longitude": 139.871,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1974",
+      "name": "Sawatarigawa Ryokuchi Prefectural Park",
+      "latitude": 36.3807,
+      "longitude": 140.447,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1977",
+      "name": "Geidai Ryokuchi Prefectural Park",
+      "latitude": 35.8838,
+      "longitude": 140.11,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1981",
+      "name": "Gunma Ikoi-no-mori Prefectural Park",
+      "latitude": 36.491,
+      "longitude": 138.936,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1984",
+      "name": "Kyoto Botanical Gardens Prefectural Park",
+      "latitude": 35.049,
+      "longitude": 135.763,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-1987",
+      "name": "Wakayama Prefecture Botanical Park Ryokka Center Prefectural Park",
+      "latitude": 34.2858,
+      "longitude": 135.328,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1988",
+      "name": "Negoroyama Genkinomori Prefectural Park",
+      "latitude": 34.2941,
+      "longitude": 135.329,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1993",
+      "name": "Takarazuka Nishitani no Mori Prefectural Park",
+      "latitude": 34.8984,
+      "longitude": 135.296,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1994",
+      "name": "Sasayama no Mori Prefectural Park",
+      "latitude": 35.0594,
+      "longitude": 135.361,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-1996",
+      "name": "Awaji Ishi no Neya Ryokuchi Prefectural Park",
+      "latitude": 34.5929,
+      "longitude": 135.001,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2001",
+      "name": "Yashiro Forest Prefectural Park",
+      "latitude": 34.9081,
+      "longitude": 135.04,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-2002",
+      "name": "Naka,Yachiyo Forest Prefectural Park",
+      "latitude": 35.0281,
+      "longitude": 134.908,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-2003",
+      "name": "Yumesaki no Mori Prefectural Park",
+      "latitude": 34.9376,
+      "longitude": 134.664,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2004",
+      "name": "Toga Art Prefectural Park",
+      "latitude": 36.4324,
+      "longitude": 137.043,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-2005",
+      "name": "Ishikawa Prefectural Forest",
+      "latitude": 36.6891,
+      "longitude": 136.75,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-2007",
+      "name": "Notojima Seaside Prefectural Park",
+      "latitude": 37.1486,
+      "longitude": 136.982,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2008",
+      "name": "Yuuhidera Kenmin Nature Garden Prefectural Park",
+      "latitude": 36.5724,
+      "longitude": 136.707,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2009",
+      "name": "Ishikawa Kenmin-no-mori Prefectural Park",
+      "latitude": 36.2246,
+      "longitude": 136.456,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2012",
+      "name": "Tottori Hanakairo-Flower Prefectural Park",
+      "latitude": 35.348,
+      "longitude": 133.424,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2013",
+      "name": "Forest Park Tottori Deainomori Prefectural Park",
+      "latitude": 35.4907,
+      "longitude": 134.17,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-2014",
+      "name": "Forest Park 21st Century Prefectural Park",
+      "latitude": 35.4168,
+      "longitude": 134.207,
+      "category": "forest",
+      "categoryLabel": "森林",
+      "reason": "名称に Forest（森林）を含む"
+    },
+    {
+      "reference": "JP-2024",
+      "name": "Tomoni Manabu Mori Prefectural Park",
+      "latitude": 31.9918,
+      "longitude": 131.207,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2032",
+      "name": "Tokushima Prefectural Sanagouchi Ikimonofureainosato Prefectural Park",
+      "latitude": 33.9687,
+      "longitude": 134.414,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2033",
+      "name": "Takamaruyama Sennennomori Prefectural Park",
+      "latitude": 33.8818,
+      "longitude": 134.332,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2035",
+      "name": "Shikoku Saburo No Sato Prefectural Park",
+      "latitude": 34.0422,
+      "longitude": 134.002,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2036",
+      "name": "Tokushima Prefectural Dejima Wild Bird Garden Prefectural Park",
+      "latitude": 33.9594,
+      "longitude": 134.672,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2037",
+      "name": "Shinmachigawa Prefectural Park",
+      "latitude": 34.0769,
+      "longitude": 134.544,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2041",
+      "name": "Donguri Land Prefectural Park",
+      "latitude": 34.219,
+      "longitude": 134.075,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2052",
+      "name": "Ohno Odaiba Prefectural Park",
+      "latitude": 36.617,
+      "longitude": 136.606,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2055",
+      "name": "Fureai Ryokuchi Prefectural Park",
+      "latitude": 40.1978,
+      "longitude": 140.36,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2056",
+      "name": "Toyama Nature Museum Prefectural Park",
+      "latitude": 36.6391,
+      "longitude": 137.082,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2057",
+      "name": "Yatyou no sono Prefectural Park",
+      "latitude": 36.6603,
+      "longitude": 137.104,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2061",
+      "name": "Botanic Gardens of Toyama Prefectural Park",
+      "latitude": 36.6628,
+      "longitude": 137.181,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-2068",
+      "name": "Ariake Shinsui Seaside Prefectural Park",
+      "latitude": 35.6432,
+      "longitude": 139.796,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2073",
+      "name": "Yamizo Kenmin Recreation Prefectural Park",
+      "latitude": 36.6993,
+      "longitude": 140.073,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2080",
+      "name": "Minato Prefectural Park",
+      "latitude": 36.6063,
+      "longitude": 136.616,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2081",
+      "name": "Goroujima Prefectural Park",
+      "latitude": 36.617,
+      "longitude": 136.624,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2082",
+      "name": "Chikaokaryokuchi Prefectural Park",
+      "latitude": 36.6121,
+      "longitude": 136.628,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2083",
+      "name": "Minato syou Prefectural Park",
+      "latitude": 37.0489,
+      "longitude": 136.977,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2084",
+      "name": "Biwan Prefectural Park",
+      "latitude": 37.0483,
+      "longitude": 136.982,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2089",
+      "name": "Tamba-no-Mori Prefectural Park",
+      "latitude": 35.1222,
+      "longitude": 135.072,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2091",
+      "name": "Kunimi-no-Mori Prefectural Park",
+      "latitude": 34.986,
+      "longitude": 134.523,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2097",
+      "name": "Kannourako Kaigan Ryokuchi Prefectural Park",
+      "latitude": 33.5429,
+      "longitude": 134.294,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2108",
+      "name": "Chikatsu Asuka Fudoki-No-Oka Historical Prefectural Park",
+      "latitude": 34.5017,
+      "longitude": 135.641,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-2109",
+      "name": "Garden of the Diet Front Park",
+      "latitude": 35.6767,
+      "longitude": 139.748,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-2110",
+      "name": "The Kochi Prefectural Makino Botanical Garden Prefectural Park",
+      "latitude": 33.5483,
+      "longitude": 133.579,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-2112",
+      "name": "Aoya Kamijichi Historical Prefectural Park",
+      "latitude": 35.513,
+      "longitude": 133.99,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-2124",
+      "name": "Kojimako Fureai Yacho Shinsui Prefectural Park",
+      "latitude": 34.5543,
+      "longitude": 133.941,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2130",
+      "name": "Ujina Pier Prefectural Park",
+      "latitude": 34.353,
+      "longitude": 132.47,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2131",
+      "name": "Ujina Chuo Prefectural Park",
+      "latitude": 34.3543,
+      "longitude": 132.469,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2132",
+      "name": "Kanon Marina Prefectural Park",
+      "latitude": 34.3586,
+      "longitude": 132.412,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2134",
+      "name": "Omi Fudoki no Oka Historical Prefectural Park",
+      "latitude": 35.1503,
+      "longitude": 136.146,
+      "category": "historicCulture",
+      "categoryLabel": "史跡・文化施設",
+      "reason": "個別確認: 庭園、史跡、博物館、美術、植物園など"
+    },
+    {
+      "reference": "JP-2136",
+      "name": "Kenmin no Mori Prefectural Park",
+      "latitude": 31.8407,
+      "longitude": 130.616,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    },
+    {
+      "reference": "JP-2139",
+      "name": "Suzukawa Seaside Sports Prefectural Park",
+      "latitude": 35.1371,
+      "longitude": 138.707,
+      "category": "urbanPark",
+      "categoryLabel": "都市・広域公園",
+      "reason": "上記以外の都道府県立公園等"
+    }
+  ]
+}
