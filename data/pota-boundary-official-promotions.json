@@ -440,6 +440,87 @@
           "reviewNote": "公的GISの公園名・所在地と岡山県公式県立都市公園情報を照合済み"
         }
       ]
+    },
+    {
+      "id": "tochigi", "label": "栃木県", "output": "data/pota-boundaries-tochigi.geojson", "authority": "栃木県", "officialParkUrl": "https://www.pref.tochigi.lg.jp/h09/town/machidukuri/toshikouen/20130218kouentop.html", "reviewNote": "公的GISの公園名・所在地と栃木県公式都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1136", "nameJa": "栃木県総合運動公園", "sourceCity": "宇都宮市", "sourceName": "栃木県総合運動公園" },
+        { "ref": "JP-1137", "nameJa": "井頭公園", "sourceCity": "真岡市", "sourceName": "井頭公園" },
+        { "ref": "JP-1138", "nameJa": "鬼怒グリーンパーク", "sourceCity": "宇都宮市", "sourceName": "鬼怒グリーンパーク" },
+        { "ref": "JP-1139", "nameJa": "栃木県中央公園", "sourceCity": "宇都宮市", "sourceName": "栃木県中央公園" }
+      ]
+    },
+    {
+      "id": "gifu", "label": "岐阜県", "output": "data/pota-boundaries-gifu.geojson", "authority": "岐阜県", "officialParkUrl": "https://www.pref.gifu.lg.jp/page/5775.html", "reviewNote": "公的GISの公園名・所在地と岐阜県公式都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1434", "nameJa": "岐阜県百年公園", "sourceCity": "関市", "sourceName": "岐阜県百年公園" },
+        { "ref": "JP-1437", "nameJa": "各務原公園", "sourceCity": "各務原市", "sourceName": "各務原公園" }
+      ]
+    },
+    {
+      "id": "nara", "label": "奈良県", "output": "data/pota-boundaries-nara.geojson", "authority": "奈良県", "officialParkUrl": "https://www.pref.nara.jp/28761.htm", "reviewNote": "公的GISの公園名・所在地と奈良県公式県有施設情報を照合済み",
+      "parks": [
+        { "ref": "JP-1562", "nameJa": "大和民俗公園", "sourceCity": "大和郡山市", "sourceName": "大和民俗公園" },
+        { "ref": "JP-1563", "nameJa": "橿原公苑", "sourceCity": "橿原市", "sourceName": "橿原公苑" },
+        { "ref": "JP-1942", "nameJa": "県営福祉パーク", "sourceCity": "田原本町", "sourceName": "県営福祉パーク" }
+      ]
+    },
+    {
+      "id": "hiroshima", "label": "広島県", "output": "data/pota-boundaries-hiroshima.geojson", "authority": "広島県", "officialParkUrl": "https://www.pref.hiroshima.lg.jp/soshiki/262/park-shinsei.html", "reviewNote": "公的GISの公園名・所在地と広島県公式公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1621", "nameJa": "縮景園", "sourceCity": "広島市", "sourceName": "縮景園" },
+        { "ref": "JP-1622", "nameJa": "広島緑化植物公園", "sourceCity": "広島市", "sourceName": "広島緑化公園" },
+        { "ref": "JP-1625", "nameJa": "びんご運動公園", "sourceCity": "尾道市", "sourceName": "びんご広域運動公園" }
+      ]
+    },
+    {
+      "id": "kagawa", "label": "香川県", "output": "data/pota-boundaries-kagawa.geojson", "authority": "香川県", "officialParkUrl": "https://www.pref.kagawa.lg.jp/toshikei/urbanpark/about.html", "reviewNote": "公的GISの公園名・所在地と香川県公式都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1650", "nameJa": "亀鶴公園", "sourceCity": "さぬき市", "sourceName": "亀鶴公園" },
+        { "ref": "JP-1652", "nameJa": "香川県総合運動公園", "sourceCity": "高松市", "sourceName": "香川県総合運動公園" },
+        { "ref": "JP-2047", "nameJa": "香川中央広域公園", "sourceCity": "高松市", "sourceName": "香川中央広域公園" },
+        { "ref": "JP-2048", "nameJa": "香東川緑地", "sourceCity": "高松市", "sourceName": "香東川緑地" },
+        { "ref": "JP-2050", "nameJa": "土器川河川敷緑地", "sourceCity": "丸亀市", "sourceName": "土器川河川敷緑地" },
+        { "ref": "JP-2051", "nameJa": "栗林公園", "sourceCity": "高松市", "sourceName": "栗林公園" }
+      ]
+    },
+    {
+      "id": "kagoshima", "label": "鹿児島県", "output": "data/pota-boundaries-kagoshima.geojson", "authority": "鹿児島県", "officialParkUrl": "https://www.pref.kagoshima.jp/ah10/infra/toshi/toshikoen/kenritu/sub31.html", "reviewNote": "公的GISの公園名・所在地と鹿児島県公式県立都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1768", "nameJa": "吉野公園", "sourceCity": "鹿児島市", "sourceName": "吉野公園" },
+        { "ref": "JP-1769", "nameJa": "谷山緑地", "sourceCity": "鹿児島市", "sourceName": "谷山緑地" },
+        { "ref": "JP-1770", "nameJa": "鴨池公園", "sourceCity": "鹿児島市", "sourceName": "鴨池公園" },
+        { "ref": "JP-1775", "nameJa": "北薩広域公園", "sourceCity": "さつま町", "sourceName": "北薩広域公園" },
+        { "ref": "JP-1776", "nameJa": "鹿児島ふれあいスポーツランド", "sourceCity": "鹿児島市", "sourceName": "鹿児島ふれあいスポーツランド" }
+      ]
+    },
+    {
+      "id": "kanagawa", "label": "神奈川県", "output": "data/pota-boundaries-kanagawa.geojson", "authority": "神奈川県", "officialParkUrl": "https://www.pref.kanagawa.jp/docs/tu5/tanosimu/koenitiran.html", "reviewNote": "公的GISの公園名・所在地と神奈川県公式県立都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1296", "nameJa": "恩賜箱根公園", "sourceCity": "箱根町", "sourceName": "恩賜箱根公園" },
+        { "ref": "JP-1297", "nameJa": "大磯城山公園", "sourceCity": "大磯町", "sourceName": "大磯城山公園" },
+        { "ref": "JP-1298", "nameJa": "城ヶ島公園", "sourceCity": "三浦市", "sourceName": "城ヶ島公園" },
+        { "ref": "JP-1299", "nameJa": "座間谷戸山公園", "sourceCity": "座間市", "sourceName": "県立座間谷戸山公園" },
+        { "ref": "JP-1300", "nameJa": "相模三川公園", "sourceCity": "海老名市", "sourceName": "相模三川緑地" },
+        { "ref": "JP-1301", "nameJa": "七沢森林公園", "sourceCity": "厚木市", "sourceName": "七沢森林公園" },
+        { "ref": "JP-1302", "nameJa": "湘南汐見台公園", "sourceCity": "茅ヶ崎市", "sourceName": "汐見台公園" },
+        { "ref": "JP-1305", "nameJa": "相模湖公園", "sourceCity": "相模原市", "sourceName": "相模湖公園" },
+        { "ref": "JP-1306", "nameJa": "東高根森林公園", "sourceCity": "川崎市", "sourceName": "東高根森林公園" },
+        { "ref": "JP-1309", "nameJa": "秦野戸川公園", "sourceCity": "秦野市", "sourceName": "秦野戸川公園" },
+        { "ref": "JP-1311", "nameJa": "湘南海岸公園", "sourceCity": "藤沢市", "sourceName": "湘南海岸公園" },
+        { "ref": "JP-1313", "nameJa": "津久井湖城山公園", "sourceCity": "相模原市", "sourceName": "津久井湖城山公園" }
+      ]
+    },
+    {
+      "id": "fukushima", "label": "福島県", "output": "data/pota-boundaries-fukushima.geojson", "authority": "福島県", "officialParkUrl": "https://www.pref.fukushima.lg.jp/sec/41055b/bousairyokuti-haragamatuika.html", "reviewNote": "公的GISの公園名・所在地と福島県公式都市公園・防災緑地情報を照合済み",
+      "parks": [
+        { "ref": "JP-1100", "nameJa": "逢瀬公園", "sourceCity": "郡山市", "sourceName": "逢瀬公園" },
+        { "ref": "JP-1103", "nameJa": "いわき公園", "sourceCity": "いわき市", "sourceName": "いわき公園" },
+        { "ref": "JP-1873", "nameJa": "原釜尾浜防災緑地", "sourceCity": "相馬市", "sourceName": "原釜尾浜防災緑地" },
+        { "ref": "JP-1874", "nameJa": "久之浜防災緑地", "sourceCity": "いわき市", "sourceName": "久之浜防災緑地" },
+        { "ref": "JP-1876", "nameJa": "薄磯沼ノ内防災緑地", "sourceCity": "いわき市", "sourceName": "薄磯沼ノ内防災緑地" },
+        { "ref": "JP-1878", "nameJa": "豊間防災緑地", "sourceCity": "いわき市", "sourceName": "豊間防災緑地" }
+      ]
     }
   ]
 }

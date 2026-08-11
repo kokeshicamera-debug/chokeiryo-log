@@ -7,7 +7,7 @@ importScripts("./data/pota-boundaries-osm-files.js");
  * 一度オンラインで開いたアプリ本体を端末に保管し、圏外でも起動できるようにする。
  * POTA/SOTAの判定データは、次の段階で地域別にここへ追加する。
  */
-const CACHE_NAME = "cho-keiryo-log-v1-10-shell-20";
+const CACHE_NAME = "cho-keiryo-log-v1-10-shell-21";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -49,7 +49,15 @@ const APP_SHELL = [
   "./data/pota-boundaries-osaka.geojson",
   "./data/pota-boundaries-hyogo.geojson",
   "./data/pota-boundaries-ishikawa.geojson",
-  "./data/pota-boundaries-saitama.geojson"
+  "./data/pota-boundaries-saitama.geojson",
+  "./data/pota-boundaries-tochigi.geojson",
+  "./data/pota-boundaries-gifu.geojson",
+  "./data/pota-boundaries-nara.geojson",
+  "./data/pota-boundaries-hiroshima.geojson",
+  "./data/pota-boundaries-kagawa.geojson",
+  "./data/pota-boundaries-kagoshima.geojson",
+  "./data/pota-boundaries-kanagawa.geojson",
+  "./data/pota-boundaries-fukushima.geojson"
 ];
 
 self.addEventListener("install", event => {

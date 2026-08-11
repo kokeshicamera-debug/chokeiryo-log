@@ -71,6 +71,14 @@
     { "id": "osaka", "label": "大阪府", "file": "./data/pota-boundaries-osaka.geojson", "note": "国土交通省の公的GISと府の公式公園情報を照合した区域を含みます。" },
     { "id": "hyogo", "label": "兵庫県", "file": "./data/pota-boundaries-hyogo.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
     { "id": "ishikawa", "label": "石川県", "file": "./data/pota-boundaries-ishikawa.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
-    { "id": "saitama", "label": "埼玉県", "file": "./data/pota-boundaries-saitama.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" }
+    { "id": "saitama", "label": "埼玉県", "file": "./data/pota-boundaries-saitama.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "tochigi", "label": "栃木県", "file": "./data/pota-boundaries-tochigi.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "gifu", "label": "岐阜県", "file": "./data/pota-boundaries-gifu.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "nara", "label": "奈良県", "file": "./data/pota-boundaries-nara.geojson", "note": "国土交通省の公的GISと県の公式施設情報を照合した区域を含みます。" },
+    { "id": "hiroshima", "label": "広島県", "file": "./data/pota-boundaries-hiroshima.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "kagawa", "label": "香川県", "file": "./data/pota-boundaries-kagawa.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "kagoshima", "label": "鹿児島県", "file": "./data/pota-boundaries-kagoshima.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "kanagawa", "label": "神奈川県", "file": "./data/pota-boundaries-kanagawa.geojson", "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。" },
+    { "id": "fukushima", "label": "福島県", "file": "./data/pota-boundaries-fukushima.geojson", "note": "国土交通省の公的GISと県の公式公園・防災緑地情報を照合した区域を含みます。" }
   ]
 }
