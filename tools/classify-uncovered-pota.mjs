@@ -18,7 +18,8 @@ const sourceIndexes = [
   "data/pota-boundaries-osm-index.json",
   "data/pota-boundaries-urban-index.json",
 ];
-const officialFiles = ["data/pota-boundaries-kanagawa-shizuoka.geojson"];
+const officialFiles = (readJson("data/pota-boundaries-manifest.json").regions || [])
+  .map(region => String(region.file || "").replace(/^\.\//u, ""));
 
 function readEmbeddedCatalog() {
   const html = fs.readFileSync(resolveRoot("index.html"), "utf8");

@@ -9,7 +9,8 @@
       "data/pota-boundaries-urban-index.json"
     ],
     "officialBoundaries": [
-      "data/pota-boundaries-kanagawa-shizuoka.geojson"
+      "data/pota-boundaries-kanagawa-shizuoka.geojson",
+      "data/pota-boundaries-ibaraki.geojson"
     ]
   },
   "totals": {

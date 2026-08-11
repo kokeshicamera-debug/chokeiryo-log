@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "regions": [
+    {
+      "id": "ibaraki",
+      "label": "茨城県",
+      "output": "data/pota-boundaries-ibaraki.geojson",
+      "parks": [
+        {
+          "ref": "JP-0203",
+          "candidate": "data/pota-boundaries-urban-candidates/JP-0203.geojson",
+          "nameJa": "国営ひたち海浜公園",
+          "nameEn": "Hitachi Seaside National Government Park",
+          "authority": "国土交通省・ひたちなか市",
+          "expectedSourcePrefecture": "茨城県",
+          "expectedSourceCity": "ひたちなか市",
+          "expectedSourceName": "常陸海浜公園",
+          "officialParkUrl": "https://www.hitachikaihin.jp/spot-guide/overview.html",
+          "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "POTA代表地点が令和7年度都市計画決定GISの常陸海浜公園区域に一意に含まれ、公園公式ページの名称・所在地とも照合済み"
+        },
+        {
+          "ref": "JP-1118", "candidate": "data/pota-boundaries-urban-candidates/JP-1118.geojson",
+          "nameJa": "笠間芸術の森公園", "nameEn": "Kasama Geijutsu no mori Prefectural Park", "authority": "茨城県・笠間市",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "笠間市", "expectedSourceName": "笠間芸術の森公園",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/doboku/kogai/kikaku/geimori_park.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式公園情報を照合済み"
+        },
+        {
+          "ref": "JP-1119", "candidate": "data/pota-boundaries-urban-candidates/JP-1119.geojson",
+          "nameJa": "港公園", "nameEn": "Minato Prefectural Park", "authority": "茨城県・神栖市",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "神栖市", "expectedSourceName": "港公園",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/bugai/koho/kenmin/life/doboku/kogai/kogai-002.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1120", "candidate": "data/pota-boundaries-urban-candidates/JP-1120.geojson",
+          "nameJa": "鹿島灘海浜公園", "nameEn": "Kashimanada Sea Side Prefectural Park", "authority": "茨城県・鉾田市",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "鉾田市", "expectedSourceName": "鹿島灘海浜公園",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/doboku/kogai/kikaku/kashimanadanew.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式公園情報を照合済み"
+        },
+        {
+          "ref": "JP-1125", "candidate": "data/pota-boundaries-urban-candidates/JP-1125.geojson",
+          "nameJa": "笠松運動公園", "nameEn": "Kasamatsu Sports Prefectural Park", "authority": "茨城県",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "ひたちなか市", "expectedSourceName": "笠松運動公園",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/yoshiki/doboku/kogai/0808n0010.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式管理公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1126", "candidate": "data/pota-boundaries-urban-candidates/JP-1126.geojson",
+          "nameJa": "堀原運動公園", "nameEn": "Horihara Sports Prefectural Park", "authority": "茨城県",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "水戸市", "expectedSourceName": "堀原運動公園",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/yoshiki/doboku/kogai/0808n0010.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式管理公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1975", "candidate": "data/pota-boundaries-urban-candidates/JP-1975.geojson",
+          "nameJa": "桜川緑地", "nameEn": "Sakuragawa Ryokuchi Prefectural Park", "authority": "茨城県・水戸市",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "水戸市", "expectedSourceName": "桜川緑地",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/doboku/mitodo/documents/toshikouenkanrishisetsu.pdf", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式都市公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1976", "candidate": "data/pota-boundaries-urban-candidates/JP-1976.geojson",
+          "nameJa": "北浦川緑地", "nameEn": "Kitauragawa Ryokuchi Prefectural Park", "authority": "茨城県・取手市",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "取手市", "expectedSourceName": "北浦川緑地",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/yoshiki/doboku/kogai/0808n0010.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式管理公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1978", "candidate": "data/pota-boundaries-urban-candidates/JP-1978.geojson",
+          "nameJa": "赤塚公園", "nameEn": "Akatsuka (JP-IB) Prefectural Park", "authority": "茨城県・つくば市",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "つくば市", "expectedSourceName": "赤塚公園",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/yoshiki/doboku/kogai/0808n0010.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式管理公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1979", "candidate": "data/pota-boundaries-urban-candidates/JP-1979.geojson",
+          "nameJa": "霞ヶ浦総合公園", "nameEn": "Kasumigaura Comprehensive Prefectural Park", "authority": "茨城県・土浦市",
+          "expectedSourcePrefecture": "茨城県", "expectedSourceCity": "土浦市", "expectedSourceName": "霞ヶ浦総合公園",
+          "officialParkUrl": "https://www.pref.ibaraki.jp/soshiki/doboku/documents/asunoibarakiwotukuru2024.pdf", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・市区町村と茨城県公式県営都市公園一覧を照合済み"
+        }
+      ]
+    }
+  ]
+}

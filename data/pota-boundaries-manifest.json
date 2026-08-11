@@ -1,12 +1,18 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-09",
+  "updatedAt": "2026-08-11",
   "regions": [
     {
       "id": "kanagawa-shizuoka",
       "label": "神奈川・静岡",
       "file": "./data/pota-boundaries-kanagawa-shizuoka.geojson",
       "note": "公的GISから確認した区域を含みます。"
+    },
+    {
+      "id": "ibaraki",
+      "label": "茨城県",
+      "file": "./data/pota-boundaries-ibaraki.geojson",
+      "note": "国土交通省の公的GISと公式公園情報を照合した区域を含みます。"
     }
   ]
 }
