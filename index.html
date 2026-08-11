@@ -1852,21 +1852,74 @@ function drawSnapshotElement(context,element,text,centerText=false){
 
 }
 
+function wrapSnapshotText(context,text,maxWidth){
+    const lines=[];
+    let line="";
+    for(const character of String(text||"")){
+        const candidate=line+character;
+        if(line&&context.measureText(candidate).width>maxWidth){
+            lines.push(line);
+            line=character;
+        }else{
+            line=candidate;
+        }
+    }
+    if(line||!lines.length) lines.push(line);
+    return lines;
+}
+
+function snapshotProgramDetails(width){
+    if(!programMode) return null;
+    const measureCanvas=document.createElement("canvas");
+    const measureContext=measureCanvas.getContext("2d");
+    measureContext.font="700 13px sans-serif";
+    const textWidth=Math.max(1,width-28);
+    const items=[potaStatus,sotaStatus].map(element=>({
+        element,
+        lines:wrapSnapshotText(measureContext,element.textContent,textWidth)
+    }));
+    const height=30+items.reduce((total,item)=>total+item.lines.length*17+12,0);
+    return {items,height,textWidth};
+}
+
+function drawSnapshotProgramDetails(context,details,top,width){
+    context.fillStyle=getComputedStyle(document.querySelector("header")).backgroundColor;
+    context.fillRect(0,top,width,details.height);
+    context.fillStyle=getComputedStyle(body).getPropertyValue("--text").trim()||"#ffffff";
+    context.font="700 13px sans-serif";
+    context.textBaseline="top";
+    context.fillText("POTA / SOTA 詳細（保存画像用・全文）",8,top+7);
+    let itemTop=top+26;
+    for(const item of details.items){
+        const style=getComputedStyle(item.element);
+        const itemHeight=item.lines.length*17+8;
+        context.fillStyle=style.backgroundColor;
+        roundRectPath(context,8,itemTop,width-16,itemHeight,7);
+        context.fill();
+        context.fillStyle=style.color;
+        context.font=(style.fontWeight||"700")+" 13px "+(style.fontFamily||"sans-serif");
+        item.lines.forEach((line,index)=>context.fillText(line,14,itemTop+5+index*17,details.textWidth));
+        itemTop+=itemHeight+4;
+    }
+}
+
 function createLogSnapshot(){
 
     const width=window.innerWidth;
     const height=window.innerHeight;
     const includeMemo=Boolean((memoStrokes.length||memoCurrentStroke.length)&&memoSnapshotRect&&memoCanvas.width);
     const memoHeight=includeMemo ? memoSnapshotRect.height+38 : 0;
+    const programDetails=snapshotProgramDetails(width);
+    const programDetailsHeight=programDetails ? programDetails.height+8 : 0;
     const scale=2;
     const snapshot=document.createElement("canvas");
     snapshot.width=Math.round(width*scale);
-    snapshot.height=Math.round((height+memoHeight)*scale);
+    snapshot.height=Math.round((height+memoHeight+programDetailsHeight)*scale);
 
     const snapshotContext=snapshot.getContext("2d");
     snapshotContext.scale(scale,scale);
     snapshotContext.fillStyle=getComputedStyle(body).getPropertyValue("--bg").trim();
-    snapshotContext.fillRect(0,0,width,height+memoHeight);
+    snapshotContext.fillRect(0,0,width,height+memoHeight+programDetailsHeight);
 
     const header=document.querySelector("header");
     const footer=document.querySelector("footer");
@@ -1903,6 +1956,10 @@ function createLogSnapshot(){
         snapshotContext.font="bold 14px sans-serif";
         snapshotContext.fillText("MEMO",16,memoTop+15);
         snapshotContext.drawImage(memoCanvas,8,memoTop+22,width-16,memoRect.height);
+    }
+
+    if(programDetails){
+        drawSnapshotProgramDetails(snapshotContext,programDetails,height+memoHeight+8,width);
     }
 
     [bandSelect,modeSelect,document.getElementById("undoButton"),document.getElementById("clearButton"),memoButton].forEach(element=>{

@@ -72,7 +72,7 @@
   function formatNearby(matches) {
     return (matches || []).slice(0, 3).map(match => {
       const summit = match.summit;
-      return `${summit.reference} ${summit.name}（標高${Math.round(summit.altitudeMeters)}m・山頂座標まで${Math.round(match.horizontalMeters)}m）`;
+      return `${summit.reference} ${summit.name}（標高${Math.round(summit.altitudeMeters)}m・山頂座標まで直線距離${Math.round(match.horizontalMeters)}m）`;
     }).join(" ／ ");
   }
 

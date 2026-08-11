@@ -10,6 +10,9 @@ const required = [
   [html.includes("notificationSafe&&hasPotaNotificationBaseline"), "POTA通知抑止が接続されていません"],
   [html.includes("notificationSafe&&evaluation.notificationSafe&&hasSotaNotificationBaseline"), "SOTA通知抑止が接続されていません"],
   [worker.includes('"./gps-position-controller.js"'), "GPS品質判定が圏外保存に含まれていません"],
+  [html.includes('element.classList.toggle("expanded")'), "POTA/SOTA欄のタップ全文表示がありません"],
+  [html.includes("snapshotProgramDetails(width)"), "保存画像へPOTA/SOTA全文を追加する処理がありません"],
+  [html.includes("POTA / SOTA 詳細（保存画像用・全文）"), "保存画像の詳細欄がありません"],
 ];
 for (const [valid, message] of required) if (!valid) throw new Error(message);
 
