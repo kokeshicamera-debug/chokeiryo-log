@@ -83,6 +83,87 @@
           "reviewNote": "公的GISの公園名・市区町村と茨城県公式県営都市公園一覧を照合済み"
         }
       ]
+    },
+    {
+      "id": "aomori", "label": "青森県", "output": "data/pota-boundaries-aomori.geojson",
+      "parks": [
+        {
+          "ref": "JP-1031", "candidate": "data/pota-boundaries-urban-candidates/JP-1031.geojson",
+          "nameJa": "新青森県総合運動公園", "nameEn": "New Aomori Prefectural Sports Prefectural Park", "authority": "青森県",
+          "expectedSourcePrefecture": "青森県", "expectedSourceCity": "青森市", "expectedSourceName": "新青森県総合運動公園",
+          "officialParkUrl": "https://www.pref.aomori.lg.jp/soshiki/kendo/toshikei/kouen_03_03.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と青森県公式都市公園情報を照合済み"
+        },
+        {
+          "ref": "JP-2053", "candidate": "data/pota-boundaries-urban-candidates/JP-2053.geojson",
+          "nameJa": "青森県総合運動公園", "nameEn": "Aomori Prefectural Sport Prefectural Park", "authority": "青森県",
+          "expectedSourcePrefecture": "青森県", "expectedSourceCity": "青森市", "expectedSourceName": "青森県総合運動公園",
+          "officialParkUrl": "https://www.pref.aomori.lg.jp/soshiki/kyoiku/e-sports/taiiku_shisetsu.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と青森県公式県有施設一覧を照合済み"
+        }
+      ]
+    },
+    {
+      "id": "iwate", "label": "岩手県", "output": "data/pota-boundaries-iwate.geojson",
+      "parks": [
+        {
+          "ref": "JP-1042", "candidate": "data/pota-boundaries-urban-candidates/JP-1042.geojson",
+          "nameJa": "花巻広域公園", "nameEn": "Hanamaki Koiki Prefectural Park", "authority": "岩手県",
+          "expectedSourcePrefecture": "岩手県", "expectedSourceCity": "花巻市", "expectedSourceName": "花巻広域公園",
+          "officialParkUrl": "https://www.pref.iwate.jp/kendozukuri/toshigesui/kouen/1029359/index.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と岩手県公式県立都市公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1891", "candidate": "data/pota-boundaries-urban-candidates/JP-1891.geojson",
+          "nameJa": "高田松原津波復興祈念公園", "nameEn": "Takatamatsubara Memorial Prefectural Park", "authority": "国土交通省・岩手県・陸前高田市",
+          "expectedSourcePrefecture": "岩手県", "expectedSourceCity": "陸前高田市", "expectedSourceName": "高田松原津波復興祈念公園",
+          "officialParkUrl": "https://www.pref.iwate.jp/kendozukuri/toshigesui/kouen/1029359/1063934/index.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と岩手県公式公園情報を照合済み"
+        }
+      ]
+    },
+    {
+      "id": "fukui", "label": "福井県", "output": "data/pota-boundaries-fukui.geojson",
+      "parks": [
+        {
+          "ref": "JP-1414", "candidate": "data/pota-boundaries-urban-candidates/JP-1414.geojson",
+          "nameJa": "丹南総合公園", "nameEn": "Tannan Sogo Prefectural Park", "authority": "福井県・越前市",
+          "expectedSourcePrefecture": "福井県", "expectedSourceCity": "越前市", "expectedSourceName": "丹南地域総合公園",
+          "officialParkUrl": "https://www.pref.fukui.lg.jp/doc/tokei/kouen/koen1-10.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの所在地・丹南地域総合公園という登録名と福井県公式の丹南総合公園情報を照合済み"
+        }
+      ]
+    },
+    {
+      "id": "shimane", "label": "島根県", "output": "data/pota-boundaries-shimane.geojson",
+      "parks": [
+        {
+          "ref": "JP-1600", "candidate": "data/pota-boundaries-urban-candidates/JP-1600.geojson",
+          "nameJa": "県立浜山公園", "nameEn": "Hamayama Prefectural Park", "authority": "島根県",
+          "expectedSourcePrefecture": "島根県", "expectedSourceCity": "出雲市", "expectedSourceName": "浜山公園",
+          "officialParkUrl": "https://www.pref.shimane.lg.jp/infra/toshi/koen/pref/hamashi.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と島根県公式県立都市公園情報を照合済み"
+        }
+      ]
+    },
+    {
+      "id": "okayama", "label": "岡山県", "output": "data/pota-boundaries-okayama.geojson",
+      "parks": [
+        {
+          "ref": "JP-1612", "candidate": "data/pota-boundaries-urban-candidates/JP-1612.geojson",
+          "nameJa": "岡山県倉敷スポーツ公園", "nameEn": "Kurashiki Sports Prefectural Park", "authority": "岡山県・倉敷市",
+          "expectedSourcePrefecture": "岡山県", "expectedSourceCity": "倉敷市", "expectedSourceName": "岡山県倉敷スポーツ公園",
+          "officialParkUrl": "https://www.pref.okayama.jp/page/detail-3068.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と岡山県公式県立都市公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1613", "candidate": "data/pota-boundaries-urban-candidates/JP-1613.geojson",
+          "nameJa": "水島緑地", "nameEn": "Mizushima Ryokuchi Prefectural Park", "authority": "岡山県・倉敷市",
+          "expectedSourcePrefecture": "岡山県", "expectedSourceCity": "倉敷市", "expectedSourceName": "水島緑地",
+          "officialParkUrl": "https://www.pref.okayama.jp/page/661596.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と岡山県公式県立都市公園情報を照合済み"
+        }
+      ]
     }
   ]
 }

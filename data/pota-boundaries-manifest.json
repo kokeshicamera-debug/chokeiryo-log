@@ -13,6 +13,26 @@
       "label": "茨城県",
       "file": "./data/pota-boundaries-ibaraki.geojson",
       "note": "国土交通省の公的GISと公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "aomori", "label": "青森県", "file": "./data/pota-boundaries-aomori.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "iwate", "label": "岩手県", "file": "./data/pota-boundaries-iwate.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "fukui", "label": "福井県", "file": "./data/pota-boundaries-fukui.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "shimane", "label": "島根県", "file": "./data/pota-boundaries-shimane.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "okayama", "label": "岡山県", "file": "./data/pota-boundaries-okayama.geojson",
+      "note": "国土交通省の公的GISと県・市の公式公園情報を照合した区域を含みます。"
     }
   ]
 }

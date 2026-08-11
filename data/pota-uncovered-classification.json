@@ -10,7 +10,12 @@
     ],
     "officialBoundaries": [
       "data/pota-boundaries-kanagawa-shizuoka.geojson",
-      "data/pota-boundaries-ibaraki.geojson"
+      "data/pota-boundaries-ibaraki.geojson",
+      "data/pota-boundaries-aomori.geojson",
+      "data/pota-boundaries-iwate.geojson",
+      "data/pota-boundaries-fukui.geojson",
+      "data/pota-boundaries-shimane.geojson",
+      "data/pota-boundaries-okayama.geojson"
     ]
   },
   "totals": {
