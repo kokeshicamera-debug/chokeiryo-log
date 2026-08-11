@@ -34,14 +34,17 @@
     if (!position || !Number.isFinite(position.latitude) || !Number.isFinite(position.longitude)) {
       return { state: "needs-position", results: [], notificationSafe: false, message: "位置情報を取得中…" };
     }
-    if (Number.isFinite(accuracy) && accuracy > MAX_GPS_ACCURACY_METERS) {
-      return { state: "needs-accuracy", results: [], notificationSafe: false, message: `GPS精度を確認中（±${Math.round(accuracy)}m・通知なし）` };
-    }
-    if (!engine || !elevations || !connectivity) {
-      return { state: "needs-terrain", results: [], notificationSafe: false, message: "25m地形判定を準備できません" };
+    if (!engine) {
+      return { state: "needs-terrain", results: [], notificationSafe: false, message: "公式サミット情報を確認できません" };
     }
     const nearby = engine.nearbySummits(position.latitude, position.longitude, toCatalog(items), SEARCH_METERS);
-    if (!nearby.length) return { state: "outside", results: [], notificationSafe: true, message: "近くに公式サミットはありません" };
+    if (!nearby.length) return { state: "outside", results: [], nearby: [], notificationSafe: true, message: "近くに公式サミットはありません" };
+    if (Number.isFinite(accuracy) && accuracy > MAX_GPS_ACCURACY_METERS) {
+      return { state: "needs-accuracy", results: [], nearby, notificationSafe: false, message: `GPS精度を確認中（±${Math.round(accuracy)}m・通知なし）` };
+    }
+    if (!elevations || !connectivity) {
+      return { state: "needs-terrain", results: [], nearby, notificationSafe: false, message: "25m地形判定を準備できません（通知なし）" };
+    }
 
     let currentElevation;
     try {
@@ -66,7 +69,17 @@
     return { state: confirmed.length ? "confirmed" : unresolved ? "uncertain" : "outside", results, nearby, confirmed, notificationSafe: !unresolved, currentElevation };
   }
 
+  function formatNearby(matches) {
+    return (matches || []).slice(0, 3).map(match => {
+      const summit = match.summit;
+      return `${summit.reference} ${summit.name}（標高${Math.round(summit.altitudeMeters)}m・山頂座標まで${Math.round(match.horizontalMeters)}m）`;
+    }).join(" ／ ");
+  }
+
   function format(evaluation) {
+    if (evaluation.message && evaluation.nearby?.length) {
+      return `${formatNearby(evaluation.nearby)}（最寄りの公式サミット・25m区域未確認・${evaluation.message}）`;
+    }
     if (evaluation.message) return evaluation.message;
     const confirmed = evaluation.confirmed || notificationMatches(evaluation.results || []);
     if (confirmed.length) return confirmed.slice(0, 3).map(match => `${match.id} ${match.name} 25m区域内（地形確認済み）`).join(" ／ ");
@@ -78,5 +91,5 @@
     return `${summit.reference} ${summit.name} 25m区域を確認中（通知なし）`;
   }
 
-  window.SotaRuntimeController = { evaluate, format, notificationMatches, toCatalog, SEARCH_METERS, MAX_GPS_ACCURACY_METERS, MAX_TERRAIN_CANDIDATES };
+  window.SotaRuntimeController = { evaluate, format, formatNearby, notificationMatches, toCatalog, SEARCH_METERS, MAX_GPS_ACCURACY_METERS, MAX_TERRAIN_CANDIDATES };
 }());

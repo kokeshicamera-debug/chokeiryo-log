@@ -24,6 +24,7 @@ const connectivity = {
 
 const inaccurate = await controller.evaluate({ ...position, accuracy: 120 }, [summitItem], { engine, elevations, connectivity });
 if (inaccurate.state !== "needs-accuracy" || inaccurate.notificationSafe) throw new Error("簡易位置で通知が抑止されません");
+if (!controller.format(inaccurate).includes(summitItem.id) || !controller.format(inaccurate).includes(summitItem.name)) throw new Error("簡易位置でも公式サミットを案内できません");
 
 const confirmed = await controller.evaluate(position, [summitItem], { engine, elevations, connectivity });
 if (confirmed.state !== "confirmed" || confirmed.confirmed[0].id !== summitItem.id || !confirmed.notificationSafe) throw new Error("25m区域内を確定できません");
@@ -36,5 +37,6 @@ if (uncertain.notificationSafe || uncertain.state !== "uncertain") throw new Err
 
 const unavailable = await controller.evaluate(position, [summitItem], { engine, elevations: { getElevation: async () => { throw new Error("offline"); } }, connectivity });
 if (unavailable.notificationSafe || unavailable.state !== "needs-terrain") throw new Error("標高未取得時の通知が抑止されません");
+if (!controller.format(unavailable).includes(summitItem.id) || !controller.format(unavailable).includes("山頂座標まで111m")) throw new Error("標高未取得でも公式サミットと距離を案内できません");
 
 console.log("検査成功: GPS精度・25m区域内・鞍部分断・未確定・圏外通知抑止");
