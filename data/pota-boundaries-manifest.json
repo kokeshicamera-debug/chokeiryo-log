@@ -33,6 +33,22 @@
     {
       "id": "okayama", "label": "岡山県", "file": "./data/pota-boundaries-okayama.geojson",
       "note": "国土交通省の公的GISと県・市の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "niigata", "label": "新潟県", "file": "./data/pota-boundaries-niigata.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "mie", "label": "三重県", "file": "./data/pota-boundaries-mie.geojson",
+      "note": "国土交通省の公的GISと県・市の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "wakayama", "label": "和歌山県", "file": "./data/pota-boundaries-wakayama.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
+    },
+    {
+      "id": "miyazaki", "label": "宮崎県", "file": "./data/pota-boundaries-miyazaki.geojson",
+      "note": "国土交通省の公的GISと県の公式公園情報を照合した区域を含みます。"
     }
   ]
 }

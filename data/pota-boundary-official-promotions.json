@@ -85,6 +85,110 @@
       ]
     },
     {
+      "id": "niigata", "label": "新潟県", "output": "data/pota-boundaries-niigata.geojson",
+      "parks": [
+        {
+          "ref": "JP-0207", "candidate": "data/pota-boundaries-urban-candidates/JP-0207.geojson",
+          "nameJa": "国営越後丘陵公園", "nameEn": "Echigo Hillside National Government Park", "authority": "国土交通省",
+          "expectedSourcePrefecture": "新潟県", "expectedSourceCity": "長岡市", "expectedSourceName": "国営越後丘陵公園",
+          "officialParkUrl": "https://www.pref.niigata.lg.jp/kyouryokuten/nr1.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と新潟県公式掲載情報を照合済み"
+        },
+        {
+          "ref": "JP-1364", "candidate": "data/pota-boundaries-urban-candidates/JP-1364.geojson",
+          "nameJa": "紫雲寺記念公園", "nameEn": "Shiunji Kinen Prefectural Park", "authority": "新潟県",
+          "expectedSourcePrefecture": "新潟県", "expectedSourceCity": "新発田市", "expectedSourceName": "紫雲寺記念公園",
+          "officialParkUrl": "https://www.pref.niigata.lg.jp/sec/toshiseibi/1217440856970.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と新潟県公式県立都市公園一覧を照合済み"
+        }
+      ]
+    },
+    {
+      "id": "mie", "label": "三重県", "output": "data/pota-boundaries-mie.geojson",
+      "parks": [
+        {
+          "ref": "JP-1476", "candidate": "data/pota-boundaries-urban-candidates/JP-1476.geojson",
+          "nameJa": "北勢中央公園", "nameEn": "Hokusei Central Prefectural Park", "authority": "三重県",
+          "expectedSourcePrefecture": "三重県", "expectedSourceCity": "四日市市", "expectedSourceName": "北勢中央公園",
+          "officialParkUrl": "https://www.pref.mie.lg.jp/TOSHIKI/HP/17352018194_00001.htm", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と三重県公式県営都市公園情報を照合済み"
+        },
+        {
+          "ref": "JP-1478", "candidate": "data/pota-boundaries-urban-candidates/JP-1478.geojson",
+          "nameJa": "亀山サンシャインパーク", "nameEn": "Kameyama Sunshine Prefectural Park", "authority": "三重県",
+          "expectedSourcePrefecture": "三重県", "expectedSourceCity": "亀山市", "expectedSourceName": "亀山サンシャインパーク",
+          "officialParkUrl": "https://www.pref.mie.lg.jp/toshiki/hp/17346018188.htm", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と三重県公式県営都市公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1481", "candidate": "data/pota-boundaries-urban-candidates/JP-1481.geojson",
+          "nameJa": "五十鈴公園", "nameEn": "Isuzu Prefectural Park", "authority": "伊勢市",
+          "expectedSourcePrefecture": "三重県", "expectedSourceCity": "伊勢市", "expectedSourceName": "五十鈴公園",
+          "officialParkUrl": "https://www.pref.mie.lg.jp/TOSHIKI/HP/17349018191.htm", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と三重県公式都市公園情報を照合済み"
+        }
+      ]
+    },
+    {
+      "id": "wakayama", "label": "和歌山県", "output": "data/pota-boundaries-wakayama.geojson",
+      "parks": [
+        {
+          "ref": "JP-1578", "candidate": "data/pota-boundaries-urban-candidates/JP-1578.geojson",
+          "nameJa": "紀三井寺公園", "nameEn": "Kimiidera Prefectural Park", "authority": "和歌山県",
+          "expectedSourcePrefecture": "和歌山県", "expectedSourceCity": "和歌山市", "expectedSourceName": "紀三井寺公園",
+          "officialParkUrl": "https://www.pref.wakayama.lg.jp/faq/answer/faq_k25048.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と和歌山県公式県営都市公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1579", "candidate": "data/pota-boundaries-urban-candidates/JP-1579.geojson",
+          "nameJa": "河西緩衝緑地", "nameEn": "Kasei Prefectural Park", "authority": "和歌山県",
+          "expectedSourcePrefecture": "和歌山県", "expectedSourceCity": "和歌山市", "expectedSourceName": "河西緩衝緑地",
+          "officialParkUrl": "https://www.pref.wakayama.lg.jp/faq/answer/faq_k25048.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と和歌山県公式県営都市公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1580", "candidate": "data/pota-boundaries-urban-candidates/JP-1580.geojson",
+          "nameJa": "和歌公園", "nameEn": "Waka Prefectural Park", "authority": "和歌山県",
+          "expectedSourcePrefecture": "和歌山県", "expectedSourceCity": "和歌山市", "expectedSourceName": "和歌公園",
+          "officialParkUrl": "https://www.pref.wakayama.lg.jp/faq/answer/faq_k25048.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と和歌山県公式県営都市公園一覧を照合済み"
+        },
+        {
+          "ref": "JP-1941", "candidate": "data/pota-boundaries-urban-candidates/JP-1941.geojson",
+          "nameJa": "和歌山交通公園", "nameEn": "Wakayama Koutsuu Prefectural Park", "authority": "和歌山県",
+          "expectedSourcePrefecture": "和歌山県", "expectedSourceCity": "和歌山市", "expectedSourceName": "和歌山交通公園",
+          "officialParkUrl": "https://www.pref.wakayama.lg.jp/faq/answer/faq_k25048.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と和歌山県公式県営施設一覧を照合済み"
+        }
+      ]
+    },
+    {
+      "id": "miyazaki", "label": "宮崎県", "output": "data/pota-boundaries-miyazaki.geojson",
+      "parks": [
+        {
+          "ref": "JP-1755", "candidate": "data/pota-boundaries-urban-candidates/JP-1755.geojson",
+          "nameJa": "県立平和台公園", "nameEn": "Heiwadai Prefectural Park", "authority": "宮崎県",
+          "expectedSourcePrefecture": "宮崎県", "expectedSourceCity": "宮崎市", "expectedSourceName": "平和台公園",
+          "officialParkUrl": "https://www.pref.miyazaki.lg.jp/digital-suishin/kanko/sports/20251226104258.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と宮崎県公式県有施設一覧を照合済み"
+        },
+        {
+          "ref": "JP-1757", "candidate": "data/pota-boundaries-urban-candidates/JP-1757.geojson",
+          "nameJa": "宮崎県総合運動公園", "nameEn": "Miyazaki Prefectural Comprehensive Sports Prefectural Park", "authority": "宮崎県",
+          "expectedSourcePrefecture": "宮崎県", "expectedSourceCity": "宮崎市", "expectedSourceName": "宮崎県総合運動公園",
+          "officialParkUrl": "https://www.pref.miyazaki.lg.jp/digital-suishin/kanko/sports/20251226104258.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と宮崎県公式県有施設一覧を照合済み"
+        },
+        {
+          "ref": "JP-1759", "candidate": "data/pota-boundaries-urban-candidates/JP-1759.geojson",
+          "nameJa": "県立阿波岐原森林公園", "nameEn": "Awakigahara Forest Prefectural Park", "authority": "宮崎県",
+          "expectedSourcePrefecture": "宮崎県", "expectedSourceCity": "宮崎市", "expectedSourceName": "阿波岐原森林公園",
+          "officialParkUrl": "https://www.pref.miyazaki.lg.jp/digital-suishin/kanko/sports/20251226104258.html", "officialGisUrl": "https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html",
+          "reviewNote": "公的GISの公園名・所在地と宮崎県公式県有施設一覧を照合済み"
+        }
+      ]
+    },
+    {
       "id": "aomori", "label": "青森県", "output": "data/pota-boundaries-aomori.geojson",
       "parks": [
         {

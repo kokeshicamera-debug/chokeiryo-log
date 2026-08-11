@@ -15,7 +15,11 @@
       "data/pota-boundaries-iwate.geojson",
       "data/pota-boundaries-fukui.geojson",
       "data/pota-boundaries-shimane.geojson",
-      "data/pota-boundaries-okayama.geojson"
+      "data/pota-boundaries-okayama.geojson",
+      "data/pota-boundaries-niigata.geojson",
+      "data/pota-boundaries-mie.geojson",
+      "data/pota-boundaries-wakayama.geojson",
+      "data/pota-boundaries-miyazaki.geojson"
     ]
   },
   "totals": {
