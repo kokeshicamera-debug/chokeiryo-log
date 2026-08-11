@@ -40,7 +40,21 @@
       "data/pota-boundaries-kagawa.geojson",
       "data/pota-boundaries-kagoshima.geojson",
       "data/pota-boundaries-kanagawa.geojson",
-      "data/pota-boundaries-fukushima.geojson"
+      "data/pota-boundaries-fukushima.geojson",
+      "data/pota-boundaries-tokyo.geojson",
+      "data/pota-boundaries-hokkaido.geojson",
+      "data/pota-boundaries-toyama.geojson",
+      "data/pota-boundaries-gunma.geojson",
+      "data/pota-boundaries-shiga.geojson",
+      "data/pota-boundaries-akita.geojson",
+      "data/pota-boundaries-saitama-additional.geojson",
+      "data/pota-boundaries-niigata-additional.geojson",
+      "data/pota-boundaries-kumamoto.geojson",
+      "data/pota-boundaries-miyagi-additional.geojson",
+      "data/pota-boundaries-fukuoka.geojson",
+      "data/pota-boundaries-kochi.geojson",
+      "data/pota-boundaries-hyogo-additional.geojson",
+      "data/pota-boundaries-oita.geojson"
     ]
   },
   "totals": {

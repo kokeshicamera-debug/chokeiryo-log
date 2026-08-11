@@ -521,6 +521,106 @@
         { "ref": "JP-1876", "nameJa": "薄磯沼ノ内防災緑地", "sourceCity": "いわき市", "sourceName": "薄磯沼ノ内防災緑地" },
         { "ref": "JP-1878", "nameJa": "豊間防災緑地", "sourceCity": "いわき市", "sourceName": "豊間防災緑地" }
       ]
+    },
+    {
+      "id": "tokyo", "label": "東京都", "output": "data/pota-boundaries-tokyo.geojson", "authority": "東京都", "officialParkUrl": "https://www.kensetsu.metro.tokyo.lg.jp/park/kouenannai/ichiran", "reviewNote": "公的GISの公園名・所在地と東京都公式都立公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1269", "nameJa": "浅間山公園", "sourceCity": "府中市", "sourceName": "浅間山公園" },
+        { "ref": "JP-1281", "nameJa": "府中の森公園", "sourceCity": "府中市", "sourceName": "府中の森公園" },
+        { "ref": "JP-1283", "nameJa": "武蔵野公園", "sourceCity": "府中市", "sourceName": "武蔵野公園" },
+        { "ref": "JP-1285", "nameJa": "武蔵野の森公園", "sourceCity": "府中市", "sourceName": "武蔵野の森公園" }
+      ]
+    },
+    {
+      "id": "hokkaido", "label": "北海道", "output": "data/pota-boundaries-hokkaido.geojson", "authority": "北海道", "officialParkUrl": "https://www.pref.hokkaido.lg.jp/kn/tkn/kgs/homepage/R1mokuhyotasseido.html", "reviewNote": "公的GISの公園名・所在地と北海道公式道立都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1019", "nameJa": "サンピラーパーク", "sourceCity": "名寄市", "sourceName": "サンピラパーク" },
+        { "ref": "JP-1020", "nameJa": "ゆめの森公園", "sourceCity": "中標津町", "sourceName": "ゆめの森公園" },
+        { "ref": "JP-1022", "nameJa": "道南四季の杜公園", "sourceCity": "函館市", "sourceName": "道南四季の杜公園" }
+      ]
+    },
+    {
+      "id": "toyama", "label": "富山県", "output": "data/pota-boundaries-toyama.geojson", "authority": "富山県", "officialParkUrl": "https://www.pref.toyama.jp/documents/53741/besshi10_seibihoushin.pdf", "reviewNote": "公的GISの公園名・所在地と富山県公式県立都市公園資料を照合済み",
+      "parks": [
+        { "ref": "JP-1375", "nameJa": "富山県総合運動公園", "sourceCity": "富山市", "sourceName": "富山県総合運動公園" },
+        { "ref": "JP-1376", "nameJa": "富山県五福公園", "sourceCity": "富山市", "sourceName": "富山県五福公園" },
+        { "ref": "JP-1377", "nameJa": "富山県岩瀬スポーツ公園", "sourceCity": "富山市", "sourceName": "富山県岩瀬スポーツ公園" },
+        { "ref": "JP-1380", "nameJa": "富岩運河環水公園", "sourceCity": "富山市", "sourceName": "カナルパーク" },
+        { "ref": "JP-2062", "nameJa": "県庁前公園", "sourceCity": "富山市", "sourceName": "県庁前公園" }
+      ]
+    },
+    {
+      "id": "gunma", "label": "群馬県", "output": "data/pota-boundaries-gunma.geojson", "authority": "群馬県", "officialParkUrl": "https://www.pref.gunma.jp/page/1223.html", "reviewNote": "公的GISの公園名・所在地と群馬県公式県立公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1319", "nameJa": "榛名公園", "sourceCity": "渋川市", "sourceName": "榛名公園" },
+        { "ref": "JP-1321", "nameJa": "敷島公園", "sourceCity": "前橋市", "sourceName": "敷島公園" }
+      ]
+    },
+    {
+      "id": "shiga", "label": "滋賀県", "output": "data/pota-boundaries-shiga.geojson", "authority": "滋賀県", "officialParkUrl": "https://www.pref.shiga.lg.jp/ippan/kendoseibi/machizukuri/300702.html", "reviewNote": "公的GISの公園名・所在地と滋賀県公式県営都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1487", "nameJa": "びわこ文化公園", "sourceCity": "大津市", "sourceName": "文化ゾーン" },
+        { "ref": "JP-1490", "nameJa": "春日山公園", "sourceCity": "大津市", "sourceName": "春日山公園" },
+        { "ref": "JP-1491", "nameJa": "びわこ地球市民の森", "sourceCity": "守山市", "sourceName": "守山速野緑地" }
+      ]
+    },
+    {
+      "id": "akita", "label": "秋田県", "output": "data/pota-boundaries-akita.geojson", "authority": "秋田県", "officialParkUrl": "https://www.pref.akita.lg.jp/pages/archive/958", "reviewNote": "公的GISの公園名・所在地と秋田県公式県立都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1067", "nameJa": "秋田県立中央公園", "sourceCity": "秋田市", "sourceName": "9･7･2 秋田県立中央公園" },
+        { "ref": "JP-1069", "nameJa": "県立小泉潟公園", "sourceCity": "秋田市", "sourceName": "9･6･1 県立小泉潟公園" }
+      ]
+    },
+    {
+      "id": "saitama-additional", "label": "埼玉県", "output": "data/pota-boundaries-saitama-additional.geojson", "authority": "埼玉県", "officialParkUrl": "https://www.pref.saitama.lg.jp/a1105/bunka_kyouiku_kennei-kouen-syoukai.html", "reviewNote": "公的GISの旧計画名・所在地と埼玉県公式県営公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1166", "nameJa": "彩の森入間公園", "sourceCity": "入間市", "sourceName": "ジョンソン基地跡地公園" },
+        { "ref": "JP-1899", "nameJa": "春日部夢の森公園", "sourceCity": "春日部市", "sourceName": "新たな森公園" }
+      ]
+    },
+    {
+      "id": "niigata-additional", "label": "新潟県", "output": "data/pota-boundaries-niigata-additional.geojson", "authority": "新潟県", "officialParkUrl": "https://www.pref.niigata.lg.jp/life/6/26/index-2.html", "reviewNote": "公的GISの公園名・所在地と新潟県公式県立都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1367", "nameJa": "奥只見レクリェーション都市公園", "sourceCity": "南魚沼市", "sourceName": "奥只見レクリェーション都市公園・浦佐地域" },
+        { "ref": "JP-1368", "nameJa": "大潟水と森公園", "sourceCity": "上越市", "sourceName": "大潟県営都市公園" }
+      ]
+    },
+    {
+      "id": "kumamoto", "label": "熊本県", "output": "data/pota-boundaries-kumamoto.geojson", "authority": "熊本県", "officialParkUrl": "https://www.pref.kumamoto.jp/soshiki/103/1297.html", "reviewNote": "公的GISの公園名・所在地と熊本県公式県営都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1736", "nameJa": "テクノ中央緑地", "sourceCity": "益城町", "sourceName": "テクノ中央緑地" },
+        { "ref": "JP-1740", "nameJa": "熊本県営八代運動公園", "sourceCity": "八代市", "sourceName": "県南運動公園" }
+      ]
+    },
+    {
+      "id": "miyagi-additional", "label": "宮城県", "output": "data/pota-boundaries-miyagi-additional.geojson", "authority": "宮城県", "officialParkUrl": "https://www.pref.miyagi.jp/soshiki/tosikan/tosikouen-gaiyou.html", "reviewNote": "公的GISの公園名・所在地と宮城県公式都市公園一覧を照合済み",
+      "parks": [
+        { "ref": "JP-1053", "nameJa": "宮城野原公園", "sourceCity": "仙台市", "sourceName": "宮城野原運動公園" }
+      ]
+    },
+    {
+      "id": "fukuoka", "label": "福岡県", "output": "data/pota-boundaries-fukuoka.geojson", "authority": "福岡県", "officialParkUrl": "https://www.pref.fukuoka.lg.jp/contents/kenkoen3.html", "reviewNote": "公的GISの公園名・所在地と福岡県公式県営都市公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1705", "nameJa": "春日公園", "sourceCity": "春日市", "sourceName": "5・6・2001　春日公園" }
+      ]
+    },
+    {
+      "id": "kochi", "label": "高知県", "output": "data/pota-boundaries-kochi.geojson", "authority": "高知県", "officialParkUrl": "https://www.pref.kochi.lg.jp/doc/kagamino/", "reviewNote": "公的GISの公園名・所在地と高知県公式公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1690", "nameJa": "鏡野公園", "sourceCity": "香美市", "sourceName": "鏡野公園" }
+      ]
+    },
+    {
+      "id": "hyogo-additional", "label": "兵庫県", "output": "data/pota-boundaries-hyogo-additional.geojson", "authority": "兵庫県・高砂市", "officialParkUrl": "https://web.pref.hyogo.lg.jp/ks21/documents/09_takasagoshi.pdf", "reviewNote": "公的GISの公園名・所在地と兵庫県公式都市計画公園資料を照合済み",
+      "parks": [
+        { "ref": "JP-1545", "nameJa": "高砂海浜公園", "sourceCity": "高砂市", "sourceName": "向島公園　" }
+      ]
+    },
+    {
+      "id": "oita", "label": "大分県", "output": "data/pota-boundaries-oita.geojson", "authority": "大分県", "officialParkUrl": "https://www.pref.oita.jp/soshiki/18800/r1oosusougouundoukouen-iinkai1.html", "reviewNote": "公的GISの公園名・所在地と大分県公式県営公園情報を照合済み",
+      "parks": [
+        { "ref": "JP-1748", "nameJa": "大洲総合運動公園", "sourceCity": "大分市", "sourceName": "大洲総合運動公園" }
+      ]
     }
   ]
 }
