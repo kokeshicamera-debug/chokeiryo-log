@@ -7,7 +7,7 @@ importScripts("./data/pota-boundaries-osm-files.js");
  * 一度オンラインで開いたアプリ本体を端末に保管し、圏外でも起動できるようにする。
  * POTA/SOTAの判定データは、次の段階で地域別にここへ追加する。
  */
-const CACHE_NAME = "cho-keiryo-log-v1-10-shell-36";
+const CACHE_NAME = "cho-keiryo-log-v1-10-shell-37";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -15,6 +15,7 @@ const APP_SHELL = [
   "./about.html",
   "./public-notes.html",
   "./behind-the-scenes.html",
+  "./site-analytics.js",
   "./manifest.webmanifest",
   "./pota-boundary-engine.js",
   "./sota-activation-engine.js",
