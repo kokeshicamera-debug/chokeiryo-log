@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171717">
+  <title>超軽量ログを作り始めた理由</title>
+  <style>
+    :root{--bg:#f4f1e8;--ink:#202018;--sub:#655f51;--line:#d4cdbd;--card:#fffdf7;--accent:#cd853f}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI",sans-serif;line-height:1.9}
+    .wrap{width:min(850px,calc(100% - 32px));margin:0 auto} header{background:#171717;color:#fff;padding:58px 0 42px} h1{margin:8px 0;font-size:clamp(2rem,8vw,3.7rem);line-height:1.25}.eyebrow{color:#f0d24c;font-weight:800;letter-spacing:.08em;margin:0}.lead{color:#e7e4dc;max-width:620px}.button{display:inline-block;margin-top:18px;padding:10px 18px;border-radius:10px;background:#f0d24c;color:#261d00;text-decoration:none;font-weight:800}main{padding:42px 0 62px}h2{font-size:clamp(1.35rem,5vw,1.9rem);line-height:1.4;margin:38px 0 16px}.card{padding:25px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px #302b1b0d}p{margin:0 0 14px}li{margin:8px 0}footer{padding:26px 0 40px;border-top:1px solid var(--line);color:var(--sub);font-size:.9rem}@media(max-width:600px){.wrap{width:min(100% - 24px,850px)}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">開発者の、かなり個人的なメモ</p>
+      <h1>超軽量ログを<br>作り始めた理由</h1>
+      <p class="lead">立派なアプリを作ろうとして始めたわけではありません。移動運用で毎回ちょっとずつ困っていたので、「自分に都合のよいもの」を作り始めました。</p>
+      <a class="button" href="./guide.html">紹介ページへ戻る</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="card">
+      <p>このアプリは、作者がアマチュア無線の移動運用をしていて「困ったな」「不便だな」と思ったことを発端にして、「あったらいいな」と思った機能だけを入れたアプリです。</p>
+      <p>そのため、絶対に「高機能」ではありません。</p>
+      <p>固定局からの運用はもとより、移動運用でも大きな機材を担いでいくのではなく、ハンディー機だけ持って歩き回るような運用に特化しています。</p>
+    </section>
+
+    <section>
+      <h2>「軽量」には、重さ以外の意味もあります</h2>
+      <div class="card">
+        <p>登山などでは、荷物を1gでも軽くしたいものです。ログを取るためのメモ帳とペンさえ持たなくていいように。これが、まず重さの意味での「軽量」です。</p>
+        <p>そして、アプリの読み込みや動作も、できるだけ軽くしたい。必要なものだけが、すぐ使えるようにしたい。これが動作の意味での「軽量」です。</p>
+        <p>なにより、スマホにこのアプリを入れておくだけで、大した準備をしなくても、気軽に移動運用へ出かけられるようにしたい。これが気持ちの意味での「軽量」です。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>私の移動運用は、かなりお気楽です</h2>
+      <div class="card">
+        <p>できるだけ身軽に、手軽に、お気楽に。気が向いたときに、気が向いただけCQを出すスタイルです。</p>
+        <p>PHONE以外にもCW、FT8、FT4、RTTYなど、いろいろなモードをやります。でも一番楽しいのは、出かけて行った先でCQを出し、そのときにつながった人との会話を楽しむことです。</p>
+        <p>そのため、このアプリはハンディー機でのFM運用を主目的に設計しています。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>移動運用で困ること</h2>
+      <div class="card">
+        <ul>
+          <li>相手方のコールサインを覚えられない。短期記憶も長期記憶も弱いので、QSO中にとても困る。</li>
+          <li>ログ用にPCやタブレットを持っていくのは面倒。</li>
+          <li>スマホの小さなキーボードでは、急いで入力しづらい。</li>
+          <li>オンラインでしか使えないアプリが多い。山では電波がなくなることもしばしば。</li>
+          <li>紙とペンを持って行っても、風でページがめくれて即座に書けない。雨なら紙がボロボロになり、字もにじむ。</li>
+          <li>ハンディー機を片手に持って、紙へ書くのは難しい。</li>
+          <li>せっかく出かけたのに、ノートとペンを忘れる。車での移動運用でも忘れる。</li>
+          <li>POTAやSOTAでは、別のアプリでスポット番号を何度も確認しないといけない。</li>
+          <li>夜の車内では紙のメモが見えない。相手方のコールサインや名前を忘れる。</li>
+          <li>初めての場所では、現在地の地名・エリア・JCC/JCGがよく分からない。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>だから、ここにこだわりました</h2>
+      <div class="card">
+        <ul>
+          <li>スマホ以外は何もいらない、超軽量。</li>
+          <li>電波がある場所で一度準備すれば、圏外でもできる限り使えるオフライン対応。</li>
+          <li>小さな画面でも押し間違えにくい、大きな手書き入力。</li>
+          <li>暗い場所でも見やすいダークモード。必要なら通常モードを手元の明かり代わりにも。</li>
+          <li>住所、エリア、JCC/JCG、JST/UTCを、一画面で手書きメモと一緒に保存。</li>
+          <li>小さな文字が見えないときだけ大きくする、老眼モード。</li>
+          <li>POTA/SOTAのスポット番号を示す、POTA/SOTAモード。</li>
+          <li>必要なときだけ引き出せる、追加の手書きメモ欄。</li>
+          <li>横画面では、現在地と相手局のコールサインを大きく表示する運転中モード。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">まだ育ち途中です</h2>
+      <p>将来は、オフラインでのエリアやPOTA/SOTA判定をもっと正確にしたいと思っています。</p>
+      <p>ひとりでは全国すべてを試せません。実際に使ってくださる方の「ここではこうだった」という声を受けながら、少しずつ良くしていけたら嬉しいです。</p>
+      <p style="margin-bottom:0"><strong>思い立ったらどこでもCQ。</strong> そのための、ちいさな道具として育てています。</p>
+    </section>
+  </main>
+  <footer><div class="wrap">超軽量ログ　公開テスト版（β）</div></footer>
+</body>
+</html>

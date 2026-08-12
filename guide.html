@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171717">
+  <title>超軽量ログ ― 公開テスト版のご案内</title>
+  <style>
+    :root{
+      --bg:#f4f1e8;
+      --ink:#202018;
+      --sub:#655f51;
+      --line:#d4cdbd;
+      --card:#fffdf7;
+      --accent:#cd853f;
+      --accent-dark:#87531d;
+      --green:#198754;
+      --pink:#c8327c;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI",sans-serif;line-height:1.8}
+    a{color:inherit}
+    .wrap{width:min(900px,calc(100% - 32px));margin:0 auto}
+    header{background:#171717;color:#fff;padding:clamp(50px,10vw,96px) 0 44px}
+    .eyebrow{margin:0;color:#f0d24c;font-size:.9rem;font-weight:800;letter-spacing:.08em}
+    h1{margin:10px 0 6px;font-size:clamp(2.2rem,9vw,4.8rem);line-height:1.1;letter-spacing:.03em}
+    .catch{margin:0;font-size:clamp(1.05rem,3.8vw,1.45rem);font-weight:700}
+    .lead{max-width:650px;margin:28px 0 0;color:#e9e6dd;font-size:1.05rem}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .button{display:inline-block;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:800;background:#f0d24c;color:#261d00}
+    .button.sub{background:transparent;color:#fff;border:1px solid #9e9b94}
+    main{padding:40px 0 64px}
+    section{margin:34px 0}
+    h2{font-size:clamp(1.45rem,5vw,2rem);line-height:1.35;margin:0 0 16px}
+    h3{font-size:1.15rem;margin:0 0 6px}
+    p{margin:0 0 14px}
+    .note{padding:20px 22px;background:#eee5cc;border-left:6px solid var(--accent);border-radius:8px}
+    .story{padding:26px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 4px 14px #302b1b0d}
+    .story p:last-child{margin-bottom:0}
+    .features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .feature{padding:18px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+    .feature p{margin:0;color:var(--sub);font-size:.94rem;line-height:1.65}
+    ul{padding-left:1.3em;margin:0}
+    li{margin:6px 0}
+    .steps{counter-reset:steps;padding:0;list-style:none}
+    .steps li{position:relative;min-height:43px;padding:5px 0 5px 54px}
+    .steps li::before{counter-increment:steps;content:counter(steps);position:absolute;left:0;top:4px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:800}
+    .labels{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+    .label{padding:3px 10px;border-radius:99px;font-size:.82rem;font-weight:800;background:#eee;color:#333}
+    .label.official{background:#ffe4a8;color:#663b00}
+    .label.candidate{background:#dcefdc;color:#155c31}
+    .label.sota{background:#dff4a5;color:#345400}
+    .privacy{font-size:.93rem;color:var(--sub)}
+    footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--sub);font-size:.9rem}
+    @media (max-width:600px){.features{grid-template-columns:1fr}.wrap{width:min(100% - 24px,900px)}header{padding-top:54px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">iPhone向け・アマチュア無線 移動運用ログ<br><span style="font-size:.78rem;font-weight:600;letter-spacing:0">※ Androidでも使える可能性があります（動作確認中）</span></p>
+      <h1>超軽量ログ</h1>
+      <p class="catch">紙のメモ帳より速く、PCより軽く。</p>
+      <p class="lead">ハンディー機とスマホだけで、ふと思い立った場所からCQを出すための、手書きログアプリです。</p>
+      <div class="actions">
+        <a class="button" href="./index.html">公開テスト版を開く</a>
+        <a class="button sub" href="#about">このアプリについて</a>
+        <a class="button sub" href="./about.html">作り始めた理由</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="note">
+      <strong>現在は公開テスト版（β）です。</strong><br>
+      実際の移動運用で使いながら育てています。POTA/SOTA、GPS、オフライン判定は、表示の種類と出典を確認のうえご利用ください。
+    </section>
+
+    <section id="about">
+      <h2>「ノートとペンを忘れた」から始まりました</h2>
+      <div class="story">
+        <p>これは、作者が移動運用で「困ったな」「不便だな」と思ったことから始めた、かなり個人的なアプリです。</p>
+        <p>ハンディー機を片手に持ったまま、風でめくれるノートへ急いで書く。雨なら紙がふやける。夜の車内ではメモが読めない。せっかくロケのよい場所まで来たのに、ログ用のノートとペンを忘れる。</p>
+        <p>相手局のコールサインを忘れてしまうこともあります。これはもう、私の記憶力の問題です。</p>
+        <p>ならば、スマホの画面へそのまま大きく手書きできて、現在地やPOTA/SOTAも同じ画面で分かればいい。そう思って作り始めました。</p>
+        <p><strong>身軽に、手軽に、お気楽に。気が向いたときに、気が向いただけCQを出す。</strong> そんな移動運用のためのログです。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>「超軽量」には3つの意味があります</h2>
+      <ul>
+        <li><strong>荷物が軽い：</strong>ログ用のノートやペンを持たず、スマホ1台で記録する。</li>
+        <li><strong>動作が軽い：</strong>必要なことに絞り、屋外でも迷わず使える。</li>
+        <li><strong>気持ちが軽い：</strong>大した準備なしに、「今日はどこでCQを出そう」と出かけられる。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>できること</h2>
+      <div class="features">
+        <div class="feature"><h3>✍️ 大きく手書き</h3><p>CALLSIGN、QRA、RST、QTHを、キーボードなしで記録できます。</p></div>
+        <div class="feature"><h3>📍 現在地の情報</h3><p>座標、エリア、住所、JCC/JCG、GPS標高を一画面に表示します。</p></div>
+        <div class="feature"><h3>🗺️ POTA / SOTA</h3><p>スポット情報を表示。判定の確からしさや出典も区別して示します。</p></div>
+        <div class="feature"><h3>📵 圏外でも使う</h3><p>一度保存したデータを使い、通信がない場所でもできる限り判定します。</p></div>
+        <div class="feature"><h3>👓 老眼モード</h3><p>現在地情報を一時的に大きく表示。暗い車内や屋外でも見やすくします。</p></div>
+        <div class="feature"><h3>🖼️ 交信を画像で保存</h3><p>手書き内容と現在地情報、必要ならメモもまとめて画像保存できます。</p></div>
+      </div>
+    </section>
+
+    <section class="note" style="border-left-color:#666633">
+      <h2 style="margin-top:0">スマホの小さな文字は、老眼の敵です</h2>
+      <p>地名、JCC/JCG、標高、エリア。移動運用で知りたい情報ほど、スマホでは小さくなりがちです。</p>
+      <p>そこで超軽量ログには<strong>老眼モード</strong>を付けました。画面上部の現在地情報をタップすると、手書き欄を大きく使って、住所・エリア・JCC/JCG・標高を一時的に大きく表示します。もう一度タップすれば、すぐ元の画面へ戻ります。</p>
+      <p style="margin-bottom:0">これは立派な高機能というより、「見えないと困る」から付けた機能です。</p>
+    </section>
+
+    <section>
+      <h2>iPhoneでの使い方</h2>
+      <ol class="steps">
+        <li>Safariでアプリを開きます。</li>
+        <li>画面下の共有ボタンを押します。</li>
+        <li>「ホーム画面に追加」を選びます。</li>
+        <li>ホーム画面の「超軽量ログ」から起動します。</li>
+      </ol>
+      <p>初回は、電波がある場所で起動して、位置情報の利用を許可してください。POTA/SOTAなどの判定データを端末に保存する場合も、最初だけ通信が必要です。</p>
+    </section>
+
+    <section>
+      <h2>Androidでも、ぜひ実験してください</h2>
+      <div class="note" style="border-left-color:#198754">
+        <p><strong>このアプリはiPhoneを基準に設計しています。</strong> ただし、Androidでも使える可能性があります。機種やブラウザによって表示・保存・常時点灯などの動きが異なるため、現在は動作確認中です。</p>
+        <ol class="steps">
+          <li>AndroidのChromeでアプリを開きます。</li>
+          <li>Chrome右上の「︙」を押します。</li>
+          <li>「ホーム画面に追加」または「アプリをインストール」を選びます。</li>
+          <li>ホーム画面に追加されたアイコンから起動します。</li>
+        </ol>
+        <p style="margin-bottom:0">もし試してくださったら、機種名と「ここまで動いた」「ここは動かなかった」を教えてください。Android対応を育てる大切な手がかりになります。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>POTA / SOTA表示について</h2>
+      <p>表示は、分かっていることを正直に区別します。</p>
+      <div class="labels">
+        <span class="label official">公式区域・境界判定</span>
+        <span class="label candidate">候補区域</span>
+        <span class="label sota">SOTA 25m地形判定</span>
+      </div>
+      <ul>
+        <li><strong>公式区域・境界判定：</strong>公的GISなどの境界を照合できた区域です。</li>
+        <li><strong>候補区域：</strong>公園候補データ等に基づく参考表示です。運用可否の最終確認は公式情報でお願いします。</li>
+        <li><strong>SOTA：</strong>公式サミット情報とGPS・地形情報を利用します。山中ではGPSや標高データの精度に影響されます。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>オフラインで使うために</h2>
+      <p>山へ入る前など、通信がある場所で一度アプリを開いてください。アプリ本体と保存済みの判定データは、圏外でも利用できます。</p>
+      <p>ただし、初めて訪れる場所の詳細住所、未保存の地形標高、最新のPOTA/SOTA情報などは、通信がないと取得できない場合があります。</p>
+    </section>
+
+    <section>
+      <h2>テストにご協力ください</h2>
+      <ul>
+        <li><strong style="font-size:1.45rem;color:#87531d">このアプリをほめてください！</strong></li>
+        <li>「ここが面倒」「こうだったら助かる」という率直な感想</li>
+        <li>iPhone / Android、縦画面 / 横画面での使いやすさ</li>
+      </ul>
+      <p>全国すべての山・公園・通信状況を、作者ひとりでは確かめられません。特に次のような報告を歓迎します。</p>
+      <ul>
+        <li>POTA/SOTAの表示が実際の場所と合っていた・違っていた</li>
+        <li>圏外で使えた機能、使えなかった機能</li>
+      </ul>
+      <p>報告フォームは準備中です。公開時にはこのページへ案内を追加します。</p>
+    </section>
+
+    <section>
+      <h2>プライバシーとデータについて</h2>
+      <p class="privacy">交信メモや手書き内容を、アプリの運営側へ送信・収集する機能はありません。オンライン時に住所、JCC/JCG、標高、POTA/SOTAの情報を更新・取得する場合は、現在地の座標が各情報提供サービスへ送られることがあります。位置情報の利用を許可するかどうかは、端末側でいつでも変更できます。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">超軽量ログ　公開テスト版（β）<br>紙のメモ帳より速く、PCより軽く。<br><a href="./about.html">このアプリを作り始めた理由</a></div>
+  </footer>
+</body>
+</html>
