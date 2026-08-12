@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171717">
+  <title>見えないところのこだわり | 超軽量ログ</title>
+  <style>
+    :root{--bg:#f4f1e8;--ink:#202018;--sub:#655f51;--line:#d4cdbd;--card:#fffdf7;--accent:#cd853f;--dark:#171717;--green:#198754;--yellow:#f0d24c}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI",sans-serif;line-height:1.8}.wrap{width:min(900px,calc(100% - 32px));margin:0 auto}header{background:var(--dark);color:#fff;padding:clamp(52px,10vw,96px) 0 46px}.eyebrow{margin:0;color:var(--yellow);font-size:.9rem;font-weight:800;letter-spacing:.08em}h1{font-size:clamp(2.1rem,8vw,4.4rem);line-height:1.13;margin:10px 0}.lead{margin:0;color:#e9e6dd;font-size:1.08rem;max-width:700px}main{padding:42px 0 68px}section{margin:34px 0}h2{font-size:clamp(1.45rem,5vw,2rem);line-height:1.35;margin:0 0 12px}h3{margin:0 0 6px;font-size:1.13rem}.note{padding:21px 23px;background:#fff7dd;border-left:6px solid var(--accent);border-radius:10px}.card{padding:24px;background:var(--card);border:1px solid var(--line);border-radius:18px;margin:15px 0}.card p:last-child{margin-bottom:0}.step{display:grid;grid-template-columns:44px 1fr;gap:14px;margin:22px 0}.num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:900}.tag{display:inline-block;padding:3px 10px;border-radius:99px;margin:0 4px 7px 0;font-weight:800;font-size:.82rem;background:#eee5cc;color:#6b4915}.tag.green{background:#dcefdc;color:#155c31}.tag.gray{background:#e8e8e8;color:#444}.limit{padding:20px;background:#f5e5e2;border:1px solid #d8aaa2;border-radius:14px}.button{display:inline-block;padding:11px 18px;border-radius:12px;background:var(--yellow);color:#261d00;text-decoration:none;font-weight:800}footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--sub);font-size:.9rem}@media(max-width:600px){.wrap{width:min(100% - 24px,900px)}header{padding-top:52px}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><p class="eyebrow">超軽量ログ・技術の裏側</p><h1>見えないところのこだわり</h1><p class="lead">紙のメモ帳のように気軽に使えて、山の中でもできるだけ頼りになる。画面には見えない、そのための仕組みを正直に紹介します。</p></div></header>
+  <main class="wrap">
+    <section class="note"><strong>大切にしているのは「何でもできる」と言い切ることではありません。</strong><br>通信がないときに端末内で判断できること、オンラインで更新・補えること、まだ判定できないことを分けて表示します。</section>
+
+    <section>
+      <h2>まず、現在地をあわてて決めない</h2>
+      <div class="card"><span class="tag">GPS</span><span class="tag">精度の見比べ</span><p>GPSは一度だけ取って終わりではありません。新しい位置情報と、より精度のよい位置情報を見比べて、より信頼できるものを採用する仕組みです。目安として精度50m以内の位置を「十分に精度が出た位置」として扱い、山中で最初の判定が遅くなりすぎないようにもしています。</p><p>それでもGPSは建物・谷・樹木・衛星の見え方で揺れます。画面の「±○m」は、まさにその揺れの目安です。</p></div>
+    </section>
+
+    <section>
+      <h2>圏外でも住所・エリア・JCC/JCGを出す</h2>
+      <div class="step"><div class="num">1</div><div><h3>全国の行政区域を端末へ保存</h3><p>都道府県・郡・市区町村の境界データを、アプリを開いた端末に保存します。現在地がどの多角形の内側かを調べるので、通信がなくても市区町村まで判定できます。</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>町字は「近い地点」から控えめに推定</h3><p>町字以下は、近い町字の代表地点を使う推定です。だから画面には「付近」「町字推定」と明記します。正確な住所を装わないことも、このアプリの精度です。</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>行政区域とJCC/JCG対応表を照合</h3><p>判定した市区町村・郡を、端末内のJCC/JCG番号表と照合します。オンラインの検索結果がなくても、JCCまたはJCGを表示できます。</p></div></div>
+    </section>
+
+    <section>
+      <h2>POTAは「中心からの距離」ではなく境界で見る</h2>
+      <div class="card"><span class="tag">POTA</span><span class="tag green">境界ポリゴン</span><p>大きな公園では、代表点からの距離だけでは公園内でも「スポット外」になってしまいます。超軽量ログは、公園の外周を多角形データとして持ち、GPS地点がその内側かを直接判定します。</p><p>さらに境界からの距離を計算し、GPSの誤差も踏まえて「境界付近」と表示します。これにより、境界ぎりぎりの場所で白黒を言い切りすぎません。</p><p>公式区域として確認できたデータと、全国展開のための候補データは表示を分けます。候補を公式と偽らない、というルールです。</p></div>
+    </section>
+
+    <section>
+      <h2>SOTAは「山頂から何m」だけで決めない</h2>
+      <div class="card"><span class="tag">SOTA</span><span class="tag green">公式サミット</span><span class="tag">25mルールに近づける</span><p>まず日本の公式サミット一覧から近い山を探します。その上で、山頂から25m下までの高さに達しているかを、標高データで確認します。</p><p>さらに、山頂と現在地の間に「25m以内の高さを保った地形のつながり」があるかを、細かな格子でたどります。判断材料が足りないときは、無理に「スポット内」とは表示しません。</p></div>
+    </section>
+
+    <section>
+      <h2>標高は、通信があるときに地形データで補う</h2>
+      <div class="card"><span class="tag">GPS標高</span><span class="tag">地理院タイル</span><p>GPS標高は通信なしでも取れる場合がありますが、機種や場所によって揺れます。通信があるときは標高タイルから地形の高さを読み取り、端末内の小さな保存領域にも残します。</p><p>ただし、全国すべての高精度地形データを最初から端末へ丸ごと入れているわけではありません。表示される「GPS標高±○m」は、誤差を隠さないための表示です。</p></div>
+    </section>
+
+    <section>
+      <h2>通信があると、より新しい情報へ</h2>
+      <div class="card"><p>住所・POTA/SOTA一覧・標高などは、通信できるときに更新や補完を試みます。取得した情報は端末に保存し、次に圏外になっても使える範囲で再利用します。</p><p>手書きの交信メモそのものを、超軽量ログの運営側へ送る機能はありません。</p></div>
+    </section>
+
+    <section class="limit"><h2>まだ「できない」と正直に表示すること</h2><p>POTAの全国すべてを公式境界として保証すること、町字以下を常に正確な住所として示すこと、標高を測量級の精度で確定することは、まだできません。だからこそ、公式区域・候補・オフライン判定・町字推定・GPS標高といった表示で、判定の根拠を見えるようにしています。</p></section>
+    <p><a class="button" href="./guide.html">紹介ページへ戻る</a></p>
+  </main>
+  <footer><div class="wrap">超軽量ログは、実際の移動運用と公開テストを通じて育てていきます。</div></footer>
+</body>
+</html>
