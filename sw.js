@@ -7,7 +7,8 @@ importScripts("./data/pota-boundaries-osm-files.js");
  * 一度オンラインで開いたアプリ本体を端末に保管し、圏外でも起動できるようにする。
  * POTA/SOTAの判定データは、次の段階で地域別にここへ追加する。
  */
-const CACHE_NAME = "cho-keiryo-log-v1-10-shell-37";
+const CACHE_NAME = "cho-keiryo-log-v1-10-shell-39";
+const NO_SLEEP_URL = "https://cdn.jsdelivr.net/npm/nosleep.js@0.12.0/dist/NoSleep.min.js";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -92,6 +93,8 @@ const APP_SHELL = [
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(async cache => {
     await cache.addAll(APP_SHELL);
+    // iPhoneの常時点灯補助も、最初のオンライン利用時に端末へ保管する。
+    try { await cache.add(NO_SLEEP_URL); } catch (error) { console.warn("常時点灯補助の保管に失敗", error); }
     for (const file of self.NATIONAL_POTA_CANDIDATE_FILES || []) {
       try { await cache.add(file); } catch (error) { console.warn("全国POTA候補の保存に失敗", file, error); }
     }
@@ -118,7 +121,19 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
-  if (url.origin !== self.location.origin) return;
+  if (url.origin !== self.location.origin) {
+    if (url.href === NO_SLEEP_URL) {
+      event.respondWith(
+        caches.match(event.request).then(cached => cached || fetch(event.request)
+          .then(response => {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+            return response;
+          }))
+      );
+    }
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request).then(cached => cached || fetch(event.request)

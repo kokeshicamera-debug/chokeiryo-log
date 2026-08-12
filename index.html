@@ -2022,19 +2022,37 @@ saveButton.addEventListener("click",shareLogImage);
 
 let wakeLock=null;
 let noSleep=null;
+let screenStayAwakeRequested=false;
+let wakeRetryTimer=null;
+
+function scheduleWakeRetry(){
+
+    clearTimeout(wakeRetryTimer);
+
+    if(!screenStayAwakeRequested || document.visibilityState!=="visible") return;
+
+    wakeRetryTimer=setTimeout(keepScreenAwake,2000);
+
+}
 
 async function keepScreenAwake(){
 
-    if(!("wakeLock" in navigator) || wakeLock) return;
+    if(!screenStayAwakeRequested || document.visibilityState!=="visible" || !("wakeLock" in navigator) || wakeLock) return;
 
     try{
 
         wakeLock=await navigator.wakeLock.request("screen");
-        wakeLock.addEventListener("release",()=>{wakeLock=null;});
+        wakeLock.addEventListener("release",()=>{
+
+            wakeLock=null;
+            scheduleWakeRetry();
+
+        });
 
     }catch(error){
 
         wakeLock=null;
+        scheduleWakeRetry();
 
     }
 
@@ -2046,8 +2064,17 @@ function enableVideoWakeFallback(){
 
     try{
 
-        noSleep=new window.NoSleep();
-        noSleep.enable();
+        const candidate=new window.NoSleep();
+
+        Promise.resolve(candidate.enable()).then(()=>{
+
+            noSleep=candidate;
+
+        }).catch(()=>{
+
+            noSleep=null;
+
+        });
 
     }catch(error){
 
@@ -2059,19 +2086,28 @@ function enableVideoWakeFallback(){
 
 function enableScreenStayAwake(){
 
+    screenStayAwakeRequested=true;
     keepScreenAwake();
     enableVideoWakeFallback();
 
 }
 
+document.addEventListener("pointerdown",enableScreenStayAwake,{passive:true});
 document.addEventListener("touchstart",enableScreenStayAwake,{passive:true});
 document.addEventListener("click",enableScreenStayAwake,{passive:true});
 
 document.addEventListener("visibilitychange",()=>{
 
-    if(document.visibilityState==="visible") enableScreenStayAwake();
+    if(document.visibilityState==="visible"){
+
+        enableScreenStayAwake();
+        scheduleWakeRetry();
+
+    }
 
 });
+
+window.addEventListener("pageshow",enableScreenStayAwake);
 
 
 
@@ -2586,7 +2622,7 @@ document.addEventListener("touchmove",function(e){
 redrawAll();
 
 window.addEventListener("load",requestLocation,{once:true});
-window.addEventListener("load",keepScreenAwake,{once:true});
+window.addEventListener("load",enableScreenStayAwake,{once:true});
 
 /* Ver.1.10: 初回のオンライン利用時に、アプリ本体を端末へ保管する。 */
 if ("serviceWorker" in navigator) {
