@@ -59,8 +59,13 @@
     .report-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
     .report-card{padding:13px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:.9rem;line-height:1.55}
     .report-card strong{display:block;color:var(--accent-dark);margin-bottom:3px}
+    .screenshots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+    .screenshot-card{margin:0;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 4px 14px #302b1b0d}
+    .screenshot-card img{display:block;width:100%;border-radius:11px;border:1px solid #222;background:#111}
+    .screenshot-card figcaption{padding:12px 4px 2px;font-size:.94rem;line-height:1.6;color:var(--sub)}
+    .screenshot-card strong{display:block;color:var(--accent-dark);font-size:1rem}
     footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--sub);font-size:.9rem}
-    @media (max-width:600px){.features,.report-cards{grid-template-columns:1fr}.wrap{width:min(100% - 24px,900px)}header{padding-top:54px}}
+    @media (max-width:600px){.features,.report-cards,.screenshots{grid-template-columns:1fr}.wrap{width:min(100% - 24px,900px)}header{padding-top:54px}}
   </style>
 </head>
 <body>
@@ -134,6 +139,21 @@
       <h2>横画面は、車載運用のための見やすさ</h2>
       <p>縦画面は「手早く書く」ため、横画面は「移動中でも現在地情報を読み取りやすくする」ための表示です。横画面では、エリア・住所・JCC/JCG・GPS標高を大きく見せ、限られた画面でも手書きの余白をできるだけ残しています。</p>
       <p>車載での運用を楽しむ方にこそ試してほしい工夫です。安全のため、画面操作や記録は必ず停車してから行ってください。</p>
+    </section>
+
+    <section>
+      <h2>実際の画面</h2>
+      <div class="screenshots">
+        <figure class="screenshot-card">
+          <img src="./assets/app-handwriting-sample.png" alt="超軽量ログの縦画面。手書きのCALLSIGN、QRA、RST、QTHを入力し、下部に交信完了ボタンが表示されているサンプル画面">
+          <figcaption><strong>手書きで、交信の流れを止めない。</strong>CALLSIGN、QRA、RST、QTHを書き込み、MEMOも併用できます。</figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="./assets/app-landscape-sample.png" alt="超軽量ログの横画面。現在地情報を大きく表示し、広い手書きスペースと操作ボタンがあるサンプル画面">
+          <figcaption><strong>横画面・車載運用モード。</strong>現在地情報を大きく、手書きスペースも広く。操作や記録は必ず停車してから行ってください。</figcaption>
+        </figure>
+      </div>
+      <p class="privacy">※ 画面内の位置情報・住所・JCC/JCG・標高は、紹介用のサンプル表示です。</p>
     </section>
 
     <section class="note" style="border-left-color:#666633">
